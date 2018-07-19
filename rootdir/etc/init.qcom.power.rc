@@ -180,10 +180,10 @@ on property:sys.boot_completed=1
 on property:init.svc.recovery=running
     trigger enable-low-power
 
-#service charger /charger
-#    class charger
-#    group system graphics
-#    seclabel u:r:healthd:s0
+service charger /charger
+    class charger
+    group system graphics
+    seclabel u:r:healthd:s0
 
 service energy-awareness /vendor/bin/energy-awareness
     class main

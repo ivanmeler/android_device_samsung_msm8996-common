@@ -150,3 +150,6 @@ persist.data.df.dev_name=rmnet_usb0
 
 # Adreno
 ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+
+# Wifi
+wifi.interface=wlan0

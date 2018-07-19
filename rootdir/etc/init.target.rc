@@ -500,9 +500,9 @@ on charger
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
 
 # LPM (samsung charger)
-service lpm /system/bin/lpm
-    class charger
-    critical
+#service lpm /system/bin/lpm
+#    class charger
+#    critical
 
 service dhcpcd_eth0 /system/vendor/bin/dhcpcd -ABKLG
 	class late_start
@@ -521,7 +521,11 @@ service ppd /vendor/bin/mm-pp-dpps
     socket pps stream 0660 system system
     disabled
 
-service sec-sh /system/bin/sh /system/etc/init.sec.boot.sh
+#service sec-sh /system/bin/sh /system/etc/init.sec.boot.sh
+#    class main
+#    user root
+#    oneshot
+
+service wifiloader /system/bin/wifiloader
     class main
-    user root
     oneshot
