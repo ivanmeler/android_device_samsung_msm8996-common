@@ -8,3 +8,6 @@ allow tee init:unix_stream_socket connectto;
 allow tee gatekeeper_data_file:file { open read };
 
 allow tee efs_file:file { open read };
+allow tee efs_file:dir search;
+
+allow tee gatekeeper_data_file:dir { read search };

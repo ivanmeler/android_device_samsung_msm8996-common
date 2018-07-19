@@ -1,0 +1,2 @@
+vendor.samsung.hardware.biometrics.fingerprint::ISecBiometricsFingerprint     u:object_r:hal_fingerprint_hwservice:s0
+

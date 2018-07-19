@@ -1,6 +1,10 @@
 allow hal_fingerprint_default system_data_file:dir { add_name create open read write remove_name rmdir };
 allow hal_fingerprint_default system_data_file:file { getattr open read };
-allow hal_fingerprint_default tee_device:chr_file ioctl;
+allow hal_fingerprint_default tee_device:chr_file { open read write ioctl };
 allow hal_fingerprint_default firmware_file:file { getattr open read };
-allow hal_fingerprint_default tee_device:chr_file { open read write };
-allow hal_fingerprint_default vfsspi_device:chr_file ioctl;
+allow hal_fingerprint_default firmware_file:dir search;
+allow hal_fingerprint_default vfsspi_device:chr_file { read open write ioctl getattr };
+
+file_type_auto_trans(hal_fingerprint_default, system_data_file, biometrics_data_file);
+allow hal_fingerprint_default biometrics_data_file:dir { add_name create open read write remove_name rmdir };
+allow hal_fingerprint_default biometrics_data_file:file { getattr open read create write };
