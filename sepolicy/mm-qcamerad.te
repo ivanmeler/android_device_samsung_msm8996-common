@@ -6,3 +6,4 @@ allow mm-qcamerad camera_data_file:sock_file { create unlink };
 allow mm-qcamerad camera_socket:dir read;
 allow mm-qcamerad system_prop:property_service set;
 allow mm-qcamerad sysfs_camera:dir search;
+allow mm-qcamerad sysfs_camera:file { getattr open read write };

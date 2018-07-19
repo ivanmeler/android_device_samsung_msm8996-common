@@ -1,1 +1,3 @@
 allow hwservicemanager unlabeled:file { getattr open read };
+allow hwservicemanager init:dir search;
+allow hwservicemanager init:file read;

@@ -27,3 +27,5 @@
 # sysfs
 /sys/devices/virtual/camera(/.*)?                                u:object_r:sysfs_camera:s0
 /sys/devices/virtual/sec/sec_key/hall_irq_ctrl                   u:object_r:sysfs_sec:s0
+
+/system/bin/wifiloader       u:object_r:wifiloader_exec:s0
