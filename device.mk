@@ -111,10 +111,9 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service \
-    libbt-vendor
+#PRODUCT_PACKAGES += \
+#    android.hardware.bluetooth@1.0-impl \
+#    android.hardware.bluetooth@1.0-service
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -188,7 +187,6 @@ PRODUCT_PACKAGES += \
     libgnsspps
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/etc/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
     $(LOCAL_PATH)/gps/etc/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
     $(LOCAL_PATH)/gps/etc/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
     $(LOCAL_PATH)/gps/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
@@ -209,11 +207,6 @@ PRODUCT_PACKAGES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common
-
-# IPA Manager
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml
 
 # IPC router config
 PRODUCT_COPY_FILES += \
@@ -338,7 +331,8 @@ PRODUCT_COPY_FILES += \
 	
 # Thermal engine
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf	
+    $(LOCAL_PATH)/configs/thermal-engine-8996-lite.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8996-lite.conf \
+    $(LOCAL_PATH)/configs/thermal-engine-8996.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8996.conf
 	
 # USB
 PRODUCT_PACKAGES += \
