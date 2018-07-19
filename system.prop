@@ -1,13 +1,152 @@
-# Bluetooth
-ro.bluetooth.dun=false
-ro.bluetooth.sap=false
-ro.qualcomm.bluetooth.ftp=true
-ro.qualcomm.bluetooth.hfp=false
-ro.qualcomm.bluetooth.hsp=false
-ro.qualcomm.bluetooth.map=true
-ro.qualcomm.bluetooth.nap=false
+# Art
+ro.sys.fw.dex2oat_thread_count=4
+
+ro.qualcomm.cabl=0
+
+qcom.bluetooth.soc=rome
+
+#Enable offload audio video playback by default
+av.offload.enable=true
+
+# enable navigation bar
+qemu.hw.mainkeys=1
+
+#property to enable fingerprint
+persist.qfp=false
+
+#Disable rotator split feature
+sdm.debug.disable_rotator_split=1
+
+# For QQ P170316-06174/P170301-02869
+ro.qq.camera.sensor=3
+camera.disable_zsl_mode=1
+
+persist.camera.preview.ubwc=0
+persist.camera.video.ubwc=0
+
+persist.camera.HAL3.enabled=1
+
+ro.product.first_api_level=24
+
+ro.security.icd.flagmode=multi
+ro.smps.enable=true
+
+af.fast_track_multiplier=1
+audio_hal.period_size=192
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+tunnel.audio.encode=false
+audio.offload.buffer.size.kb=64
+audio.offload.video=true
+audio.offload.pcm.16bit.enable=true
+audio.offload.pcm.24bit.enable=true
+audio.offload.track.enable=true
+audio.deep_buffer.media=true
+media.stagefright.audio.sink=280
+use.voice.path.for.pcm.voip=true
+audio.offload.multiaac.enable=true
+audio.dolby.ds2.enabled=true
+audio.dolby.ds2.hardbypass=true
+audio.offload.passthrough=true
+audio.offload.multiple.enabled=false
+ro.qc.sdk.audio.ssr=false
+audio.offload.gapless.enabled=true
+audio.safx.pbe.enabled=true
+audio.parser.ip.buffer.size=262144
+qcom.hw.aac.encoder=true
+use.qti.sw.alac.decoder=false
+use.qti.sw.ape.decoder=false
+flac.sw.decoder.24bit.support=false
+ro.audio.monitorRotation=true
+
+ro.qcom.hdr.config=/system/vendor/etc/hdr_tm_config.xml
+
+# Display
+ro.sf.lcd_density=320
+ro.sf.hwrotation=90
+lockscreen.rot_override=true
+
+#Graphics properties
+debug.sf.enable_hwc_vds=1
+debug.sf.hw=1
+debug.sf.latch_unsignaled=1
+debug.egl.hw=1
+debug.gralloc.enable_fb_ubwc=1
+sdm.debug.disable_skip_validate=1
+sys.disable_ext_animation=1
+
+#Disable rotator split feature
+sdm.debug.disable_rotator_split=1
+
+#property to enable VDS WFD solution
+persist.hwc.enable_vds=1
+
+# Property to enable display default color mode
+vendor.display.enable_default_color_mode=1
+
+# OpenGLES
+ro.opengles.version=196610
+
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
+# Time services
+persist.timed.enable=true
+
 ro.qualcomm.bluetooth.opp=true
+ro.qualcomm.bluetooth.ftp=true
+ro.qualcomm.bluetooth.nap=false
+ro.bluetooth.sap=false
+ro.bluetooth.dun=false
+ro.qualcomm.bluetooth.hsp=false
+ro.qualcomm.bluetooth.hfp=false
 ro.qualcomm.bluetooth.pbap=true
+ro.qualcomm.bluetooth.map=true
+
+ro.hardware.keystore=mdfpp
+ro.hardware.gatekeeper=mdfpp
 
 # Radio
-ro.radio.noril=yes
+persist.data.netmgrd.qos.enable=true
+persist.data.qmi.adb_logmask=0
+persist.radio.add_power_save=1
+#rild.libpath=/system/vendor/lib64/libsec-ril.so
+rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+ro.telephony.mms_data_profile=5
+ro.ril.telephony.data_reg_resp_strings=7
+ro.ril.telephony.oper_resp_strings=4
+ro.ril.telephony.qan_resp_strings=6
+
+# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
+ro.telephony.call_ring.multiple=0
+
+DEVICE_PROVISIONED=1
+ril.subscription.types=NV,RUIM
+ro.telephony.call_ring.multiple=false
+ro.telephony.default_cdma_sub=0
+ro.telephony.default_network=20,20
+#persist.data.qmi.adb_logmask=0
+persist.net.doxlat=true
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.force_on_dc=true
+#persist.radio.multisim.config=dsds
+persist.radio.redir_party_num=1
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.sib16_support=1
+
+# RmNet Data
+persist.rmnet.data.enable=true
+persist.data.wda.enable=true
+persist.data.df.dl_mode=5
+persist.data.df.ul_mode=5
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.data.df.mux_count=8
+persist.data.df.iwlan_mux=9
+persist.data.df.dev_name=rmnet_usb0
+
+# Adreno
+ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0

@@ -1,0 +1,11 @@
+allow init debugfs:file write;
+
+allow init debugfs_trace_marker:file getattr;
+allow init dsp_file:dir mounton;
+allow init efs_file:dir mounton;
+allow init pstorefs:dir mounton;
+allow init functionfs:dir mounton;
+
+allow init self:netlink_socket { bind create read };
+allow init self:tcp_socket create;
+allow init socket_device:sock_file { create setattr };

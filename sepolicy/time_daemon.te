@@ -1,0 +1,4 @@
+allow time_daemon system_app:dir search;
+allow time_daemon system_app:file { open read };
+allow time_daemon rild:file { open read };
+allow time_daemon rild:dir search;

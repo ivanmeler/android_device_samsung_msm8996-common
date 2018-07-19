@@ -1,0 +1,18 @@
+set_prop(rild, net_radio_prop)
+
+allow rild unlabeled:dir search;
+allow rild unlabeled:file { getattr open read write };
+
+allow rild app_efs_file:file { getattr open read };
+allow rild proc_net:file write;
+allow rild self:capability { chown dac_read_search };
+allow rild default_android_service:service_manager find;
+allow rild radio_data_file:dir { add_name getattr write };
+allow rild radio_data_file:file { getattr ioctl lock create open read setattr write };
+
+allow rild radio_data_file:lnk_file read;
+
+allow rild proc_net:file w_file_perms;
+allow rild sysfs_sec:file rw_file_perms;
+
+allow rild tombstone_data_file:dir search;

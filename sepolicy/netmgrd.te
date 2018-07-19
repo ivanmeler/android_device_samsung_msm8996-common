@@ -1,0 +1,3 @@
+allow netmgrd self:capability dac_override;
+allow netmgrd unlabeled:file { getattr open read };
+allow netmgrd netd_socket:sock_file write;

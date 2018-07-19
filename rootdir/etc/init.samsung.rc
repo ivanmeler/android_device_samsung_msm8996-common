@@ -1,0 +1,278 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+on post-fs-data
+    # Permissions for Fingerprint sensor
+    chown system radio /sys/class/fingerprint/fingerprint/type_check
+    chown system radio /sys/class/fingerprint/fingerprint/name
+    chown system radio /sys/class/fingerprint/fingerprint/vendor
+    chown system radio /sys/class/fingerprint/fingerprint/adm
+    chown system radio /sys/class/fingerprint/fingerprint/bfs_values
+
+on boot
+    #Create directories for Fingerprint
+    mkdir /data/vendor/misc/qti_fp 0770 system system
+    mkdir /data/vendor/misc/qti_fp/bg_estimation 0770 system system
+    mkdir /data/vendor/misc/qti_fp/calib_test 0770 system system
+    mkdir /data/vendor/misc/qti_fp/database 0770 system system
+
+    # Permissions for svc led
+    chown system system /sys/class/sec/led/led_r
+    chown system system /sys/class/sec/led/led_g
+    chown system system /sys/class/sec/led/led_b
+    chown system system /sys/class/sec/led/led_pattern
+    chown system system /sys/class/sec/led/led_blink
+    chown system system /sys/class/sec/led/led_lowpower
+    chown system system /sys/class/sec/led/led_brightness
+    chown system system /sys/class/sec/led/delay_on
+    chown system system /sys/class/sec/led/delay_off
+    chown system system /sys/class/sec/led/blink
+
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/timed_output/vibrator/intensity
+    chown system system /sys/class/timed_output/vibrator/multi_freq
+
+    # Permissions for Camera
+    chown cameraserver cameraserver /sys/kernel/mm/vmscan/mem_boost_mode
+    chown system system /sys/class/camera/rear/rear_camfw
+    chown system system /sys/class/camera/rear/rear_camfw_full
+    chown system system /sys/class/camera/rear/rear_camfw_load
+    chown system system /sys/class/camera/rear/rear_camtype
+    chown system system /sys/class/camera/rear/rear_companionfw_full
+    chown system system /sys/class/camera/rear/rear_calcheck
+    chown system system /sys/class/camera/rear/rear_fwcheck
+    chown system system /sys/class/camera/rear/rear_checkfw_user
+    chown system system /sys/class/camera/rear/rear_checkfw_factory
+    chown system system /sys/class/camera/rear/rear_moduleinfo
+    chown system system /sys/class/camera/rear/rear_afcal
+    chown system system /sys/class/camera/rear/isp_core
+    chown system system /sys/class/camera/rear/rear_caminfo
+    chown system system /sys/class/camera/rear/rear_sensorid_exif
+    chown system system /sys/class/camera/rear/rear_moduleid
+    chown system system /sys/class/camera/rear/companion_ic_check
+    chown system system /sys/class/camera/rear/ssrm_camera_info
+    chown system system /sys/class/camera/flash/rear_flash
+    chown system system /sys/class/camera/front/front_camfw
+    chown system system /sys/class/camera/front/front_camtype
+    chown system system /sys/class/camera/front/front_caminfo
+    chown system system /sys/class/camera/front/front_camfw_full
+    chown system system /sys/class/camera/front/front_camfw_load
+    chown system system /sys/class/camera/front/front_checkfw_user
+    chown system system /sys/class/camera/front/front_checkfw_factory
+    chown system system /sys/class/camera/front/front_afcal
+    chown system system /sys/class/camera/front/front_sensorid_exif
+    chown system system /sys/class/camera/ois/selftest
+    chown system system /sys/class/camera/ois/ois_power
+    chown system system /sys/class/camera/ois/ois_rawdata
+    chown system system /sys/class/camera/ois/oisfw
+    chown system system /sys/class/camera/ois/ois_diff
+    chown system system /sys/class/camera/ois/ois_exif
+    chown system system /sys/class/camera/ois/autotest
+    chown system system /sys/class/camera/secure/iris_camfw
+    chown system system /sys/class/camera/secure/iris_camfw_full
+    chown system system /sys/class/camera/secure/iris_checkfw_factory
+    chown system system /sys/class/camera/secure/iris_checkfw_user
+    chown system system /sys/class/camera/secure/iris_caminfo
+    chown system system /sys/devices/svc/Camera/SVC_rear_module
+
+# Permissions for InputDevices.
+    chown system radio /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/input/enabled
+    chmod 0660 /sys/class/sec/tsp/input/enabled
+
+    chown system system /sys/class/sec/sec_touchkey/input/enabled
+    chmod 0660 /sys/class/sec/sec_touchkey/input/enabled
+    chown system system /sys/class/sec/sec_touchkey/brightness
+    chown system radio /sys/class/sec/sec_touchkey/keyboard_mode
+    chown system radio /sys/class/sec/sec_touchkey/flip_mode
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
+    chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_light_version
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_light_update
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_light_id_compare
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_light_table_write
+    chown system radio /sys/class/sec/sec_touchkey/glove_mode
+
+    chown system system /sys/class/sec/sec_epen/input/enabled
+    chmod 0660 /sys/class/sec/sec_epen/input/enabled
+    chown system radio /sys/class/sec/sec_epen/epen_firm_update
+    chown system radio /sys/class/sec/sec_epen/epen_reset
+    chown system radio /sys/class/sec/sec_epen/epen_reset_result
+    chown system radio /sys/class/sec/sec_epen/epen_checksum
+    chown system radio /sys/class/sec/sec_epen/epen_checksum_result
+    chown system radio /sys/class/sec/sec_epen/epen_saving_mode
+    chown system radio /sys/class/sec/sec_epen/epen_wcharging_mode
+    chown system radio /sys/class/sec/sec_epen/epen_disable_mode
+    chown system radio /sys/class/sec/sec_epen/epen_aop_mode
+    chown system radio /sys/class/sec/sec_epen/screen_off_memo_enable
+
+# Permissions for SecureDevice
+    chown system system /sys/class/sec/tsp/input/secure_touch_enable
+
+# Permissions for gpio_keys
+    chown system radio /sys/class/sec/sec_key/wakeup_keys
+    write /sys/class/sec/sec_key/wakeup_keys 116,172
+
+# Permissions for SENSORS
+# HRM_sensor
+    chown system radio /sys/class/sensors/hrm_sensor/name
+    chown system radio /sys/class/sensors/hrm_sensor/vendor
+    chown system radio /sys/class/sensors/hrm_sensor/led_current
+    chown system radio /sys/class/sensors/hrm_sensor/led_current1
+    chown system radio /sys/class/sensors/hrm_sensor/led_current2
+    chown system radio /sys/class/sensors/hrm_sensor/led_current3
+    chown system radio /sys/class/sensors/hrm_sensor/led_current4
+    chown system radio /sys/class/sensors/hrm_sensor/hr_range
+    chown system radio /sys/class/sensors/hrm_sensor/hr_range2
+    chown system radio /sys/class/sensors/hrm_sensor/look_mode_ir
+    chown system radio /sys/class/sensors/hrm_sensor/look_mode_red
+    chown system radio /sys/class/sensors/hrm_sensor/eol_test
+    chown system radio /sys/class/sensors/hrm_sensor/eol_test_result
+    chown system radio /sys/class/sensors/hrm_sensor/eol_test_status
+    chown system radio /sys/class/sensors/hrm_sensor/int_pin_check
+    chown system radio /sys/class/sensors/hrm_sensor/lib_ver
+    chown system radio /sys/class/sensors/hrm_sensor/regulator
+    chown system radio /sys/class/sensors/hrm_sensor/part_type
+    chown system radio /sys/class/sensors/hrm_sensor/device_id
+    chown system radio /sys/class/sensors/hrm_sensor/hrm_flush
+    chown system radio /sys/class/sensors/hrm_sensor/threshold
+    chown system radio /sys/class/sensors/hrm_sensor/eol_lib_ver
+    chown system radio /sys/class/sensors/hrm_sensor/elf_lib_ver
+    chown system radio /sys/class/sensors/hrm_sensor/adpd_reg_read
+    chown system radio /sys/class/sensors/hrm_sensor/adpd_reg_write
+    chown system radio /sys/class/sensors/hrm_sensor/adpd_mode
+    chown system radio /sys/class/sensors/hrm_sensor/adpd_configuration
+    chown system radio /sys/class/sensors/hrm_sensor/adpd_stat
+    chown system radio /sys/class/sensors/hrm_sensor/alc_enable
+    chmod 0600 /dev/max_hrm
+    chown system system /dev/max_hrm
+
+# HRMLED_sensor
+    chown system radio /sys/class/sensors/hrmled_sensor/name
+    chown system radio /sys/class/sensors/hrmled_sensor/vendor
+    chown system radio /sys/class/sensors/hrmled_sensor/hrmled_flush
+
+# Grip_sensor
+    chown system radio /sys/class/sensors/grip_sensor/name
+    chown system radio /sys/class/sensors/grip_sensor/vendor
+    chown system radio /sys/class/sensors/grip_sensor/raw_data
+    chown system radio /sys/class/sensors/grip_sensor/threshold
+    chown system radio /sys/class/sensors/grip_sensor/calibration
+    chown system radio /sys/class/sensors/grip_sensor/onoff
+    chown system radio /sys/class/sensors/grip_sensor/reset
+    chown system radio /sys/class/sensors/grip_sensor/mode
+    chown system radio /sys/class/sensors/grip_sensor/gain
+    chown system radio /sys/class/sensors/grip_sensor/start
+    chown system radio /sys/class/sensors/grip_sensor/normal_threshold
+    chown system radio /sys/class/sensors/grip_sensor/gain_ch2
+    chown system radio /sys/class/sensors/grip_sensor/raw_data_ch2
+    chown system radio /sys/class/sensors/grip_sensor/diff_avg_ch2
+    chown system radio /sys/class/sensors/grip_sensor/normal_threshold_ch2
+    chown system radio /sys/class/sensors/grip_sensor/ch_state
+    chown system radio /sys/class/sensors/grip_sensor/body_threshold
+    chown system radio /sys/class/sensors/grip_sensor/grip_flush
+    chown system radio /sys/class/sensors/grip_sensor/irq_count
+
+# Grip_sensor_wifi
+    chown system radio /sys/class/sensors/grip_sensor_wifi/name
+    chown system radio /sys/class/sensors/grip_sensor_wifi/vendor
+    chown system radio /sys/class/sensors/grip_sensor_wifi/raw_data
+    chown system radio /sys/class/sensors/grip_sensor_wifi/threshold
+    chown system radio /sys/class/sensors/grip_sensor_wifi/calibration
+    chown system radio /sys/class/sensors/grip_sensor_wifi/onoff
+    chown system radio /sys/class/sensors/grip_sensor_wifi/reset
+    chown system radio /sys/class/sensors/grip_sensor_wifi/mode
+    chown system radio /sys/class/sensors/grip_sensor_wifi/gain
+    chown system radio /sys/class/sensors/grip_sensor_wifi/start
+    chown system radio /sys/class/sensors/grip_sensor_wifi/normal_threshold
+    chown system radio /sys/class/sensors/grip_sensor_wifi/gain_ch2
+    chown system radio /sys/class/sensors/grip_sensor_wifi/raw_data_ch2
+    chown system radio /sys/class/sensors/grip_sensor_wifi/diff_avg_ch2
+    chown system radio /sys/class/sensors/grip_sensor_wifi/normal_threshold_ch2
+    chown system radio /sys/class/sensors/grip_sensor_wifi/ch_state
+    chown system radio /sys/class/sensors/grip_sensor_wifi/body_threshold
+    chown system radio /sys/class/sensors/grip_sensor_wifi/grip_flush
+
+# Accelerometer Sensor
+    chown system radio /sys/class/sensors/accelerometer_sensor/name
+    chown system radio /sys/class/sensors/accelerometer_sensor/vendor
+    chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
+    chown system radio /sys/class/sensors/accelerometer_sensor/calibration
+    chown system radio /sys/class/sensors/accelerometer_sensor/selftest
+    chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
+    chown system radio /sys/class/sensors/accelerometer_sensor/lowpassfilter
+
+# Gyro Sensor
+    chown system radio /sys/class/sensors/gyro_sensor/name
+    chown system radio /sys/class/sensors/gyro_sensor/vendor
+    chown system radio /sys/class/sensors/gyro_sensor/power_on
+    chown system radio /sys/class/sensors/gyro_sensor/power_off
+    chown system radio /sys/class/sensors/gyro_sensor/selftest
+    chown system radio /sys/class/sensors/gyro_sensor/temperature
+
+# Magnetic Sensor
+    chown system radio /sys/class/sensors/magnetic_sensor/name
+    chown system radio /sys/class/sensors/magnetic_sensor/vendor
+    chown system radio /sys/class/sensors/magnetic_sensor/raw_data
+    chown system radio /sys/class/sensors/magnetic_sensor/adc
+    chown system radio /sys/class/sensors/magnetic_sensor/asa
+    chown system radio /sys/class/sensors/magnetic_sensor/dac
+    chown system radio /sys/class/sensors/magnetic_sensor/chk_registers
+    chown system radio /sys/class/sensors/magnetic_sensor/selftest
+
+# Barometer Sensor
+    chown system radio /sys/class/sensors/barometer_sensor/name
+    chown system radio /sys/class/sensors/barometer_sensor/vendor
+    chown system radio /sys/class/sensors/barometer_sensor/sea_level_pressure
+    chown system radio /sys/class/sensors/barometer_sensor/calibration
+    chown system radio /sys/class/sensors/barometer_sensor/eeprom_check
+    chown system radio /sys/class/sensors/barometer_sensor/temperature
+
+# Proximity Sensor
+    chown system radio /sys/class/sensors/proximity_sensor/name
+    chown system radio /sys/class/sensors/proximity_sensor/vendor
+    chown system radio /sys/class/sensors/proximity_sensor/state
+    chown system radio /sys/class/sensors/proximity_sensor/raw_data
+    chown system radio /sys/class/sensors/proximity_sensor/barcode_emul_en
+    chown system radio /sys/class/sensors/proximity_sensor/prox_avg
+    chown system radio /sys/class/sensors/proximity_sensor/prox_cal
+    chown system radio /sys/class/sensors/proximity_sensor/thresh_high
+    chown system radio /sys/class/sensors/proximity_sensor/thresh_low
+    chown system radio /sys/class/sensors/proximity_sensor/prox_offset_pass
+    chown system radio /sys/class/sensors/proximity_sensor/prox_trim
+    chown system radio /sys/class/sensors/proximity_sensor/thresh_detect_high
+    chown system radio /sys/class/sensors/proximity_sensor/thresh_detect_low
+    chown system radio /sys/class/sensors/proximity_sensor/prox_alert_thresh
+
+# Light Sensor
+    chown system radio /sys/class/sensors/light_sensor/name
+    chown system radio /sys/class/sensors/light_sensor/vendor
+    chown system radio /sys/class/sensors/light_sensor/lux
+    chown system radio /sys/class/sensors/light_sensor/raw_data
+
+# Hidden Hole
+    chown system radio /sys/class/sensors/hidden_hole/hh_ver
+    chown system radio /sys/class/sensors/hidden_hole/hh_write_all_data
+    chown system radio /sys/class/sensors/hidden_hole/hh_is_exist_efs
+
+# MOBEAM
+    chown system radio /sys/class/sec/sec_barcode_emul/vendor
+    chown system radio /sys/class/sec/sec_barcode_emul/name
+    chown system radio /sys/class/sec/sec_barcode_emul/barcode_send
+    chown system radio /sys/class/sec/sec_barcode_emul/barcode_led_status
+    chown system radio /sys/class/sec/sec_barcode_emul/barcode_ver_check
+
+# SSC CORE
+    chown system radio /sys/class/sensors/ssc_core/operation_mode
+    chown system log /sys/class/sensors/ssc_core/dumpstate
+    chown system radio /sys/class/sensors/ssc_core/ssc_pid
+    chown system radio /sys/class/sensors/ssc_core/mode
+    chown system system /sys/class/sensors/ssc_core/remove_sysfs
+
+    setprop debug.sensor.logging.slpi true
+
+#Meta event
+    chown system radio /sys/class/sensors/sensor_dev/flush

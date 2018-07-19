@@ -1,0 +1,3 @@
+allow audioserver unlabeled:dir search;
+allow audioserver unlabeled:file { getattr open read };
+allow audioserver audio_prop:property_service set;
