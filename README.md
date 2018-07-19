@@ -32,9 +32,10 @@ repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <project name="Valera1978/android_device_samsung_gts3llte" path="device/samsung/gts3llte" remote="github" revision="lineage-15.1" />
-  <project name="Valera1978/android_kernel_samsung_msm8996" path="kernel/samsung/msm8996" remote="github" revision="lineage-15.1" />
-  <project name="Valera1978/android_vendor_samsung_gts3llte" path="vendor/samsung/gts3llte" remote="github" revision="lineage-15.1" />
+  <project name="Valera1978/android_device_samsung_gts3llte" path="device/samsung/gts3llte" remote="github" />
+  <project name="Valera1978/android_kernel_samsung_msm8996" path="kernel/samsung/msm8996" remote="github" />
+  <project name="Valera1978/android_vendor_samsung_gts3llte" path="vendor/samsung/gts3llte" remote="github" />
+  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" />
 
 </manifest>
 ```
