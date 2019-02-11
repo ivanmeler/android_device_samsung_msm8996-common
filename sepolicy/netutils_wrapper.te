@@ -1,2 +1,2 @@
-allow netutils_wrapper data_test_data_file:file { read write };
+#allow netutils_wrapper data_test_data_file:file { read write };
 allow netutils_wrapper netmgrd:netlink_socket { read write };

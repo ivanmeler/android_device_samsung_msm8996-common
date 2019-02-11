@@ -1,4 +1,4 @@
-set_prop(rild, net_radio_prop)
+set_prop(rild, system_radio_prop)
 
 allow rild unlabeled:dir search;
 allow rild unlabeled:file { getattr open read write };

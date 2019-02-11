@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2015 The CyanogenMod Project
- *               2017 The LineageOS Project
+ * Copyright (C) 2015 The CyanogenMod Project
+ *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,22 +25,18 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
 
-public class DozeService extends Service
-{
+public class DozeService extends Service {
     private static final String TAG = "DozeService";
     private static final boolean DEBUG = false;
 
     private ProximitySensor mProximitySensor;
     private TiltSensor mTiltSensor;
-    private SignificantSensor mSignificantSensor;
 
     @Override
-    public void onCreate()
-    {
+    public void onCreate() {
         if (DEBUG) Log.d(TAG, "Creating service");
         mProximitySensor = new ProximitySensor(this);
         mTiltSensor = new TiltSensor(this);
-        mSignificantSensor = new SignificantSensor(this);
 
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -48,62 +44,55 @@ public class DozeService extends Service
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId)
-    {
+    public int onStartCommand(Intent intent, int flags, int startId) {
         if (DEBUG) Log.d(TAG, "Starting service");
         return START_STICKY;
     }
 
     @Override
-    public void onDestroy()
-    {
+    public void onDestroy() {
         if (DEBUG) Log.d(TAG, "Destroying service");
         super.onDestroy();
         this.unregisterReceiver(mScreenStateReceiver);
         mProximitySensor.disable();
         mTiltSensor.disable();
-        mSignificantSensor.disable();
     }
 
     @Override
-    public IBinder onBind(Intent intent)
-    {
+    public IBinder onBind(Intent intent) {
         return null;
     }
 
-    private void onDisplayOn()
-    {
+    private void onDisplayOn() {
         if (DEBUG) Log.d(TAG, "Display on");
-        if (Utils.pickUpEnabled(this))
-        {
+        if (Utils.isPickUpEnabled(this)) {
             mTiltSensor.disable();
-            mSignificantSensor.disable();
         }
-        if (Utils.handwaveGestureEnabled(this) || Utils.pocketGestureEnabled(this))
+        if (Utils.isHandwaveGestureEnabled(this) ||
+                Utils.isPocketGestureEnabled(this)) {
             mProximitySensor.disable();
-    }
-
-    private void onDisplayOff()
-    {
-        if (DEBUG) Log.d(TAG, "Display off");
-        if (Utils.pickUpEnabled(this))
-        {
-            mTiltSensor.enable();
-            mSignificantSensor.enable();
         }
-        if (Utils.handwaveGestureEnabled(this) || Utils.pocketGestureEnabled(this))
-            mProximitySensor.enable();
     }
 
-    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver()
-    {
+    private void onDisplayOff() {
+        if (DEBUG) Log.d(TAG, "Display off");
+        if (Utils.isPickUpEnabled(this)) {
+            mTiltSensor.enable();
+        }
+        if (Utils.isHandwaveGestureEnabled(this) ||
+                Utils.isPocketGestureEnabled(this)) {
+            mProximitySensor.enable();
+        }
+    }
+
+    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
         @Override
-        public void onReceive(Context context, Intent intent)
-        {
-            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON))
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
                 onDisplayOn();
-            else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF))
+            } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
                 onDisplayOff();
+            }
         }
     };
 }

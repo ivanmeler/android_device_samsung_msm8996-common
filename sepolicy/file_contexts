@@ -21,6 +21,11 @@
 # TimeKeep
 /system/bin/timekeep                         u:object_r:timekeep_exec:s0
 
+/data/camera(/.*)?                    u:object_r:camera_socket:s0
+
+# Data vendor files
+/data/vendor/misc/audio(/.*)?         u:object_r:vendor_audio_data_file:s0
+
 /dev/mobicore                u:object_r:tee_device:s0
 /dev/mobicore-user           u:object_r:tee_device:s0
 
@@ -30,5 +35,12 @@
 
 /system/bin/wifiloader       u:object_r:wifiloader_exec:s0
 
+/vendor/bin/factory.adsp     u:object_r:wifiloader_exec:s0
+
 /system/vendor/bin/hw/vendor\.samsung\.hardware\.biometrics\.fingerprint@2\.1-service u:object_r:hal_fingerprint_default_exec:s0
 
+/dev/block/mmcblk0p27                   u:object_r:e2fsck_device:s0
+
+# HALs
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey         u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine         u:object_r:hal_drm_widevine_exec:s0

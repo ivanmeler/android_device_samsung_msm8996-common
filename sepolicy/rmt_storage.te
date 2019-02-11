@@ -1,2 +1,5 @@
+allow rmt_storage debugfs_rmt:dir search;
+allow rmt_storage debugfs_rmt:file rw_file_perms;
+
 set_prop(rmt_storage, rmt_storage_prop)
 allow rmt_storage self:capability net_raw;
