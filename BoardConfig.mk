@@ -226,6 +226,8 @@ TARGET_RIL_VARIANT := caf
 # Security patch level - T825XXU2BRL2
 VENDOR_SECURITY_PATCH := 2018-12-01
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
