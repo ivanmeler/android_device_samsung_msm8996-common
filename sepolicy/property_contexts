@@ -32,6 +32,7 @@ ro.vendor.camera.wrapper.hal3TrebleMinorVersion   u:object_r:sec_camera_prop:s0
 ro.vendor.multisim.                    u:object_r:vendor_radio_prop:s0
 ro.vendor.radio.                       u:object_r:vendor_radio_prop:s0
 service.camera.                        u:object_r:sec_camera_prop:s0
+sys.audio.rotation                     u:object_r:exported_system_prop:s0
 sys.cameramode.                        u:object_r:sec_camera_prop:s0
 system.camera.CC.                      u:object_r:sec_camera_prop:s0
 vendor.bluetooth_fw_ver                u:object_r:vendor_bluetooth_prop:s0

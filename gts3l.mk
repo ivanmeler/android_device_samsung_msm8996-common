@@ -101,7 +101,9 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libvolumelistener \
     tinymix \
-    libaudioprimary_shim
+    libaudioprimary_shim \
+    AudioRotationMonitor \
+    set-audio-rotation
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
