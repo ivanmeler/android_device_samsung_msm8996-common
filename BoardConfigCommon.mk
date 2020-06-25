@@ -145,7 +145,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware \
     /vendor/bt_firmware:/bt_firmware \
     /mnt/vendor/persist:/persist
-TARGET_USES_MKE2FS := true
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := efs
