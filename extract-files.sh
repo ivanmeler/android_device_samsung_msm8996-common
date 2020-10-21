@@ -60,6 +60,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    vendor/lib/hw/camera.msm8996.so)
+        sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
+        ;;
     vendor/lib64/hw/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
