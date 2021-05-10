@@ -180,21 +180,13 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # Ramdisk
 BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-modem persist
-BOARD_ROOT_EXTRA_SYMLINKS := /system/etc/firmware/btfw32.tlv:/bt_firmware/image/btfw32.tlv
-BOARD_ROOT_EXTRA_SYMLINKS += /system/etc/firmware/btnv32.bin:/bt_firmware/image/btnv32.bin
+BOARD_ROOT_EXTRA_SYMLINKS := /system/vendor/firmware/btfw32.tlv:/bt_firmware/image/btfw32.tlv
+BOARD_ROOT_EXTRA_SYMLINKS += /system/vendor/firmware/btnv32.bin:/bt_firmware/image/btnv32.bin
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
-BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-
-# Treble
-#PRODUCT_FULL_TREBLE_OVERRIDE := true
-#PRODUCT_VENDOR_MOVE_ENABLED := true
-
-# Properties
-#BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # RIL
 PROTOBUF_SUPPORTED := true
