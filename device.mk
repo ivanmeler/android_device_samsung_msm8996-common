@@ -15,6 +15,8 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n.mk)
+
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/gts3llte/gts3llte-vendor.mk)
 
