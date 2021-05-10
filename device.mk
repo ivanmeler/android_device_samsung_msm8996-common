@@ -17,6 +17,9 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n.mk)
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/gts3llte/gts3llte-vendor.mk)
 
