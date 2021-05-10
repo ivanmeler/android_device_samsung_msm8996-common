@@ -26,7 +26,9 @@ $(call inherit-product-if-exists, vendor/samsung/gts3llte/gts3llte-vendor.mk)
 LOCAL_PATH := device/samsung/gts3llte
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    device/samsung/qcom-common/overlay \
+    $(LOCAL_PATH)/overlay
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
