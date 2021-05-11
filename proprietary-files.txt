@@ -6,7 +6,6 @@ framework/audiosphere.jar
 framework/cneapiclient.jar
 framework/com.quicinc.cne.api-V1.0-java.jar
 framework/com.quicinc.cne.jar
-lib64/com.qualcomm.qti.ant@1.0.so
 -lib64/libantradio.so
 lib64/libdiag_system.so
 lib64/liblocationservice_jni.so
@@ -20,7 +19,6 @@ lib64/vendor.qti.hardware.iop@1.0.so
 lib64/vendor.qti.hardware.iop@2.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
 lib64/vendor.qti.hardware.tui_comm@1.0.so
-lib/com.qualcomm.qti.ant@1.0.so
 -lib/libantradio.so
 lib/libuniapi.so
 lib/libuniplugin.so
@@ -28,7 +26,6 @@ lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.iop@2.0.so
 lib/vendor.qti.hardware.perf@1.0.so
 -vendor/app/TimeService/TimeService.apk
-vendor/bin/adsprpcd
 vendor/bin/btnvtool
 vendor/bin/energy-awareness
 vendor/bin/hw/vendor.display.color@1.0-service
@@ -45,13 +42,7 @@ vendor/bin/tftp_server
 vendor/bin/thermal-engine
 vendor/bin/time_daemon
 vendor/bin/xtra-daemon
-vendor/etc/Bluetooth_cal.acdb
 vendor/etc/cacert_location.pem
-vendor/etc/General_cal.acdb
-vendor/etc/Global_cal.acdb
-vendor/etc/Handset_cal.acdb
-vendor/etc/Hdmi_cal.acdb
-vendor/etc/Headset_cal.acdb
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
@@ -65,7 +56,6 @@ vendor/etc/perf/perf-profile5.conf
 vendor/etc/perf/perf-profile6.conf
 vendor/etc/perf/targetconfig.xml
 vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/Speaker_cal.acdb
 vendor/etc/xtra_root_cert.pem
 vendor/firmware/a530_gpmu.fw2
 vendor/firmware/a530_pfp.fw
@@ -83,7 +73,6 @@ vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/hw/activity_recognition.msm8996.so
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/keystore.msm8996.so
 vendor/lib64/hw/vulkan.msm8996.so
@@ -92,8 +81,6 @@ vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libadreno_utils.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libadsprpc.so
 vendor/lib64/libalarmservice_jni.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libbccQTI.so
@@ -111,7 +98,6 @@ vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libevent_observer.so
 vendor/lib64/libfastcrc.so
-vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libflp.so
 vendor/lib64/libgdtap.so
 vendor/lib64/libgeofence.so
@@ -203,10 +189,8 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libadreno_utils.so
-vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsp_hvx_callback_skel.so
 vendor/lib/libadsp_hvx_stub.so
-vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
@@ -217,7 +201,6 @@ vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libedge_smooth_hvx_stub.so
 vendor/lib/libfastcrc.so
-vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libgpustats.so
 vendor/lib/libgsl.so
@@ -287,22 +270,6 @@ vendor/lib/libTsAwb.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
 vendor/lib/libwvhidl.so
-vendor/lib/rfsa/adsp/libadsp_fd_skel.so
-vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
-vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
-vendor/lib/rfsa/adsp/libadsp_hvx_stats.so
-vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so
-vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdejagging_skel.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libedge_smooth_skel.so
-vendor/lib/rfsa/adsp/libexternal_dog_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libhvxmc3D_skel.so
-vendor/lib/rfsa/adsp/libvpp_frc.so
-vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libaudioeffectoffload.so
 vendor/lib/soundfx/libaudioefx.so
@@ -324,6 +291,53 @@ vendor/lib64/libnlnetmgr.so
 vendor/lib/libnlnetmgr.so
 lib64/libfloatingfeature.so
 lib/libfloatingfeature.so
+
+# ACDB data
+vendor/etc/General_cal.acdb
+vendor/etc/Hdmi_cal.acdb
+vendor/etc/Headset_cal.acdb
+vendor/etc/Bluetooth_cal.acdb
+vendor/etc/Speaker_cal.acdb
+vendor/etc/Handset_cal.acdb
+vendor/etc/Global_cal.acdb
+vendor/etc/workspaceFile.qwsp
+
+# ADSP
+vendor/bin/adsprpcd
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libfastcvadsp_stub.so
+vendor/lib/libadsp_default_listener.so
+vendor/lib/libadsp_hvx_callback_skel.so
+vendor/lib/libadsp_hvx_stub.so
+vendor/lib/libadsprpc.so
+vendor/lib/libfastcvadsp_stub.so
+
+# ADSP (modules)
+vendor/lib/rfsa/adsp/libadsp_fd_skel.so
+vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
+vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
+vendor/lib/rfsa/adsp/libadsp_hvx_stats.so
+vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so
+vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdejagging_skel.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libedge_smooth_skel.so
+vendor/lib/rfsa/adsp/libexternal_dog_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libhvxmc3D_skel.so
+vendor/lib/rfsa/adsp/libvpp_frc.so
+vendor/lib/rfsa/adsp/libvpp_svc_skel.so
+
+# ANT+
+lib/com.qualcomm.qti.ant@1.0.so
+-lib/libantradio.so
+lib64/com.qualcomm.qti.ant@1.0.so
+-lib64/libantradio.so
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
