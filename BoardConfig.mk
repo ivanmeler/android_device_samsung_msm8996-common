@@ -165,14 +165,11 @@ TARGET_USES_INTERACTION_BOOST := true
 BOARD_USES_QCOM_HARDWARE := true
 
 # Ramdisk
-BOARD_ROOT_EXTRA_FOLDERS := efs omr firmware firmware-modem persist
+BOARD_ROOT_EXTRA_FOLDERS := efs omr
 BOARD_ROOT_EXTRA_SYMLINKS := \
-    /mnt/vendor/persist:/persist \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware \
-    /vendor/bt_firmware:/bt_firmware
-BOARD_ROOT_EXTRA_SYMLINKS += /system/vendor/firmware/btfw32.tlv:/bt_firmware/image/btfw32.tlv
-BOARD_ROOT_EXTRA_SYMLINKS += /system/vendor/firmware/btnv32.bin:/bt_firmware/image/btnv32.bin
+    /mnt/vendor/persist:/persist
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
