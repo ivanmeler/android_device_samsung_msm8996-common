@@ -15,9 +15,6 @@
 # limitations under the License.
 #
 
-# temporary
-BUILD_BROKEN_DUP_RULES := true
-
 BOARD_VENDOR := samsung
 
 DEVICE_PATH := device/samsung/gts3llte
@@ -51,17 +48,16 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7464900.sdhci lpm_levels.sleep_disabled=1 rcupdate.rcu_expedited=1 cma=32M@0-0xffffffff
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02200000 --tags_offset 0x02000000
-TARGET_KERNEL_SOURCE := kernel/samsung/msm8996
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_SOURCE := kernel/samsung/msm8996
 TARGET_KERNEL_CONFIG := lineage_gts3llte_defconfig
-
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # Platform
@@ -103,9 +99,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
 
 # Camera
-USE_CAMERA_STUB := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_USES_MEDIA_EXTENSIONS := true
+TARGET_USES_QTI_CAMERA_DEVICE := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -141,9 +135,9 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/configs/framework_manifest.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 79691776
@@ -151,7 +145,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 79691776
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 3072000000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3072000000
 #BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4194304000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26226982912
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -160,21 +154,24 @@ TARGET_USES_MKE2FS := true
 # Fingerprint
 TARGET_SEC_FP_HAL_VARIANT := bauth
 
-# Init
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
-
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
 # Power
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 TARGET_USES_INTERACTION_BOOST := true
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 
 # Ramdisk
-BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-modem persist
-BOARD_ROOT_EXTRA_SYMLINKS := /system/vendor/firmware/btfw32.tlv:/bt_firmware/image/btfw32.tlv
+BOARD_ROOT_EXTRA_FOLDERS := efs omr firmware firmware-modem persist
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist \
+    /vendor/dsp:/dsp \
+    /vendor/firmware_mnt:/firmware \
+    /vendor/bt_firmware:/bt_firmware
+BOARD_ROOT_EXTRA_SYMLINKS += /system/vendor/firmware/btfw32.tlv:/bt_firmware/image/btfw32.tlv
 BOARD_ROOT_EXTRA_SYMLINKS += /system/vendor/firmware/btnv32.bin:/bt_firmware/image/btnv32.bin
 
 # Recovery
@@ -189,11 +186,10 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Security patch level - T825N0KOU3CTD1
 VENDOR_SECURITY_PATCH := 2020-03-01
 
-SELINUX_IGNORE_NEVERALLOWS := true
-
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true

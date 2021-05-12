@@ -39,15 +39,6 @@ TARGET_BOOTANIMATION_HALF_RES := true
 # Device characteristics
 PRODUCT_CHARACTERISTICS := tablet
 
-# Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=256m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapmaxfree=8m
-
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
@@ -107,24 +98,26 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
-    android.hardware.audio@5.0-impl \
+    android.hardware.audio@5.0-impl.gts3l \
     android.hardware.audio.effect@5.0-impl \
-    android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl:32 \
-    android.hardware.soundtrigger@2.1-impl:32 \
-    audio.a2dp.default \
+    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.soundtrigger@2.1-impl \
     audio.bluetooth.default \
     audio.primary.msm8996 \
     audio.r_submix.default \
     audio.usb.default \
-    libaacwrapper \
-    libaudio-resampler \
+    cplay \
+    liba2dpoffload \
     libaudioroute \
+    libcirrusspkrprot \
+    libhdmiedid \
+    libhfp \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libvolumelistener \
-    tinymix
+    libsndmonitor \
+    libspkrprot \
+    libvolumelistener
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -146,11 +139,9 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    vendor.qti.hardware.camera.device@1.0 \
-    vendor.qti.hardware.camera.device@1.0_vendor
-
-PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl:32 \
+    android.hardware.camera.provider@2.4-service \
+    camera.msm8996 \
     Snap
 
 # Connectivity Engine support (CNE)
@@ -175,8 +166,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/display/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_tm_config.xml \
-	$(LOCAL_PATH)/configs/display/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml
+	$(LOCAL_PATH)/configs/display/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/hdr_tm_config.xml \
+	$(LOCAL_PATH)/configs/display/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml
 
 # Doze mode
 PRODUCT_PACKAGES += \
