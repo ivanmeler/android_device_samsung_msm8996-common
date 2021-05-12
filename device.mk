@@ -25,7 +25,8 @@ LOCAL_PATH := device/samsung/gts3llte
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     device/samsung/qcom-common/overlay \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
