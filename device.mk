@@ -159,12 +159,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.configstore@1.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     copybit.msm8996 \
@@ -172,14 +170,10 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
     libdisplayconfig \
-    libhwc2on1adapter \
-    libgenlock \
     liboverlay \
-    libtinyxml \
-    libqdMetaData \
-    libqdMetaData.system
+    libqdMetaData.system \
+    libtinyxml
 
-# Display
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/display/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_tm_config.xml \
 	$(LOCAL_PATH)/configs/display/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml
@@ -192,7 +186,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.2-service.clearkey
+    android.hardware.drm@1.1-service.clearkey
 
 # Fingerprint
 PRODUCT_PACKAGES += \
