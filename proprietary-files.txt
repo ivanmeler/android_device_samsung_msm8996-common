@@ -73,13 +73,8 @@ vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/keystore.msm8996.so
 vendor/lib64/hw/vulkan.msm8996.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libalarmservice_jni.so
-vendor/lib64/libaudcal.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libc2d30_bltlib.so
@@ -97,7 +92,6 @@ vendor/lib64/libgdtap.so
 vendor/lib64/libgeofence.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libgpustats.so
 vendor/lib64/libgsl.so
 vendor/lib64/libhdr_tm.so
 vendor/lib64/libizat_client_api.so
@@ -111,13 +105,11 @@ vendor/lib64/liblocationservice.so
 vendor/lib64/libloc_ds_api.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libmdsprpc.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libperipheral_client.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libqtigef.so
 vendor/lib64/libqti-iopd-client.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
@@ -145,11 +137,6 @@ vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
-vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libaudioeffectoffload.so
-vendor/lib64/soundfx/libqcbassboost.so
-vendor/lib64/soundfx/libqcvirt.so
-vendor/lib64/soundfx/libswdap.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -161,17 +148,11 @@ vendor/lib/hw/activity_recognition.msm8996.so
 vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib/hw/keystore.msm8996.so
 vendor/lib/hw/vulkan.msm8996.so
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
 vendor/lib/libactuator_dw9807.so
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libadsp_hvx_callback_skel.so
 vendor/lib/libadsp_hvx_stub.so
-vendor/lib/libaudcal.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30_bltlib.so
@@ -179,14 +160,11 @@ vendor/lib/libCB.so
 vendor/lib/libedge_smooth_hvx_stub.so
 vendor/lib/libfastcrc.so
 vendor/lib/libfastcvopt.so
-vendor/lib/libgpustats.so
 vendor/lib/libgsl.so
 vendor/lib/libhdr_tm.so
-vendor/lib/libI420colorconvert.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libloc_api_v02.so
-vendor/lib/libmdsprpc.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
@@ -202,7 +180,6 @@ vendor/lib/libOpenCL.so
 vendor/lib/libperfgluelayer.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libQSEEComAPI.so
-vendor/lib/libqtigef.so
 vendor/lib/libqti-iopd-client.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
@@ -231,22 +208,7 @@ vendor/lib/libTsAe.so
 vendor/lib/libTsAf.so
 vendor/lib/libTsAwbFront.so
 vendor/lib/libTsAwb.so
-vendor/lib/libvpplibrary.so
-vendor/lib/libvqzip.so
 vendor/lib/libwvhidl.so
-vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libaudioeffectoffload.so
-vendor/lib/soundfx/libaudioefx.so
-vendor/lib/soundfx/libaudiosaplus_sec.so
-vendor/lib/soundfx/libgearvr.so
-vendor/lib/soundfx/libmysound.so
-vendor/lib/soundfx/libmyspace.so
-vendor/lib/soundfx/libplaybackrecorder.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
-vendor/lib/soundfx/libswdap.so
-
 
 # Not founds from logcat
 lib64/vendor.samsung.hardware.bluetooth@1.0.so
@@ -302,6 +264,35 @@ lib64/com.qualcomm.qti.ant@1.0.so
 -lib64/libantradio.so
 vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
+
+# Audio
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libadm.so
+vendor/lib/libaudcal.so
+vendor/lib/libaudioalsa.so
+vendor/lib/libmdsprpc.so
+vendor/lib/libqtigef.so
+vendor/lib/libsurround_3mic_proc.so
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbrtac.so
+vendor/lib64/libadiertac.so
+vendor/lib64/libaudcal.so
+vendor/lib64/libaudioalsa.so
+vendor/lib64/libmdsprpc.so
+vendor/lib64/libqtigef.so
+
+# Audio (effects)
+vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
+vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcvirt.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -745,6 +736,31 @@ vendor/lib64/libegis_fp_normal_sensor_test.so
 vendor/lib64/libgf_in_system_lib.so
 vendor/lib64/libqfp_sensortest.so
 vendor/lib64/libsynaFpSensorTestNwd.so
+
+# Media
+lib64/libFileMux.so
+lib64/libmmosal.so
+lib64/libmmparser_lite.so
+lib64/libmmrtpdecoder.so
+lib64/libmmrtpencoder.so
+lib/libFileMux.so
+lib/libmmosal.so
+lib/libmmparser_lite.so
+lib/libmmrtpdecoder.so
+lib/libmmrtpencoder.so
+vendor/lib64/libI420colorconvert.so
+vendor/lib64/libgpustats.so
+vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmmosal_proprietary.so
+vendor/lib64/libvpphvx.so
+vendor/lib64/libvpplibrary.so
+vendor/lib/libI420colorconvert.so
+vendor/lib/libgpustats.so
+vendor/lib/libmm-color-convertor.so
+vendor/lib/libmmosal_proprietary.so
+vendor/lib/libvpphvx.so
+vendor/lib/libvpplibrary.so
+vendor/lib/libvqzip.so
 
 # QMI
 vendor/bin/irsc_util
