@@ -1,4 +1,1 @@
-allow sensors app_efs_file:dir { getattr open read search };
-allow sensors app_efs_file:file { getattr open read write };
-allow sensors efs_file:dir getattr;
-allow sensors unlabeled:file { open read };
+get_prop(sensors, system_panel_prop)

@@ -1,2 +1,1 @@
-allow netmgrd self:capability dac_override;
-allow netmgrd unlabeled:file { getattr open read };
+set_prop(netmgrd, vendor_xlat_prop)

@@ -1,56 +1,59 @@
-# Cache
-/dev/block/bootdevice/by-name/cache          u:object_r:cache_block_device:s0
+# Devices
+/dev/captouch                         u:object_r:captouch_device:s0
+/dev/elliptic(.*)?                    u:object_r:sound_device:s0
+/dev/lirc[0-9]*                       u:object_r:lirc_device:s0
+/dev/pn548                            u:object_r:nfc_device:s0
+/dev/sysmatdrv                        u:object_r:sysmatdrv_device:s0
 
-# EFS
-/dev/block/bootdevice/by-name/efs            u:object_r:efs_block_device:s0
-/efs/bluetooth(/.*)?                         u:object_r:bluetooth_efs_file:s0
-/efs/FactoryApp(/.*)?                        u:object_r:app_efs_file:s0
+# Sys files
+/sys/devices/soc/75b7000\.i2c/i2c-9/9-[0-9a-f]+/leds(/.*)?    u:object_r:sysfs_leds:s0
+/sys/devices/soc/leds-qpnp-[0-9]+/leds(/.*)?                  u:object_r:sysfs_leds:s0
 
-# FRP
-/dev/block/bootdevice/by-name/persistent     u:object_r:frp_block_device:s0
+/sys/devices/soc/75ba000\.i2c/i2c-12/12-[0-9a-f]+/panel_(color|vendor)                  u:object_r:sysfs_panel:s0
 
-# Fingerprint
-/dev/vfsspi                                  u:object_r:vfsspi_device:s0
-/data/biometrics(/.*)?                       u:object_r:biometrics_data_file:s0
-/dev/esfp0                                  u:object_r:vfsspi_device:s0
+/sys/devices/soc/75ba000\.i2c/i2c-12/12-[0-9a-f]+/input/input[0-9]+/0dbutton            u:object_r:proc_touchpanel:s0
 
-# mDNIe
-/sys/devices/virtual/mdnie/mdnie/mode        u:object_r:sysfs_mdnie:s0
-/sys/devices/virtual/mdnie/mdnie/scenario    u:object_r:sysfs_mdnie:s0
+/sys/devices/soc/75ba000\.i2c/i2c-12/12-[0-9a-f]+(/input/input[0-9]+)?/reversed_keys    u:object_r:proc_touchpanel:s0
 
-# TimeKeep
-/system/bin/timekeep                         u:object_r:timekeep_exec:s0
+/sys/devices/soc/75ba000\.i2c/i2c-12/12-[0-9a-f]+/input/input[0-9]+/wake_gesture        u:object_r:proc_touchpanel:s0
+/sys/devices/soc/75ba000\.i2c/i2c-12/12-[0-9a-f]+/wakeup_mode                           u:object_r:proc_touchpanel:s0
 
+/sys/devices/soc/soc:fpc_fpc1020/irq                                            u:object_r:sysfs_fpc:s0
+/sys/devices/soc/soc:fpc_fpc1020/enable_key_events                              u:object_r:sysfs_fpc_keyevents:s0
+/sys/devices/soc/soc:fpc_fpc1020/enable_wakeup                                  u:object_r:sysfs_fpc_wakeup:s0
+/sys/devices/soc/soc:fpc_fpc1020/proximity_state                                u:object_r:sysfs_fpc_proximity:s0
+
+/sys/module/cnss_common/parameters/bdwlan_file                                  u:object_r:sysfs_cnss_common:s0
+
+# Data files
+/data/fpc(/.*)?                       u:object_r:fpc_data_file:s0
 /data/camera(/.*)?                    u:object_r:camera_socket:s0
+/data/connectivity(/.*)?              u:object_r:cnd_core_data_file:s0
+/data/decrypt\.txt                    u:object_r:thermal_data_file:s0
+/data/misc/stargate(/.*)?             u:object_r:qfp-daemon_core_data_file:s0
 
-# Data vendor files
-/data/vendor/misc/audio(/.*)?         u:object_r:vendor_audio_data_file:s0
+# Persist files
+/(mnt/vendor)/persist/audio/us_cal                 u:object_r:persist_usf_cal_file:s0
+/(mnt/vendor)/persist/PRSensorData\.txt            u:object_r:sensors_persist_file:s0
+/(mnt/vendor)/persist/PSensor3cm_ct\.txt           u:object_r:sensors_persist_file:s0
+/(mnt/vendor)/persist/qc_senseid(/.*)?             u:object_r:persist_qc_senseid_file:s0
 
-/dev/mobicore                u:object_r:tee_device:s0
-/dev/mobicore-user           u:object_r:tee_device:s0
+# Root files
+/bt_firmware(/.*)?    u:object_r:bt_firmware_file:s0
+/firmware(/.*)?       u:object_r:firmware_file:s0
 
-/sys/class/power_supply/battery/batt_update_data     u:object_r:rootfs:s0
-
-#/sys/devices/soc/7464900.sdhci/clkscale_enable       u:object_r:sysfs_scsi_host:s0
-#/sys/kernel/tracing/tracing_on               u:object_r:debugfs_trace_marker:s0
-#/sys/block/mmcblk0/queue/scheduler
-
-# sysfs
-/sys/devices/virtual/camera(/.*)?                                u:object_r:sysfs_camera:s0
-/sys/devices/virtual/sec/sec_key/hall_irq_ctrl                   u:object_r:sysfs_sec:s0
-
-/firmware(/.*)?                 u:object_r:vendor_firmware_file:s0
-/firmware-modem(/.*)?           u:object_r:vendor_firmware_file:s0
-/bt_firmware(/.*)?              u:object_r:vendor_firmware_file:s0
-/persist(/.*)?                  u:object_r:persist_data_file:s0
+# Binaries
+/system/bin/chargeonlymode            u:object_r:charger_exec:s0
+/(vendor|system/vendor)/bin/readfem   u:object_r:readfem_exec:s0
+/(vendor|system/vendor)/bin/readmac   u:object_r:readmac_exec:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.0-service\.clearkey         u:object_r:hal_drm_clearkey_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.0-service\.widevine         u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey         u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine         u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.xiaomi            u:object_r:hal_ir_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_8996    u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_8996      u:object_r:hal_lineage_touch_default_exec:s0
 
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-qcom         u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service.samsung                     u:object_r:hal_lineage_touch_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.biometrics\.fingerprint@2\.1-service u:object_r:hal_fingerprint_default_exec:s0
-
-/system/bin/wifiloader                         u:object_r:wifiloader_exec:s0
-/(vendor|system/vendor)/bin/wifiloader         u:object_r:wifiloader_exec:s0
+# Shell scripts
+/(vendor|system/vendor)/bin/init\.panel\.sh    u:object_r:init_panel_exec:s0
+/(vendor|system/vendor)/bin/init\.tfa\.sh      u:object_r:init_tfa_exec:s0

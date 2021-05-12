@@ -1,8 +1,0 @@
-allow cameraserver unlabeled:file { getattr open read };
-allow cameraserver system_prop:property_service set;
-allow cameraserver socket_device:sock_file write;
-allow cameraserver sysfs_camera:dir search;
-allow cameraserver hal_perf_default:binder call;
-allow cameraserver hal_perf_hwservice:hwservice_manager find;
-allow cameraserver sysfs:file write;
-allow cameraserver sysfs_camera:file { getattr open read };

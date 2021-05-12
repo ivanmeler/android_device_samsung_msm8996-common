@@ -1,4 +1,0 @@
-allow zygote tombstone_data_file:file append;
-allow zygote tombstoned:fd use;
-allow zygote tombstoned:unix_stream_socket connectto;
-allow zygote tombstoned_crash_socket:sock_file write;

@@ -1,2 +1,0 @@
-r_dir_file(mediacodec, firmware_file)
-allow mediacodec socket_device:sock_file write;

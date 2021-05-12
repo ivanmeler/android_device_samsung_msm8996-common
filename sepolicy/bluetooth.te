@@ -1,3 +1,0 @@
-allow bluetooth unlabeled:file { getattr open read };
-allow bluetooth tombstone_data_file:file append;
-allow bluetooth tombstoned_crash_socket:sock_file write;

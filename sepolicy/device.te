@@ -1,8 +1,4 @@
-# EFS
-type efs_block_device, dev_type;
-
-# Fingerprint
-type vfsspi_device, dev_type;
-
-# e2fsck
-type e2fsck_device, dev_type;
+type captouch_device, dev_type;
+type lirc_device, dev_type;
+type sound_device, dev_type;
+type sysmatdrv_device, dev_type;

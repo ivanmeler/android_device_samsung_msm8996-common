@@ -1,4 +1,0 @@
-allow vold adsprpcd_file:dir r_dir_perms;
-allow vold efs_file:dir { ioctl open read };
-allow vold persist_file:dir { open read ioctl };
-allow vold self:capability sys_resource;
