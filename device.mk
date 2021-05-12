@@ -335,6 +335,10 @@ PRODUCT_PACKAGES += \
     wifi_qcom.rc \
     wifi_sec.rc
 
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
