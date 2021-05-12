@@ -167,9 +167,10 @@ BOARD_USES_QCOM_HARDWARE := true
 # Ramdisk
 BOARD_ROOT_EXTRA_FOLDERS := efs omr
 BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware \
-    /mnt/vendor/persist:/persist
+    /vendor/bt_firmware:/bt_firmware
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
