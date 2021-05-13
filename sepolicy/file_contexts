@@ -1,7 +1,6 @@
 # Devices
 /dev/captouch                         u:object_r:captouch_device:s0
 /dev/elliptic(.*)?                    u:object_r:sound_device:s0
-/dev/lirc[0-9]*                       u:object_r:lirc_device:s0
 /dev/pn548                            u:object_r:nfc_device:s0
 /dev/sysmatdrv                        u:object_r:sysmatdrv_device:s0
 
@@ -44,17 +43,8 @@
 /(vendor|system/vendor)/bin/readmac   u:object_r:readmac_exec:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey         u:object_r:hal_drm_clearkey_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine         u:object_r:hal_drm_widevine_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.samsung           u:object_r:hal_ir_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung        u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung          u:object_r:hal_lineage_touch_default_exec:s0
-
-# Shell scripts
-/(vendor|system/vendor)/bin/init\.panel\.sh    u:object_r:init_panel_exec:s0
-/(vendor|system/vendor)/bin/init\.tfa\.sh      u:object_r:init_tfa_exec:s0
-
-# HALs
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey                       u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine                       u:object_r:hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.samsung    u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.samsung                     u:object_r:hal_health_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.samsung                  u:object_r:hal_keymaster_default_exec:s0
@@ -63,3 +53,8 @@
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-qcom             u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.camera\.provider@3\.0-service            u:object_r:hal_camera_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.miscpower@2\.0-service                   u:object_r:hal_power_default_exec:s0
+
+# Shell scripts
+/(vendor|system/vendor)/bin/init\.panel\.sh    u:object_r:init_panel_exec:s0
+/(vendor|system/vendor)/bin/init\.tfa\.sh      u:object_r:init_tfa_exec:s0
+
