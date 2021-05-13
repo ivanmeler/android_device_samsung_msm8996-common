@@ -12,35 +12,18 @@ lib64/libsecnativefeature.so
 lib64/libxt_native.so
 lib64/vendor.qti.hardware.iop@1.0.so
 lib64/vendor.qti.hardware.iop@2.0.so
-lib64/vendor.qti.hardware.perf@1.0.so
 lib64/vendor.qti.hardware.tui_comm@1.0.so
 lib/libuniapi.so
 lib/libuniplugin.so
 lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.iop@2.0.so
-lib/vendor.qti.hardware.perf@1.0.so
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/btnvtool
-vendor/bin/energy-awareness
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/bin/pm-proxy
 vendor/bin/pm_proxy_helper
 vendor/bin/pm-service
 vendor/bin/qseecomd
-vendor/bin/thermal-engine
 vendor/bin/time_daemon
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
-vendor/etc/perf/perf-profile2.conf
-vendor/etc/perf/perf-profile3.conf
-vendor/etc/perf/perf-profile4.conf
-vendor/etc/perf/perf-profile5.conf
-vendor/etc/perf/perf-profile6.conf
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
 vendor/etc/xtra_root_cert.pem
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/keystore.msm8996.so
@@ -61,14 +44,10 @@ vendor/lib64/liblocationservice.so
 vendor/lib64/libloc_ds_api.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libperfgluelayer.so
 vendor/lib64/libperipheral_client.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libqti-iopd-client.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
 vendor/lib64/librpmb.so
 vendor/lib64/libscalar.so
 vendor/lib64/libSecureUILib.so
@@ -76,8 +55,6 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
-vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
 vendor/lib64/libtime_genoff.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
@@ -90,20 +67,15 @@ vendor/lib/libadsp_hvx_stub.so
 vendor/lib/libedge_smooth_hvx_stub.so
 vendor/lib/libfastcrc.so
 vendor/lib/libfastcvopt.so
-vendor/lib/libperfgluelayer.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libqti-iopd-client.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
 vendor/lib/libscalar.so
 vendor/lib/libSecureUILib.so
 vendor/lib/libsecureui.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib/libsmwrapper.so
 vendor/lib/libStDrvInt.so
-vendor/lib/libthermalclient.so
 vendor/lib/libTsAccmFront.so
 vendor/lib/libTsAccm.so
 vendor/lib/libTsAeFront.so
@@ -863,6 +835,41 @@ lib/libsnamrnb.so
 lib/libsnamrwb.so
 lib/libsxqk.so
 
+# Power
+vendor/bin/hw/vendor.samsung.hardware.miscpower@1.0-service
+vendor/etc/init/vendor.samsung.hardware.miscpower@1.0-service.rc
+lib64/vendor.samsung.hardware.miscpower@1.0.so
+lib/vendor.samsung.hardware.miscpower@1.0.so
+
+# Power (perf)
+vendor/bin/energy-awareness
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
+vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/perf-profile0.conf
+vendor/etc/perf/perf-profile1.conf
+vendor/etc/perf/perf-profile2.conf
+vendor/etc/perf/perf-profile3.conf
+vendor/etc/perf/perf-profile4.conf
+vendor/etc/perf/perf-profile5.conf
+vendor/etc/perf/perf-profile6.conf
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/lib/libperfgluelayer.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-util.so
+vendor/lib/libqti-utils.so
+vendor/lib/vendor.qti.hardware.perf@1.0.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-util.so
+vendor/lib64/libqti-utils.so
+vendor/lib64/vendor.qti.hardware.perf@1.0.so
+etc/powerhint.xml
+
 # QMI
 vendor/bin/irsc_util
 vendor/bin/rmt_storage
@@ -958,6 +965,13 @@ lib/libsensorlistener.so
 # Sensors (etc)
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
+
+# Thermal
+vendor/bin/thermal-engine
+vendor/etc/thermal-engine.conf
+vendor/lib/libthermalclient.so
+vendor/lib64/libthermalclient.so
+vendor/lib64/libthermalioctl.so
 
 # WLAN (firmware)
 etc/firmware/Data.msc:/vendor/firmware/Data.msc
