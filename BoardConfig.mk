@@ -165,11 +165,12 @@ TARGET_USES_INTERACTION_BOOST := true
 BOARD_USES_QCOM_HARDWARE := true
 
 # Ramdisk
-BOARD_ROOT_EXTRA_FOLDERS := efs omr
+BOARD_ROOT_EXTRA_FOLDERS := omr
 BOARD_ROOT_EXTRA_SYMLINKS := \
-    /mnt/vendor/persist:/persist \
-    /vendor/dsp:/dsp \
-    /vendor/firmware_mnt:/firmware
+    /firmware_mnt:/vendor/firmware_mnt \
+    /firmware-modem:/vendor/firmware-modem \
+    /efs:/mnt/vendor/efs \
+    /persist:/mnt/vendor/persist
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
