@@ -27,7 +27,7 @@
 
 import /vendor/etc/init/hw/init.qcom.power.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
-import /vendor/etc/init/hw/init.msm.usb.configfs.rc
+import /vendor/etc/init/hw/init.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
 
 on early-init
@@ -892,7 +892,7 @@ service vendor.wifilearner /system/vendor/bin/wifilearner
     group wifi
     oneshot
 
-service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
+service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     override
     class hal
     user audioserver

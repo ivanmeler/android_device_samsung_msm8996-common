@@ -27,17 +27,63 @@
 #
 #
 
+import /vendor/etc/init/hw/init.samsung.rc
+import /vendor/etc/init/hw/init.${ro.product.vendor.device}.rc
+import /vendor/etc/init/hw/init.${ro.product.vendor.name}.rc
+
+on early-init
+    mkdir /mnt/vendor/persist 0771 system system
+    symlink /data/tombstones /tombstones
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
     setprop ro.crypto.fde_algorithm AES-256-XTS
+    swapon_all /vendor/etc/fstab.qcom
+
     mkdir /mnt/vendor/efs 0771 system radio
     mkdir /mnt/vendor/persist 0771 root system
+
+    mount /firmware /vendor/firmware_mnt bind
+    mount /firmware-modem /vendor/firmware-modem bind
+    mount /efs /mnt/vendor/efs bind
+    mount /persist /mnt/vendor/persist bind
+
     mkdir /mnt/vendor/persist/data 0700 system system
     mkdir /mnt/vendor/persist/rfs 0700 system system
-    restorecon_recursive /mnt/vendor/efs
-    restorecon_recursive /mnt/vendor/persist
+
+    wait /dev/block/bootdevice/by-name/bluetooth
+    mount vfat /dev/block/bootdevice/by-name/bluetooth /vendor/bt_firmware ro shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0
+
+    wait /dev/block/bootdevice/by-name/dsp
+    mount ext4 /dev/block/bootdevice/by-name/dsp /vendor/dsp ro nosuid nodev barrier=1
+    restorecon_recursive /vendor/dsp
+    mount ext4 /dev/block/bootdevice/by-name/dsp /vendor/dsp ro remount nosuid nodev barrier=1
+
+on init
+    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
+on post-fs-data
+    mkdir /data/tombstones 0771 system system
+    mkdir /tombstones/modem 0771 system system
+    mkdir /tombstones/lpass 0771 system system
+    mkdir /tombstones/wcnss 0771 system system
+    mkdir /tombstones/dsps 0771 system system
+    mkdir /persist/data/sfs 0700 system system
+    mkdir /persist/data/tz 0700 system system
+    mkdir /persist/qti_fp 0700 system system
+    mkdir /data/misc/dts 0770 media audio
+    mkdir /data/misc/seemp 0700 system system
+    mkdir /data/usf 0700 system system
+    mkdir /data/misc/tloc/ 0700 system drmrpc
+    mkdir /data/misc/audio_pp 0771 media audio
+
+#Create folder for mm-qcamera-daemon
+    mkdir /data/vendor/camera 0770 camera camera
+
+on property:init.svc.bootanim=running
+    write /sys/class/leds/wled/brightness 4095
 
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
@@ -45,26 +91,8 @@ on post-fs
 
     write /dev/ipa 1
 
-on init
-    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
-
 on late-fs
     mount_all /vendor/etc/fstab.qcom --late
-
-on post-fs-data
-    mkdir /persist/data/sfs 0700 system system
-    mkdir /persist/data/tz 0700 system system
-    mkdir /persist/qti_fp 0700 system system
-    mkdir /data/misc/dts 0770 media audio
-    mkdir /data/misc/seemp 0700 system system
-    mkdir /data/usf 0700 system system
-    mkdir /data/misc/audio_pp 0771 media audio
-
-#Create folder for mm-qcamera-daemon
-mkdir /data/vendor/camera 0770 camera camera
-
-on property:init.svc.bootanim=running
-    write /sys/class/leds/wled/brightness 4095
 
 ##### added by init.qcom.early_boot.sh (booting performance team)#####
 on early-boot
@@ -166,27 +194,27 @@ on boot
     write /sys/class/android_usb/android0/f_rndis_qc/rndis_transports BAM2BAM_IPA
 
 #start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
-    class late_start
-    user camera
-    group camera system inet input graphics
-
+#    service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+#    class late_start
+#    user camera
+#    group camera system inet input graphics
+#
 #fingerprint service
-service fingerprintd /system/vendor/bin/fingerprintd
-    class late_start
-    user system
-    group system
-
-service qfp-daemon /system/vendor/bin/qfp-daemon
-    class late_start
-    user system
-    group system drmrpc diag input
-
-service fps_hal /system/vendor/bin/fingerprint.qcom
-    class late_start
-    user system
-    group system input
-
+#service fingerprintd /system/vendor/bin/fingerprintd
+#    class late_start
+#    user system
+#    group system
+#
+#service qfp-daemon /system/vendor/bin/qfp-daemon
+#    class late_start
+#    user system
+#    group system drmrpc diag input
+#
+#service fps_hal /system/vendor/bin/fingerprint.qcom
+#    class late_start
+#    user system
+#    group system input
+#
 #Start up peripheral manager
 service per_mgr /vendor/bin/pm-service
     class core
@@ -207,15 +235,15 @@ on property:sys.shutdown.requested=*
     stop per_proxy
     stop vendor.ims_rtp_daemon
 
-service mdm_launcher /system/bin/sh init.mdm.sh
-     class core
-     oneshot
-
-service mdm_helper /system/bin/mdm_helper
-     class core
-     group root system
-     disabled
-
+#service mdm_launcher /system/bin/sh init.mdm.sh
+#     class core
+#     oneshot
+#
+#service mdm_helper /system/bin/mdm_helper
+#     class core
+#     group root system
+#     disabled
+#
 #service qrngd /system/bin/qrngd -f
 #   class main
 #   user root
@@ -236,24 +264,24 @@ service qseecomd /vendor/bin/qseecomd
    user root
    group root
 
-service gamed /system/vendor/bin/gamed
-   class main
-   user system
-   group system
-   disabled
-   socket gamed seqpacket 0640 system system
-
-service seempd /system/vendor/bin/seempd
-   class late_start
-   user system
-   group system
-   socket seempdw dgram 0666 system system
-
-service secotad /system/vendor/bin/secotad
-   class late_start
-   user system
-   group system
-
+#service gamed /system/vendor/bin/gamed
+#   class main
+#   user system
+#   group system
+#   disabled
+#   socket gamed seqpacket 0640 system system
+#
+#service seempd /system/vendor/bin/seempd
+#   class late_start
+#   user system
+#   group system
+#   socket seempdw dgram 0666 system system
+#
+#service secotad /system/vendor/bin/secotad
+#   class late_start
+#   user system
+#   group system
+#
 #service mpdecision /system/vendor/bin/mpdecision --avg_comp
 #   user root
 #   disabled
@@ -263,7 +291,7 @@ service secotad /system/vendor/bin/secotad
 #   group system
 #   disabled
 #
-service thermal-engine /system/vendor/bin/thermal-engine
+service thermal-engine /vendor/bin/thermal-engine
    class main
    user root
    socket thermal-send-client stream 0666 system system
@@ -280,103 +308,120 @@ service thermal-engine /system/vendor/bin/thermal-engine
 #    class core
 #    oneshot
 #
-service time_daemon /system/vendor/bin/time_daemon
-   class late_start
-   user root
-   group root
+#service time_daemon /system/vendor/bin/time_daemon
+#   class late_start
+#   user root
+#   group root
+#
+#service adsprpcd /system/vendor/bin/adsprpcd
+#   class main
+#   user media
+#   group media
+#
 
-service adsprpcd /system/vendor/bin/adsprpcd
+service adsprpcd /vendor/bin/adsprpcd rootpd
+   class main
+   user system
+   group system
+
+service adsprpcd_audiopd /vendor/bin/adsprpcd audiopd
    class main
    user media
    group media
 
-service audiod /system/vendor/bin/audiod
-   class late_start
+service adsprpcd_sensorspd /vendor/bin/adsprpcd sensorspd
+   class core
    user system
    group system
 
-
-service usf_tester /system/vendor/bin/usf_tester
-    user system
-    group system inet
-    disabled
-    oneshot
-
-service usf_epos /system/vendor/bin/usf_epos
-    class main
-    user system
-    group system inet
-    disabled
-    oneshot
-
-service usf_gesture /system/vendor/bin/usf_gesture
-    user system
-    group system inet
-    disabled
-    oneshot
-
-service usf_sync_gesture /system/vendor/bin/usf_sync_gesture
-    user system
-    group system inet audio
-    disabled
-    oneshot
-
-service usf_p2p /system/vendor/bin/usf_p2p
-    user system
-    group system inet
-    disabled
-    oneshot
-
-service usf_hovering /system/vendor/bin/usf_hovering
-    user system
-    group system inet
-    disabled
-    oneshot
-
-service usf_proximity /system/vendor/bin/usf_proximity
-    class late_start
-    user system
-    group system inet audio
-
-service usf_pairing /system/vendor/bin/usf_pairing
-    user system
-    group system inet
-    disabled
-    oneshot
-
-service usf_sw_calib /system/vendor/bin/usf_sw_calib
-    user system
-    group system inet
-    disabled
-    oneshot
-
-service usf-post-boot /system/vendor/bin/sh /system/etc/usf_post_boot.sh
-    class late_start
-    user root
-    disabled
-    oneshot
-
+#service audiod /system/vendor/bin/audiod
+#   class late_start
+#   user system
+#   group system
+#
+#
+#service usf_tester /system/vendor/bin/usf_tester
+#    user system
+#    group system inet
+#    disabled
+#    oneshot
+#
+#service usf_epos /system/vendor/bin/usf_epos
+#    class main
+#    user system
+#    group system inet
+#    disabled
+#    oneshot
+#
+#service usf_gesture /system/vendor/bin/usf_gesture
+#    user system
+#    group system inet
+#    disabled
+#    oneshot
+#
+#service usf_sync_gesture /system/vendor/bin/usf_sync_gesture
+#    user system
+#    group system inet audio
+#    disabled
+#    oneshot
+#
+#service usf_p2p /system/vendor/bin/usf_p2p
+#    user system
+#    group system inet
+#    disabled
+#    oneshot
+#
+#service usf_hovering /system/vendor/bin/usf_hovering
+#    user system
+#    group system inet
+#    disabled
+#    oneshot
+#
+#service usf_proximity /system/vendor/bin/usf_proximity
+#    class late_start
+#    user system
+#    group system inet audio
+#
+#service usf_pairing /system/vendor/bin/usf_pairing
+#    user system
+#    group system inet
+#    disabled
+#    oneshot
+#
+#service usf_sw_calib /system/vendor/bin/usf_sw_calib
+#    user system
+#    group system inet
+#    disabled
+#    oneshot
+#
+#service usf-post-boot /system/vendor/bin/sh /system/etc/usf_post_boot.sh
+#    class late_start
+#    user root
+#    disabled
+#    oneshot
+#
 on property:init.svc.bootanim=stopped
     start usf-post-boot
 
 ## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
-    class main
-    user system
-    socket ims_qmid stream 0660 system radio
-    group radio log diag
-
+#service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
+#    class main
+#    user system
+#    socket ims_qmid stream 0660 system radio
+#    group radio log diag
+#
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
-    class main
-    user system
-    socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag
-    disabled
-
-service pd_mapper /system/vendor/bin/pd-mapper
+#service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
+#    class main
+#    user system
+#    socket ims_datad stream 0660 system radio
+#    group system wifi radio inet log diag
+#    disabled
+#
+service pd_mapper /vendor/bin/pd-mapper
      class core
-     disabled
+     user system
+     group system
 
 on property:persist.sys.pd_enable=1
      start pd_mapper
@@ -394,31 +439,31 @@ on property:persist.sys.pd_enable=0
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start vendor.imsdatadaemon
 
-service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
-   class main
-   user system
-   group radio diag inet log
-
-service vendor.imsrcsservice /system/vendor/bin/imsrcsd
-   class main
-   user system
-   group radio diag inet log wakelock
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-    restart vendor.ims_rtp_daemon
-
-service dts_configurator /system/vendor/bin/dts_configurator
-    class late_start
-    user system
-    group system media audio
-    oneshot
-
-service dtseagleservice /system/vendor/bin/dts_eagle_service
-    class late_start
-    user system
-    group audio media
-    disabled
-
+#service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+#   class main
+#   user system
+#   group radio diag inet log
+#
+#service vendor.imsrcsservice /system/vendor/bin/imsrcsd
+#   class main
+#   user system
+#   group radio diag inet log wakelock
+#
+#on property:vendor.ims.DATA_DAEMON_STATUS=1
+#    restart vendor.ims_rtp_daemon
+#
+#service dts_configurator /system/vendor/bin/dts_configurator
+#    class late_start
+#    user system
+#    group system media audio
+#    oneshot
+#
+#service dtseagleservice /system/vendor/bin/dts_eagle_service
+#    class late_start
+#    user system
+#    group audio media
+#    disabled
+#
 on property:init.svc.dts_configurator=stopped
     start dtseagleservice
 
@@ -440,22 +485,22 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service energy-awareness /system/vendor/bin/energy-awareness
-    class main
-    user root
-    group system
-    oneshot
-
-service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
-    class main
-    user root
-    group system wakelock
-
-service mdtpd /system/vendor/bin/mdtpd
-   class late_start
-   user root
-   group system radio drmrpc
-
+#service energy-awareness /system/vendor/bin/energy-awareness
+#    class main
+#    user system
+#    group system
+#    oneshot
+#
+#service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
+#    class main
+#    user root
+#    group system wakelock
+#
+#service mdtpd /system/vendor/bin/mdtpd
+#   class late_start
+#   user root
+#   group system radio drmrpc
+#
 service dhcpcd_eth0 /system/vendor/bin/dhcpcd -ABKLG
 	class late_start
 	disabled

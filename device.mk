@@ -96,9 +96,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl.gts3l \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.bluetooth.audio@2.0-impl \
-    android.hardware.soundtrigger@2.1-impl \
+    android.hardware.soundtrigger@2.2-impl \
+    audio.a2dp.default \
     audio.bluetooth.default \
-    audio.primary.msm8996 \
+    audio.primary.msm8996:32 \
     audio.r_submix.default \
     audio.usb.default \
     cplay \
@@ -112,7 +113,8 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libsndmonitor \
     libspkrprot \
-    libvolumelistener
+    libvolumelistener \
+    sound_trigger.primary.msm8996
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -125,7 +127,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
@@ -134,21 +136,24 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
-    camera.device@3.3-impl \
-    camera.device@3.4-impl \
-    camera.device@3.4-external-impl \
-    camera.device@3.5
+    android.hardware.camera.provider@2.4-legacy-impl \
+    android.hardware.camera.provider@2.4-service \
+    vendor.qti.hardware.camera.device@1.0 \
+    vendor.qti.hardware.camera.device@1.0_vendor
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
+# CryptfsHW
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl:64 \
+    android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
@@ -163,8 +168,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/display/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/hdr_tm_config.xml \
-	$(LOCAL_PATH)/display/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml
+    $(LOCAL_PATH)/display/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/hdr_tm_config.xml \
+    $(LOCAL_PATH)/display/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/qdcm_calib_data_ss_dsi_panel_ANA38401_AMS968HH01_QXGA.xml
 
 # Doze mode
 PRODUCT_PACKAGES += \
@@ -172,9 +177,9 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-impl:64 \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.1-service.clearkey
+    android.hardware.drm@1.2-service.clearkey
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -189,20 +194,21 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
+# Healthd
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor \
-    android.hidl.manager@1.0
-
-# Telephony
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    ims-ext-common \
-    telephony-ext
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0.vendor \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
 
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -212,12 +218,6 @@ PRODUCT_PACKAGES += \
 # IPC router config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    libebtc
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -259,12 +259,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
-# Net
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.0 \
-    libandroid_net \
-    netutils-wrapper-1.0
-
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -282,7 +276,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service-qti
+    android.hardware.power@1.2-service.samsung
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -298,8 +292,8 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.carrier.rc \
     init.class_main.sh \
-    init.msm.usb.configfs.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.power.rc \
@@ -308,6 +302,10 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
+    init.usb.configfs.rc \
+    init.rilchip.rc \
+    init.rilcommon.rc \
+    init.samsung.rc \
     init.target.rc \
     ueventd.qcom.rc \
     wifi_qcom.rc \
@@ -321,18 +319,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio.deprecated@1.0 \
+    android.hardware.radio.deprecated@1.0-impl \
+    librmnetctl \
+    libxml2
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4 \
-    android.hardware.radio.config@1.0 \
-    android.hardware.secure_element@1.0 \
-    librmnetctl \
-    libxml2 \
-    libprotobuf-cpp-full
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -358,10 +354,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
-# HW crypto
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.cryptfshw@1.0-service-ioctl-qti
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.1-service.basic
@@ -372,7 +364,8 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.lineage
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
 
 # WiFi
 PRODUCT_PACKAGES += \
@@ -389,3 +382,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
+# ADB
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.usb.config=adb \
+    ro.adb.secure=0 \
+    ro.secure=0
+
+# Root
+PRODUCT_PACKAGES += \
+    su

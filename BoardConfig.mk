@@ -48,7 +48,7 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7464900.sdhci lpm_levels.sleep_disabled=1 rcupdate.rcu_expedited=1 cma=32M@0-0xffffffff
-BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DT := true
@@ -154,6 +154,9 @@ TARGET_USES_MKE2FS := true
 # Fingerprint
 TARGET_SEC_FP_HAL_VARIANT := bauth
 
+# Init
+TARGET_PLATFORM_DEVICE_BASE := "/devices/soc/"
+
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
@@ -161,16 +164,14 @@ TARGET_PROVIDES_KEYMASTER := true
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 TARGET_USES_INTERACTION_BOOST := true
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 
 # Ramdisk
-BOARD_ROOT_EXTRA_FOLDERS := omr
-BOARD_ROOT_EXTRA_SYMLINKS := \
-    /firmware_mnt:/vendor/firmware_mnt \
-    /firmware-modem:/vendor/firmware-modem \
-    /efs:/mnt/vendor/efs \
-    /persist:/mnt/vendor/persist
+BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-modem persist
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom

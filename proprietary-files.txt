@@ -1,3 +1,22 @@
+######### FOR DEBUGGING #########
+# OTHER BINARIES DONT SURE REALLY NEEDED
+vendor/bin/athdiag
+vendor/bin/audioflacapp
+vendor/bin/diag_callback_sample
+vendor/bin/diag_dci_sample
+vendor/bin/diag_klog
+vendor/bin/diag_mdlog
+vendor/bin/diag_socket_log
+vendor/bin/diag_uart_log
+vendor/bin/e_loop
+vendor/bin/hal_proxy_daemon
+vendor/bin/hci_qcomm_init
+vendor/bin/qseecom_sample_client
+vendor/bin/ssr_diag
+vendor/bin/ssr_setup
+vendor/bin/wvkprov
+#################################
+
 # ACDB data
 vendor/etc/General_cal.acdb
 vendor/etc/Hdmi_cal.acdb
@@ -35,7 +54,6 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
-vendor/lib/libmdsprpc.so
 vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib64/libacdb-fts.so
@@ -44,7 +62,6 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
-vendor/lib64/libmdsprpc.so
 vendor/lib64/libqtigef.so
 
 # Audio (effects)
@@ -152,6 +169,7 @@ lib/vendor.samsung.hardware.camera.device@3.3.so
 lib/vendor.samsung.hardware.camera.device@3.4.so
 lib/vendor.samsung.hardware.camera.provider@2.4.so
 lib/vendor.samsung.hardware.camera.provider@2.5.so
+lib/vendor.qti.hardware.camera.device@1.0.so
 lib64/libBarcode.camera.samsung.so
 lib64/libBeauty_v1.camera.samsung.so
 lib64/libBeauty_v3.camera.samsung.so
@@ -205,8 +223,11 @@ lib64/vendor.samsung.hardware.camera.device@3.2.so
 lib64/vendor.samsung.hardware.camera.device@3.3.so
 lib64/vendor.samsung.hardware.camera.device@3.4.so
 lib64/vendor.samsung.hardware.camera.provider@2.4.so
+lib64/vendor.qti.hardware.camera.device@1.0.so
 vendor/bin/mm-qcamera-daemon
+vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so
 vendor/lib/hw/vendor.samsung.hardware.camera.provider@2.4-impl.so
+vendor/lib/camera.device@3.4-external-impl.so
 vendor/lib/libedge_smooth_hvx_stub.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
@@ -275,16 +296,18 @@ vendor/lib/vendor.samsung.camera.device@1.0-impl.so
 vendor/lib/vendor.samsung.camera.device@3.2-impl.so
 vendor/lib/vendor.samsung.camera.device@3.3-impl.so
 vendor/lib/vendor.samsung.camera.device@3.4-impl.so
+vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so
+vendor/lib64/hw/vendor.samsung.hardware.camera.provider@2.4-impl.so
+vendor/lib64/camera.device@3.4-external-impl.so
 vendor/lib64/libOpenCv.camera.samsung.so
 vendor/lib64/libhumantracking_util.camera.samsung.so
 vendor/lib64/libsmart_cropping.camera.samsung.so
 vendor/lib64/libsomp.camera.samsung.so
-vendor/lib64/libxcv.camera.samsung.so
-vendor/lib64/hw/vendor.samsung.hardware.camera.provider@2.4-impl.so
 vendor/lib64/vendor.samsung.camera.device@1.0-impl.so
 vendor/lib64/vendor.samsung.camera.device@3.2-impl.so
 vendor/lib64/vendor.samsung.camera.device@3.3-impl.so
 vendor/lib64/vendor.samsung.camera.device@3.4-impl.so
+vendor/lib64/libxcv.camera.samsung.so
 
 # Camera (firmware)
 etc/firmware/C12QL_Isp0_s5k2l1sx.bin:vendor/firmware/C12QL_Isp0_s5k2l1sx.bin
@@ -652,6 +675,7 @@ vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libfastcrc.so
 vendor/lib/libfastcvopt.so
+vendor/lib/libmdsprpc.so
 vendor/lib/libsdsprpc.so
 
 # Fingerprint
@@ -1105,6 +1129,7 @@ lib/libsecnativefeature.so
 lib64/libsecnativefeature.so
 
 # Sensors
+vendor/bin/factory.adsp
 vendor/bin/sensors.qti
 vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsensor1.so
@@ -1126,9 +1151,6 @@ vendor/etc/sensors/sensor_def_qcomdev.conf
 
 # Soundtrigger
 vendor/lib/libaudio_soundtrigger.so
-vendor/etc/sound_trigger_mixer_paths.xml
-vendor/etc/sound_trigger_platform_info.xml
-vendor/etc/sound_trigger_mixer_paths_wcd9330.xml
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 lib64/liblistensoundmodel2.so
@@ -1185,6 +1207,7 @@ lib/vendor.qti.hardware.tui_comm@1.0.so
 
 # WiFi
 vendor/bin/hw/macloader
+vendor/bin/wcnss_filter
 bin/cnss-daemon
 
 # WiFi (display)

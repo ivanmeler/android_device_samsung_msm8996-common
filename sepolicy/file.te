@@ -1,6 +1,7 @@
 type camera_socket, file_type, core_data_file_type, data_file_type;
 type cnd_core_data_file, file_type, core_data_file_type, data_file_type;
 type debugfs_rmt, debugfs_type, fs_type;
+type firmware-modem_file,  file_type, contextmount_type, vendor_file_type;
 type fpc_data_file, core_data_file_type, data_file_type, file_type;
 type omr_file, file_type, mlstrustedobject;
 type persist_qc_senseid_file, file_type;
@@ -23,5 +24,4 @@ type sysfs_sec_switch, fs_type, sysfs_type;
 type sysfs_tsp, fs_type, sysfs_type;
 type sysfs_wifi, fs_type, sysfs_type;
 type thermal_data_file, core_data_file_type, data_file_type, file_type;
-
 
