@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "camera_cameraclient.h"
+#include "libcameraclient.h"
 
 namespace android
 {

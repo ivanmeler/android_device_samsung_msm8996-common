@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     camera.device@3.3-impl \
     camera.device@3.4-impl \
-    libshims_cameraclient \
+    libcameraclient_shim \
     Snap
 
 # Connectivity Engine support (CNE)
