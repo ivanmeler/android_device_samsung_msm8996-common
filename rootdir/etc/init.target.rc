@@ -194,11 +194,11 @@ on boot
     write /sys/class/android_usb/android0/f_rndis_qc/rndis_transports BAM2BAM_IPA
 
 #start camera server as daemon
-#    service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
-#    class late_start
-#    user camera
-#    group camera system inet input graphics
-#
+    service qcamerasvr /vendor/bin/mm-qcamera-daemon
+    class late_start
+    user camera
+    group camera system inet input graphics
+
 #fingerprint service
 #service fingerprintd /system/vendor/bin/fingerprintd
 #    class late_start

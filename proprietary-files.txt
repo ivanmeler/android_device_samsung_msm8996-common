@@ -225,6 +225,7 @@ lib64/vendor.samsung.hardware.camera.device@3.4.so
 lib64/vendor.samsung.hardware.camera.provider@2.4.so
 lib64/vendor.qti.hardware.camera.device@1.0.so
 vendor/bin/mm-qcamera-daemon
+vendor/lib/hw/camera.msm8996.so
 vendor/lib/hw/vendor.samsung.hardware.camera.provider@2.4-impl.so
 vendor/lib/libedge_smooth_hvx_stub.so
 vendor/lib/libflash_pmic.so
@@ -267,6 +268,7 @@ vendor/lib/libmmcamera_hvx_grid_sum.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_imglib_faceproc_adspstub.so
 vendor/lib/libmmcamera_imx258.so
+vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_lsi_s5k5e3yx_eeprom.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_pdafcamif.so
@@ -280,8 +282,10 @@ vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_tuning_lookup.so
 vendor/lib/libmmcamera_vpu_module.so
 vendor/lib/libmmjpeg.so
+vendor/lib/libmmjpeg_interface.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
+vendor/lib/libqomx_core.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so

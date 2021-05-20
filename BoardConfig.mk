@@ -214,7 +214,8 @@ BOARD_HAVE_SAMSUNG_WIFI := true
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
-    /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so
+    /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
+    /vendor/lib/hw/camera.msm8996.so|/vendor/lib/libshims_cameraclient.so
 
 # inherit from the proprietary version
 -include vendor/samsung/gts3llte/BoardConfigVendor.mk
