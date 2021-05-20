@@ -1150,13 +1150,6 @@ lib/libsensorlistener.so
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
 
-# Soundtrigger
-vendor/lib/libaudio_soundtrigger.so
-vendor/lib/libadpcmdec.so
-vendor/lib/libsmwrapper.so
-lib64/liblistensoundmodel2.so
-lib/liblistensoundmodel2.so
-
 # Thermal
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
