@@ -105,6 +105,7 @@ PRODUCT_PACKAGES += \
     cplay \
     liba2dpoffload \
     libaudioroute \
+    libldacBT_dec \
     libhdmiedid \
     libhfp \
     libqcompostprocbundle \
