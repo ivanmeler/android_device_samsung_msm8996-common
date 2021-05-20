@@ -41,6 +41,7 @@ type proc_simslot_count, fs_type, proc_type;
 type proc_swappiness, fs_type, proc_type;
 
 # rootfs
+type firmware-modem_file, file_type, contextmount_type, vendor_file_type;
 type omr_file, file_type, mlstrustedobject;
 
 # sysfs

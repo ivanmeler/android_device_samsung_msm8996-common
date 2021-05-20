@@ -17,7 +17,6 @@
 # Binaries
 /(vendor|system/vendor)/bin/hw/macloader       u:object_r:macloader_exec:s0
 /(vendor|system/vendor)/bin/secril_config_svc  u:object_r:secril_config_svc_exec:s0
-/(vendor|system/vendor)/dsp(/.*)?              u:object_r:adsprpcd_file:s0
 
 # Data files
 /data/vendor/biometrics(/.*)?        u:object_r:biometrics_vendor_data_file:s0
@@ -176,9 +175,9 @@
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.miscpower@1\.0-service                   u:object_r:hal_power_default_exec:s0
 
 # Rootfs
-/firmware(/.*)?    u:object_r:firmware_file:s0
-/omr(/.*)?         u:object_r:omr_file:s0
-/persist(/.*)?     u:object_r:persist_file:s0
+/firmware(/.*)?          u:object_r:firmware_file:s0
+/firmware-modem(/.*)?    u:object_r:firmware-modem_file:s0
+/omr(/.*)?               u:object_r:omr_file:s0
 
 # Sys
 /sys/class/camera(/.*)?                                     --  u:object_r:sysfs_camera_writable:s0
