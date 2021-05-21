@@ -169,7 +169,6 @@ lib/vendor.samsung.hardware.camera.device@3.3.so
 lib/vendor.samsung.hardware.camera.device@3.4.so
 lib/vendor.samsung.hardware.camera.provider@2.4.so
 lib/vendor.samsung.hardware.camera.provider@2.5.so
-lib/vendor.qti.hardware.camera.device@1.0.so
 lib64/libBarcode.camera.samsung.so
 lib64/libBeauty_v1.camera.samsung.so
 lib64/libBeauty_v3.camera.samsung.so
@@ -223,7 +222,6 @@ lib64/vendor.samsung.hardware.camera.device@3.2.so
 lib64/vendor.samsung.hardware.camera.device@3.3.so
 lib64/vendor.samsung.hardware.camera.device@3.4.so
 lib64/vendor.samsung.hardware.camera.provider@2.4.so
-lib64/vendor.qti.hardware.camera.device@1.0.so
 vendor/bin/mm-qcamera-daemon
 vendor/lib/hw/camera.msm8996.so
 vendor/lib/hw/vendor.samsung.hardware.camera.provider@2.4-impl.so
