@@ -96,7 +96,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl.gts3l \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.bluetooth.audio@2.0-impl \
-    audio.a2dp.default \
     audio.bluetooth.default \
     audio.primary.msm8996:32 \
     audio.r_submix.default \
@@ -104,7 +103,6 @@ PRODUCT_PACKAGES += \
     cplay \
     liba2dpoffload \
     libaudioroute \
-    libldacBT_dec \
     libhdmiedid \
     libhfp \
     libqcompostprocbundle \
