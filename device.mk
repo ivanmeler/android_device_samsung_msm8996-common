@@ -133,10 +133,16 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
+    android.frameworks.displayservice@1.0_32 \
+    android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
-    camera.msm8996 \
-    libmm-qcamera
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    camera.device@3.3-impl \
+    camera.device@3.4-impl \
+    camera.device@3.5-impl \
+    libcameraclient_shim \
+    Snap
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
