@@ -606,15 +606,15 @@ service vendor.move_wifi_data /system/bin/move_wifi_data.sh
     disabled
     oneshot
 
-service wigignpt /vendor/bin/wigignpt
-    interface vendor.qti.hardware.wigig.netperftuner@1.0::INetPerfTuner default
-    class hal
-    socket wigignpt stream 660 system wifi
-    user system
-    group wifi
-    capabilities NET_ADMIN
-    disabled
-
+#service wigignpt /vendor/bin/wigignpt
+#    interface vendor.qti.hardware.wigig.netperftuner@1.0::INetPerfTuner default
+#    class hal
+#    socket wigignpt stream 660 system wifi
+#    user system
+#    group wifi
+#    capabilities NET_ADMIN
+#    disabled
+#
 service dhcpcd_wlan0 /system/bin/dhcpcd -ABKLG
     class late_start
     disabled
