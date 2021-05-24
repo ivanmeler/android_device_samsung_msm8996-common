@@ -163,15 +163,13 @@ lib/libuniplugin.so
 lib/libwideselfie.arcsoft.so
 lib/libvdis_core.so
 lib/libvdis_interface.so
-lib/vendor.samsung.hardware.camera.device@1.0.so
-lib/vendor.samsung.hardware.camera.device@3.2.so
-lib/vendor.samsung.hardware.camera.device@3.3.so
-lib/vendor.samsung.hardware.camera.device@3.4.so
-lib/vendor.samsung.hardware.camera.provider@2.4.so
-lib/vendor.samsung.hardware.camera.provider@2.5.so
 vendor/bin/mm-qcamera-daemon
 vendor/lib/hw/camera.msm8996.so
-vendor/lib/hw/vendor.samsung.hardware.camera.provider@2.4-impl.so
+vendor/lib/camera.device@1.0-impl.so
+vendor/lib/camera.device@3.2-impl.so
+vendor/lib/camera.device@3.3-impl.so
+vendor/lib/camera.device@3.4-external-impl.so
+vendor/lib/camera.device@3.4-impl.so
 vendor/lib/libedge_smooth_hvx_stub.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
@@ -240,10 +238,6 @@ vendor/lib/libhumantracking_util.camera.samsung.so
 vendor/lib/libsmart_cropping.camera.samsung.so
 vendor/lib/libsomp.camera.samsung.so
 vendor/lib/libxcv.camera.samsung.so
-vendor/lib/vendor.samsung.camera.device@1.0-impl.so
-vendor/lib/vendor.samsung.camera.device@3.2-impl.so
-vendor/lib/vendor.samsung.camera.device@3.3-impl.so
-vendor/lib/vendor.samsung.camera.device@3.4-impl.so
 
 # Camera (firmware)
 etc/firmware/C12QL_Isp0_s5k2l1sx.bin:vendor/firmware/C12QL_Isp0_s5k2l1sx.bin
