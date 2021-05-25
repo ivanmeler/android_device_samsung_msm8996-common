@@ -319,20 +319,10 @@ service thermal-engine /vendor/bin/thermal-engine
 #   group media
 #
 
-service adsprpcd /vendor/bin/adsprpcd rootpd
-   class main
-   user system
-   group system
-
-service adsprpcd_audiopd /vendor/bin/adsprpcd audiopd
+service adsprpcd /vendor/bin/adsprpcd
    class main
    user media
    group media
-
-service adsprpcd_sensorspd /vendor/bin/adsprpcd sensorspd
-   class core
-   user system
-   group system
 
 #service audiod /system/vendor/bin/audiod
 #   class late_start
