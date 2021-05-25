@@ -87,11 +87,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0 \
-    android.hardware.audio.common@6.0 \
-    android.hardware.audio.common@6.0-util \
     android.hardware.audio@6.0-impl.gts3l:32 \
-    android.hardware.audio.effect@6.0 \
     android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio@2.0-impl:32 \
