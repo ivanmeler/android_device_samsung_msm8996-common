@@ -55,6 +55,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    vendor/lib64/libsec-ril.so)
+        sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
+        ;;
     vendor/lib/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v28.so" "${2}"
         ;;
