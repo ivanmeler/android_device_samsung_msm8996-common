@@ -91,8 +91,8 @@ lib64/vendor.samsung.hardware.bluetooth@1.0.so
 lib64/libaptX_encoder.so
 
 # Bluetooth (firmware)
-etc/firmware/btfw32.tlv
-etc/firmware/btnv32.bin
+etc/firmware/btfw32.tlv:/vendor/firmware/btfw32.tlv
+etc/firmware/btnv32.bin:/vendor/firmware/btnv32.bin
 
 # Camera
 etc/firmware/msm8996_camera_gts3.xml
@@ -234,26 +234,26 @@ vendor/lib/libsomp.camera.samsung.so
 vendor/lib/libxcv.camera.samsung.so
 
 # Camera (firmware)
-etc/firmware/C12QL_Isp0_s5k2l1sx.bin
-etc/firmware/C12QL_Isp1_s5k2l1sx.bin
-etc/firmware/C12QS_Isp0_imx260.bin
-etc/firmware/C12QS_Isp1_imx260.bin
-etc/firmware/cal_data_LSCmaster.bin
-etc/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw
-etc/firmware/D12QL_Isp0_s5k2l1sx.bin
-etc/firmware/D12QS_Isp0_imx260.bin
-etc/firmware/Master0.bin
-etc/firmware/Master1.bin
-etc/firmware/ois_fw_dom.bin
-etc/firmware/ois_fw_sec.bin
+etc/firmware/C12QL_Isp0_s5k2l1sx.bin:vendor/firmware/C12QL_Isp0_s5k2l1sx.bin
+etc/firmware/C12QL_Isp1_s5k2l1sx.bin:vendor/firmware/C12QL_Isp1_s5k2l1sx.bin
+etc/firmware/C12QS_Isp0_imx260.bin:vendor/firmware/C12QS_Isp0_imx260.bin
+etc/firmware/C12QS_Isp1_imx260.bin:vendor/firmware/C12QS_Isp1_imx260.bin
+etc/firmware/cal_data_LSCmaster.bin:vendor/firmware/cal_data_LSCmaster.bin
+etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
+etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
+etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
+etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
+etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
+etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
+etc/firmware/D12QL_Isp0_s5k2l1sx.bin:vendor/firmware/D12QL_Isp0_s5k2l1sx.bin
+etc/firmware/D12QS_Isp0_imx260.bin:vendor/firmware/D12QS_Isp0_imx260.bin
+etc/firmware/Master0.bin:vendor/firmware/Master0.bin
+etc/firmware/Master1.bin:vendor/firmware/Master1.bin
+etc/firmware/ois_fw_dom.bin:vendor/firmware/ois_fw_dom.bin
+etc/firmware/ois_fw_sec.bin:vendor/firmware/ois_fw_sec.bin
 
 # Camera (sensors)
 vendor/lib/libmmcamera_isp_abf47.so
@@ -1141,19 +1141,19 @@ lib/libwfduibcsink.so
 lib/libwfduibcsinkinterface.so
 
 # WLAN (firmware)
-etc/firmware/Data.msc
-etc/firmware/bdwlan30.bin
-etc/firmware/nvm_tlv_1.3.bin
-etc/firmware/nvm_tlv_2.1.bin
-etc/firmware/nvm_tlv_3.0.bin
-etc/firmware/nvm_tlv_3.2.bin
-etc/firmware/nvm_tlv.bin
-etc/firmware/otp30.bin
-etc/firmware/qwlan30.bin
-etc/firmware/rampatch_tlv_1.3.tlv
-etc/firmware/rampatch_tlv_2.1.tlv
-etc/firmware/rampatch_tlv_3.0.tlv
-etc/firmware/rampatch_tlv_3.2.tlv
-etc/firmware/rampatch_tlv.img
-etc/firmware/utfbd30.bin
-etc/firmware/utf30.bin
+etc/firmware/Data.msc:/vendor/firmware/Data.msc
+etc/firmware/bdwlan30.bin:/vendor/firmware/bdwlan30.bin
+etc/firmware/nvm_tlv_1.3.bin:/vendor/firmware/nvm_tlv_1.3.bin
+etc/firmware/nvm_tlv_2.1.bin:/vendor/firmware/nvm_tlv_2.1.bin
+etc/firmware/nvm_tlv_3.0.bin:/vendor/firmware/nvm_tlv_3.0.bin
+etc/firmware/nvm_tlv_3.2.bin:/vendor/firmware/nvm_tlv_3.2.bin
+etc/firmware/nvm_tlv.bin:/vendor/firmware/nvm_tlv.bin
+etc/firmware/otp30.bin:/vendor/firmware/otp30.bin
+etc/firmware/qwlan30.bin:/vendor/firmware/qwlan30.bin
+etc/firmware/rampatch_tlv_1.3.tlv:/vendor/firmware/rampatch_tlv_1.3.tlv
+etc/firmware/rampatch_tlv_2.1.tlv:/vendor/firmware/rampatch_tlv_2.1.tlv
+etc/firmware/rampatch_tlv_3.0.tlv:/vendor/firmware/rampatch_tlv_3.0.tlv
+etc/firmware/rampatch_tlv_3.2.tlv:/vendor/firmware/rampatch_tlv_3.2.tlv
+etc/firmware/rampatch_tlv.img:/vendor/firmware/rampatch_tlv.img
+etc/firmware/utfbd30.bin:/vendor/firmware/utfbd30.bin
+etc/firmware/utf30.bin:/vendor/firmware/utf30.bin
