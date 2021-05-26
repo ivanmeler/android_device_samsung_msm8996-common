@@ -315,6 +315,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!--
     <hal format="hidl">
         <name>vendor.lineage.livedisplay</name>
         <transport>hwbinder</transport>
@@ -340,6 +341,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>vendor.qti.gnss</name>
         <transport>hwbinder</transport>
