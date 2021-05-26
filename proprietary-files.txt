@@ -35,8 +35,11 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
+vendor/lib/libaudio_log_utils.so
+vendor/lib/libaudio_soundtrigger.so
 vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so
+vendor/lib/libtinycompress_vendor.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
@@ -404,6 +407,13 @@ vendor/lib/libchromatix_s5k5e3yx_video.so
 vendor/lib/libchromatix_s5k5e3yx_video_VGA.so
 vendor/lib/libchromatix_s5k5e3yx_zsl_preview_ad5816g.so
 vendor/lib/libchromatix_s5k5e3yx_zsl_video_ad5816g.so
+vendor/lib/libTsAccm.so
+vendor/lib/libTsAccmFront.so
+vendor/lib/libTsAe.so
+vendor/lib/libTsAeFront.so
+vendor/lib/libTsAf.so
+vendor/lib/libTsAwb.so
+vendor/lib/libTsAwbFront.so
 vendor/lib/W13QS_libchromatix_imx258_1080p_preview.so
 vendor/lib/W13QS_libchromatix_imx258_1080p_video.so
 vendor/lib/W13QS_libchromatix_imx258_4k_preview.so
