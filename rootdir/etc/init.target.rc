@@ -42,24 +42,18 @@ on fs
     setprop ro.crypto.fde_algorithm AES-256-XTS
     swapon_all /vendor/etc/fstab.qcom
 
-    mkdir /mnt/vendor/efs 0771 system radio
-    mkdir /mnt/vendor/persist 0771 root system
+    restorecon -R /mnt/vendor/efs
+    chmod 0771 /mnt/vendor/efs
+    chown radio system /mnt/vendor/efs
 
-    mount /firmware /vendor/firmware_mnt bind
-    mount /firmware-modem /vendor/firmware-modem bind
-    mount /efs /mnt/vendor/efs bind
-    mount /persist /mnt/vendor/persist bind
+    restorecon_recursive /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    chown root system /mnt/vendor/persist
 
     mkdir /mnt/vendor/persist/data 0700 system system
     mkdir /mnt/vendor/persist/rfs 0700 system system
 
-    wait /dev/block/bootdevice/by-name/bluetooth
-    mount vfat /dev/block/bootdevice/by-name/bluetooth /vendor/bt_firmware ro shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0
-
-    wait /dev/block/bootdevice/by-name/dsp
-    mount ext4 /dev/block/bootdevice/by-name/dsp /vendor/dsp ro nosuid nodev barrier=1
     restorecon_recursive /vendor/dsp
-    mount ext4 /dev/block/bootdevice/by-name/dsp /vendor/dsp ro remount nosuid nodev barrier=1
 
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
