@@ -315,8 +315,8 @@ service thermal-engine /vendor/bin/thermal-engine
 
 service adsprpcd /vendor/bin/adsprpcd
    class main
-   user media
-   group media
+   user system
+   group system
 
 #service audiod /system/vendor/bin/audiod
 #   class late_start
