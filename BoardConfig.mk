@@ -167,6 +167,13 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3072000000
 #BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4194304000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26226982912
 BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist \
+    /mnt/vendor/efs:/efs \
+    /vendor/dsp:/dsp \
+    /vendor/firmware-modem:/firmware-modem \
+    /vendor/firmware_mnt:/firmware \
+    /vendor/bt_firmware:/bt_firmware
 TARGET_USES_MKE2FS := true
 
 # Fingerprint
@@ -187,9 +194,6 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
-
-# Ramdisk
-BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-modem persist
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
