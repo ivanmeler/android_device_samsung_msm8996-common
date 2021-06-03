@@ -32,7 +32,6 @@ import /vendor/etc/init/hw/init.${ro.product.vendor.device}.rc
 import /vendor/etc/init/hw/init.${ro.product.vendor.name}.rc
 
 on early-init
-    mkdir /mnt/vendor/persist 0771 system system
     symlink /data/tombstones /tombstones
 
 on fs
@@ -42,18 +41,14 @@ on fs
     setprop ro.crypto.fde_algorithm AES-256-XTS
     swapon_all /vendor/etc/fstab.qcom
 
-    restorecon -R /mnt/vendor/efs
-    chmod 0771 /mnt/vendor/efs
-    chown radio system /mnt/vendor/efs
-
-    restorecon_recursive /mnt/vendor/persist
-    chmod 0771 /mnt/vendor/persist
-    chown root system /mnt/vendor/persist
+    wait /dev/block/bootdevice/by-name/efs
+    mount ext4 /dev/block/bootdevice/by-name/efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_async_commit,errors=panic
+    chown radio system /efs
+    chmod 0771 /efs
+    restorecon -R /efs
 
     mkdir /mnt/vendor/persist/data 0700 system system
     mkdir /mnt/vendor/persist/rfs 0700 system system
-
-    restorecon_recursive /vendor/dsp
 
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1

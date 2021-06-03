@@ -166,13 +166,15 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4061331456
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 25680748544
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_ROOT_EXTRA_SYMLINKS := \
-    /mnt/vendor/persist:/persist \
-    /mnt/vendor/efs:/efs \
     /vendor/dsp:/dsp \
     /vendor/firmware-modem:/firmware-modem \
     /vendor/firmware_mnt:/firmware \
-    /vendor/bt_firmware:/bt_firmware
+    /vendor/bt_firmware:/bt_firmware \
+    /mnt/vendor/persist:/persist
 TARGET_USES_MKE2FS := true
+
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := efs
 
 # Fingerprint
 TARGET_SEC_FP_HAL_VARIANT := bauth
