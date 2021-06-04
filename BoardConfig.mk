@@ -170,8 +170,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
     /vendor/firmware-modem:/firmware-modem \
     /vendor/firmware_mnt:/firmware \
-    /vendor/bt_firmware:/bt_firmware \
-    /mnt/vendor/persist:/persist
+    /vendor/bt_firmware:/bt_firmware
 TARGET_USES_MKE2FS := true
 
 # Root
