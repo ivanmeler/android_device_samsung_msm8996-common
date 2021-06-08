@@ -47,6 +47,7 @@ on fs
     chmod 0771 /efs
     restorecon -R /efs
 
+    restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/data 0700 system system
     mkdir /mnt/vendor/persist/rfs 0700 system system
 
