@@ -209,15 +209,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.radio.deprecated</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOemHook</name>
-            <instance>slot1</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.renderscript</name>
         <transport arch="32+64">passthrough</transport>
         <version>1.0</version>
@@ -413,6 +404,38 @@
             <name>IGPAppConnector</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.am</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.ims</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.lpa</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.qcrilhook</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.qtiradio</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.uim</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.uim_remote_client</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.uim_remote_server</name>
+        <transport>hwbinder</transport>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.tui_comm</name>

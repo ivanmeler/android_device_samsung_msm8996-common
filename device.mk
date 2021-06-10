@@ -347,10 +347,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
     android.hardware.radio.config@1.1 \
-    android.hardware.radio.deprecated@1.0 \
-    android.hardware.radio.deprecated@1.0-impl \
+    android.hardware.secure_element@1.0 \
     librmnetctl \
-    libxml2
+    libxml2 \
+    libprotobuf-cpp-full
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -366,6 +366,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/samsung
+
+# Telephony
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
+# Tethering
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
 
 # Thermal
 PRODUCT_PACKAGES += \
