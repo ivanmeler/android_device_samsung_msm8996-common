@@ -187,7 +187,6 @@ TARGET_PLATFORM_DEVICE_BASE := "/devices/soc/"
 TARGET_PROVIDES_KEYMASTER := true
 
 # Power
-TARGET_POWER_SET_FEATURE_LIB := libpower_feature.gts3l
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
