@@ -1,61 +1,60 @@
-Device configuration for the Samsung Galaxy Tab S3 LTE
+# Device Tree for Samsung Galaxy Tab S3 LTE (gts3llte)
 
+> - Currently working in progress.
+> - Some commits are meaningless, I'm digging in.
+> - Will be separated to use common device tree.
+
+## Copyright
+
+```xxx
 Copyright (C) 2017 The LineageOS Project
-Copyright (C) 2018 Valera Chigir <valera1978@tut.by>
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-------------------------------------------------------------------
-
-* Description
-
-  This repository is for LineageOS on Samsung Galaxy Tab S3 LTE (gts3llte)
-
-* How To Build LineageOS for Samsung Galaxy Tab S3 LTE
-
-  - Make a workspace
-
-mkdir cm17
-cd cm17
-
-  - Do repo init & sync
-
-repo init -u git://github.com/LineageOS/android.git -b lineage-16.0
-
-  - Create .repo/local_manifests/roomservice.xml with the following content:
-
+Copyright (C) 2018-2020 Valera Chigir <valera1978@tut.by>
+Copyright (C) 2021 Deokgyu Yang <secugyu@gmail.com>
 ```
+
+## Disclaimer
+
+```xxx
+/*
+ * Your warranty will be VOID after installing a custom ROM.
+ *
+ * Get notified yourself that I am not responsible for bricked devices, dead SD cards,
+ * thermonuclear war, or you getting fired because the alarm app failed.
+ * Please do some research if you have any concerns about features included in this ROM
+ * before flashing it!
+ * YOU are choosing to make these modifications,
+ * and if you point the finger at me for messing up your device,
+ * I will laugh at you.
+ */
+```
+
+## Local manifest
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+    <project name="awesometic/android_device_samsung_gts3llte"
+        path="device/samsung/gts3llte"
+        revision="lineage-18.1"
+        remote="github" />
+    <project name="awesometic/android_kernel_samsung_msm8996"
+        path="kernel/samsung/msm8996"
+        revision="lineage-18.1"
+        remote="github" />
 
-  <project name="Valera1978/android_device_samsung_gts3llte" path="device/samsung/gts3llte" remote="github" />
-  <project name="Valera1978/android_kernel_samsung_msm8996" path="kernel/samsung/msm8996" remote="github" />
-  <project name="Valera1978/android_vendor_samsung_gts3llte" path="vendor/samsung/gts3llte" remote="github" />
-  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" />
-
+    <project name="LineageOS/android_device_samsung_qcom-common"
+        path="device/samsung/qcom-common"
+        revision="lineage-18.1"
+        remote="github" />
+    <project name="LineageOS/android_hardware_samsung"
+        path="hardware/samsung"
+        revision="lineage-18.1"
+        remote="github" />
 </manifest>
 ```
 
-repo sync
+## License
 
-  - Copy proprietary vendor files
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 
-  There are two options to to that. Connect your device with adb enabled and run:
-
-./extract-files.sh
-
-  Or if you have the system image unpacked on your disk, then simply run:
-
-    STOCK_ROM_DIR=/path/to/system ./extract-files.sh
-
-  - Setup environment
-
-. build/envsetup.sh
-
-  - Build lineage 16.0
-
-brunch gts3llte
+You may obtain a copy of the License at [https://www.apache.org/licenses/LICENSE-2.0.html]
