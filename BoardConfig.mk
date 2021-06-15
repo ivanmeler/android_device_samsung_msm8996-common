@@ -56,7 +56,7 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8996
-TARGET_KERNEL_CONFIG := lineageos_gts3llte_defconfig
+TARGET_KERNEL_CONFIG := lineage_gts3llte_defconfig
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # Platform
