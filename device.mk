@@ -228,9 +228,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/sec_touchkey.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchkey.kl \
     $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/synaptics_dsx.kl \
     $(LOCAL_PATH)/keylayout/Tab_S3_Book_Cover_Keyboard.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Tab_S3_Book_Cover_Keyboard.kl \
-
-# idc
-PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/sec_e-pen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_e-pen.idc \
     $(LOCAL_PATH)/idc/Tab_S3_Book_Cover_Keyboard.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Tab_S3_Book_Cover_Keyboard.idc
 
