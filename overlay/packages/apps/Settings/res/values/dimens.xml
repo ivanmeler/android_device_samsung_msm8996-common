@@ -1,5 +1,5 @@
-<!--
-     Copyright (C) 2018 The LineageOS Project
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,8 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <resources>
-    <!-- Max visible notification icons -->
-    <integer name="config_maxVisibleNotificationIcons">12</integer>
-    <integer name="config_maxVisibleNotificationIconsOnLock">13</integer>
+    <!-- Fingerprint sensor location -->
+    <dimen name="fingerprint_dot_radius">5dp</dimen>
+    <item name="fingerprint_sensor_location_fraction_y" type="fraction">83.60%</item>
 </resources>
