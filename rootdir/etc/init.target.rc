@@ -303,24 +303,8 @@ service thermal-engine /vendor/bin/thermal-engine
 #   user root
 #   group root
 #
-#service adsprpcd /system/vendor/bin/adsprpcd
-#   class main
-#   user media
-#   group media
-#
-
-service adsprpcd /vendor/bin/adsprpcd rootpd
+service adsprpcd /vendor/bin/adsprpcd
    class main
-   user system
-   group system
-
-service adsprpcd_audiopd /vendor/bin/adsprpcd audiopd
-   class main
-   user media
-   group media
-
-service adsprpcd_sensorspd /vendor/bin/adsprpcd sensorspd
-   class core
    user system
    group system
 
