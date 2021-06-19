@@ -216,6 +216,8 @@ on boot
     chown system radio /sys/class/fingerprint/fingerprint/resetcnt
 
     # Create directories for Fingerprint
+    mkdir /data/vendor/biometrics 0770 system system
+    mkdir /data/vendor/fpSnrTest 0770 system system
     mkdir /data/vendor/misc/qti_fp 0770 system system
     mkdir /data/vendor/misc/qti_fp/bg_estimation 0770 system system
     mkdir /data/vendor/misc/qti_fp/calib_test 0770 system system
