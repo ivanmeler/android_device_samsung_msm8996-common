@@ -184,7 +184,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
+    <hal format="hidl" override="true">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
         <version>1.2</version>
@@ -272,6 +272,27 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>com.qualcomm.qti.bluetooth_audio</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothAudio</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>com.qualcomm.qti.dpm.api</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>com.qualcomm.qti.imscmservice</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>com.qualcomm.qti.uceservice</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl">
         <name>com.qualcomm.qti.wifidisplayhal</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -346,6 +367,23 @@
             <name>ILocHidlGnss</name>
             <instance>gnss_vendor</instance>
         </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.alarm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAlarm</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.data.connection</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.data.latency</name>
+        <transport>hwbinder</transport>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.capabilityconfigstore</name>
@@ -467,6 +505,14 @@
             <instance>wifidisplaysessionvideotrack</instance>
         </interface>
     </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.ims.callinfo</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.imsrtpservice</name>
+        <transport>hwbinder</transport>
+    </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.bluetooth</name>
         <transport>hwbinder</transport>
@@ -511,6 +557,7 @@
             <name>IRadio</name>
             <instance>slot1</instance>
         </interface>
+        <fqname>@1.2::IRadio/slot1</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.channel</name>
@@ -521,6 +568,8 @@
             <instance>epdgd</instance>
             <instance>imsd</instance>
         </interface>
+        <fqname>@1.0::ISecChannel/epdgd</fqname>
+        <fqname>@1.0::ISecChannel/imsd</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.configsvc</name>
@@ -530,6 +579,7 @@
             <name>IConfigSvc</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::IConfigSvc/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.secbridge</name>
@@ -539,6 +589,7 @@
             <name>ISecBridge</name>
             <instance>slot1</instance>
         </interface>
+        <fqname>@1.0::ISecBridge/slot1</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.sechook</name>
@@ -548,6 +599,7 @@
             <name>IOemHook</name>
             <instance>slot1</instance>
         </interface>
+        <fqname>@1.0::IOemHook/slot1</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.vibrator</name>
@@ -557,5 +609,6 @@
             <name>ISecVibrator</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::ISecVibrator/default</fqname>
     </hal>
 </manifest>

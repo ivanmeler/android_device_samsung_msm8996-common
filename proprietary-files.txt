@@ -960,6 +960,7 @@ vendor/bin/irsc_util
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
+vendor/etc/data/qmi_config.xml
 vendor/etc/sec_config
 vendor/lib/libdiagjni.so
 vendor/lib/libdiag.so
