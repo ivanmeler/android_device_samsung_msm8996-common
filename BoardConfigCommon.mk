@@ -17,12 +17,9 @@
 
 BOARD_VENDOR := samsung
 
-DEVICE_PATH := device/samsung/gts3llte
+COMMON_PATH := device/samsung/gts3l-common
 
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
-
-# Assert
-TARGET_OTA_ASSERT_DEVICE := gts3llte
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Architecture
 TARGET_ARCH := arm64
@@ -56,7 +53,6 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8996
-TARGET_KERNEL_CONFIG := lineage_gts3llte_defconfig
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # Platform
@@ -104,7 +100,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_HAS_QCA_BT_ROME := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
@@ -150,12 +146,11 @@ TARGET_ENABLE_MEDIADRM_64 := true
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 79691776
@@ -191,30 +186,32 @@ TARGET_PROVIDES_KEYMASTER := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-ENABLE_VENDOR_RIL_SERVICE := true
-
-# Security patch level - T825N0KOU3CTD1
+# Security patch level
 VENDOR_SECURITY_PATCH := 2020-03-01
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
+    /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so
+
 # Wifi
+BOARD_HAVE_SAMSUNG_WIFI := true
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
 BOARD_WLAN_DEVICE := qcwcn
@@ -228,13 +225,3 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-BOARD_HAVE_SAMSUNG_WIFI := true
-
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
-    /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so
-
-# inherit from the proprietary version
--include vendor/samsung/gts3llte/BoardConfigVendor.mk

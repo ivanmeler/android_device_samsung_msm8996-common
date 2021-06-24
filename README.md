@@ -1,8 +1,4 @@
-# Device Tree for Samsung Galaxy Tab S3 LTE (gts3llte)
-
-> - Currently working in progress.
-> - Some commits are meaningless, I'm digging in.
-> - Will be separated to use common device tree.
+# Common Device Tree for Samsung Galaxy Tab S3
 
 ## Copyright
 
@@ -10,47 +6,6 @@
 Copyright (C) 2017 The LineageOS Project
 Copyright (C) 2018-2020 Valera Chigir <valera1978@tut.by>
 Copyright (C) 2021 Deokgyu Yang <secugyu@gmail.com>
-```
-
-## Disclaimer
-
-```xxx
-/*
- * Your warranty will be VOID after installing a custom ROM.
- *
- * Get notified yourself that I am not responsible for bricked devices, dead SD cards,
- * thermonuclear war, or you getting fired because the alarm app failed.
- * Please do some research if you have any concerns about features included in this ROM
- * before flashing it!
- * YOU are choosing to make these modifications,
- * and if you point the finger at me for messing up your device,
- * I will laugh at you.
- */
-```
-
-## Local manifest
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-    <project name="awesometic/android_device_samsung_gts3llte"
-        path="device/samsung/gts3llte"
-        revision="lineage-18.1"
-        remote="github" />
-    <project name="awesometic/android_kernel_samsung_msm8996"
-        path="kernel/samsung/msm8996"
-        revision="lineage-18.1"
-        remote="github" />
-
-    <project name="LineageOS/android_device_samsung_qcom-common"
-        path="device/samsung/qcom-common"
-        revision="lineage-18.1"
-        remote="github" />
-    <project name="LineageOS/android_hardware_samsung"
-        path="hardware/samsung"
-        revision="lineage-18.1"
-        remote="github" />
-</manifest>
 ```
 
 ## License
