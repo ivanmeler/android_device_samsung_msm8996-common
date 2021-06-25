@@ -4,8 +4,6 @@
 # This is a common source of Android security bugs.
 #
 
-import /vendor/etc/init/hw/init.carrier.rc
-
 on init
     symlink /dev/block/bootdevice/by-name/persistent  /dev/block/persistent
     symlink /dev/block/bootdevice/by-name/steady  /dev/block/steady
