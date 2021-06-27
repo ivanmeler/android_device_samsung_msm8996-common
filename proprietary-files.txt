@@ -949,6 +949,7 @@ vendor/lib64/libqti-utils.so
 vendor/bin/irsc_util
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
+vendor/bin/qmuxd
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/qmi_config.xml
 vendor/etc/sec_config
