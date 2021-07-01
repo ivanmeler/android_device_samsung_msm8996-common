@@ -1,6 +1,3 @@
-# enable navigation bar
-qemu.hw.mainkeys=1
-
 # Audio
 af.fast_track_multiplier=1
 audio.offload.video=true
