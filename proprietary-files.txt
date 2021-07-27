@@ -23,8 +23,6 @@ lib/libSamsungPostProcess.so
 lib/libSamsungPostProcessConvertor.so
 lib/libsamsungVoipResampler.so
 lib/lib_SamsungRec_06002.so
-lib/lib_SoundAlive_SRC384_ver320.so
-lib/lib_soundaliveresampler.so
 lib/lib_SoundBooster_ver_Quad_710.so
 vendor/etc/SoundBoosterParam.txt
 vendor/lib/hw/audio.primary.msm8996.so
@@ -42,6 +40,8 @@ vendor/lib/libsamsungSoundbooster_plus.so
 vendor/lib/libsecaudioinfo.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libtinycompress_vendor.so
+vendor/lib/lib_SoundAlive_SRC384_ver320.so
+vendor/lib/lib_soundaliveresampler.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
@@ -49,6 +49,8 @@ vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
+vendor/lib64/lib_SoundAlive_SRC384_ver320.so
+vendor/lib64/lib_soundaliveresampler.so
 
 # Audio (effects)
 vendor/lib/soundfx/libasphere.so
