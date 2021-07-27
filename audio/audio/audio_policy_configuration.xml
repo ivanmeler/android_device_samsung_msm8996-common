@@ -55,7 +55,7 @@
                 <item>Built-In Mic</item>
                 <item>Built-In Back Mic</item>
                 <item>FM Tuner</item>
-                <!--<item>Telephony Rx</item>-->
+                <item>Telephony Rx</item>
             </attachedDevices>
             <defaultOutputDevice>Speaker</defaultOutputDevice>
             <mixPorts>
