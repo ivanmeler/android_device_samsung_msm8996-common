@@ -76,10 +76,6 @@ QCOM_BT_USE_BTNV := true
 
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
-TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
-    /vendor/bin/mm-qcamera-daemon=26
-TARGET_SUPPORT_HAL1 := false
-TARGET_USES_MEDIA_EXTENSIONS := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
@@ -179,7 +175,8 @@ SELINUX_IGNORE_NEVERALLOWS := true
 TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
-    /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so
+    /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so \
+    /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
