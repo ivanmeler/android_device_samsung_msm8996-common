@@ -551,8 +551,16 @@
     <ctl name="PRI_TDM_RX_0 Channels" value="Four" />
 	<!-- channel -->
 
+    <!--! awesometic: ExtSPK setups -->
+    <!-- ExtSPK LL => Bottom Left -->
+    <!-- ExtSPK LR => Bottom Right -->
+    <!-- ExtSPK UL => Top Left -->
+    <!-- ExtSPK UR => Top Right -->
 	<ctl name="ExtSPK UL I2S Mux" value="I2S1" />
+    <ctl name="ExtSPK UL I2S_Channel" value="0" />
 	<ctl name="ExtSPK UR I2S Mux" value="I2S1" />
+    <ctl name="ExtSPK UR I2S_Channel" value="0" />
+    <!--! awesometic: ExtSPK setups end -->
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="deep-buffer-playback">
@@ -2628,7 +2636,7 @@
     <path name="VoLTE-voice-NS-mic-speaker">
         <path name="sub-main-mic" />
         <ctl name="ADC3 Volume" value="12" />
-        <ctl name="ADC4 Volume" value="12" />        
+        <ctl name="ADC4 Volume" value="12" />
         <ctl name="DEC8 Volume" value="84" />
         <ctl name="DEC7 Volume" value="84" />
     </path>
@@ -3573,7 +3581,7 @@
         <ctl name="ADC3 Volume" value="11" />
         <ctl name="DEC7 Volume" value="84" />
     </path>
-    
+
     <path name="voip-main-mic-callforwarding">
         <path name="main-mic" />
         <ctl name="ADC3 Volume" value="12" />
