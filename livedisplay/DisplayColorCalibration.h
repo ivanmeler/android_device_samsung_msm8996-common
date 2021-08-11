@@ -29,7 +29,7 @@ using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 
-#define FILE_RGB "/sys/class/graphics/fb0/rgb"
+#define FILE_RGB "/sys/class/mdnie/mdnie/sensorRGB"
 
 class DisplayColorCalibration : public IDisplayColorCalibration {
   public:

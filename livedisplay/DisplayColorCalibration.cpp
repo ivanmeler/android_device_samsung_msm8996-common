@@ -40,11 +40,11 @@ bool DisplayColorCalibration::isSupported() {
 
 // Methods from ::vendor::lineage::livedisplay::V2_0::IDisplayColorCalibration follow.
 Return<int32_t> DisplayColorCalibration::getMaxValue() {
-    return 32768;
+    return 255;
 }
 
 Return<int32_t> DisplayColorCalibration::getMinValue() {
-    return 255;
+    return 1;
 }
 
 Return<void> DisplayColorCalibration::getCalibration(getCalibration_cb _hidl_cb) {
