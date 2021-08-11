@@ -238,8 +238,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.samsung
 
 # LiveDisplay
-#PRODUCT_PACKAGES += \
-#    vendor.lineage.livedisplay@2.0-service.samsung-qcom
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service.gts3l
 
 # Media
 PRODUCT_COPY_FILES += \
