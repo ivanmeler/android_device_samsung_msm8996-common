@@ -25,9 +25,11 @@
  * symlink to the locations given here, or override this header in your
  * device tree.
  */
-#define PANEL_BRIGHTNESS_NODE "/sys/class/backlight/panel/brightness"
-#define PANEL_MAX_BRIGHTNESS_NODE "/sys/class/backlight/panel/max_brightness"
+#define PANEL_BRIGHTNESS_NODE "/sys/class/leds/lcd-backlight/brightness"
+#define PANEL_MAX_BRIGHTNESS_NODE "/sys/class/leds/lcd-backlight/max_brightness"
 #define BUTTON_BRIGHTNESS_NODE "/sys/class/sec/sec_touchkey/brightness"
+
+// Those two paths don't exist in the Galaxy Tab S3 sysfs
 #define LED_BLINK_NODE "/sys/class/sec/led/led_blink"
 #define LED_BLN_NODE "/sys/class/misc/backlightnotification/notification_led"
 
