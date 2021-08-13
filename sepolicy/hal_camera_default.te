@@ -2,3 +2,5 @@ allow hal_camera_default camera_data_file:sock_file write;
 
 allow hal_camera_default sysfs_camera_writable:dir search;
 allow hal_camera_default sysfs_camera_writable:file { getattr open read };
+
+allow hal_camera_default sec_camera_prop:file { getattr open read };
