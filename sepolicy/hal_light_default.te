@@ -1,0 +1,4 @@
+allow hal_light_default sysfs_lcd_writable:dir search;
+allow hal_light_default sysfs_lcd_writable:file { getattr open read write };
+
+allow hal_light_default sysfs:file { getattr open write };
