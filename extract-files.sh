@@ -63,6 +63,9 @@ function blob_fixup() {
     vendor/lib/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v28.so" "${2}"
         ;;
+    vendor/lib/libmmcamera2_sensor_modules.so)
+        sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" "${2}"
+        ;;
     esac
 }
 
