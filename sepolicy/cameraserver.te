@@ -1,1 +1,13 @@
+allow cameraserver csc_prop:file { getattr open read };
+
+allow cameraserver hal_perf_default:binder call;
+allow cameraserver hal_perf_hwservice:hwservice_manager find;
+
+allow cameraserver mm-qcamerad:unix_dgram_socket sendto;
+
 allow cameraserver sec_camera_prop:file { getattr open read };
+allow cameraserver sec_camera_prop:property_service set;
+
+allow cameraserver sysfs_camera_writable:dir search;
+allow cameraserver sysfs_camera_writable:file { getattr open read };
+allow cameraserver sysfs:file { getattr open read write };
