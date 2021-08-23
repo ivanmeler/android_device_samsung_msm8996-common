@@ -1,0 +1,4 @@
+allow system_server init:binder call;
+
+allow system_server userspace_reboot_config_prop:file { getattr open read };
+allow system_server userspace_reboot_exported_prop:file { getattr open read };

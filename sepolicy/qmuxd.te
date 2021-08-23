@@ -1,0 +1,1 @@
+allow qmuxd vendor_radio_prop:file { getattr open read };

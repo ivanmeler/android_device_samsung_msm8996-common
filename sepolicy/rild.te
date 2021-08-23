@@ -5,4 +5,14 @@ allowxperm rild tun_device:chr_file ioctl { TUNSETIFF TUNSETPERSIST };
 
 allow rild proc_net:file write;
 
+allow rild app_efs_file:file { getattr open read };
+
+allow rild default_android_hwservice:hwservice_manager add;
+allow rild default_prop:property_service set;
+
+allow rild imei_efs_file:file { open read setattr getattr write };
+
+allow rild system_data_file:dir { write add_name };
+allow rild system_data_file:file { create open write };
+
 get_prop(rild, csc_prop)

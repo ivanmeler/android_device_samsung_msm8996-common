@@ -2,4 +2,10 @@ allow qti_init_shell mnt_vendor_file:dir create_dir_perms;
 
 allow qti_init_shell sensors_persist_file:dir create_dir_perms;
 
+allow qti_init_shell persist_file:lnk_file read;
+
+allow qti_init_shell self:capability dac_override;
+
+allow qti_init_shell sysfs:file write;
+
 set_prop(qti_init_shell, ctl_default_prop)
