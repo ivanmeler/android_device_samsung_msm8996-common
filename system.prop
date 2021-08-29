@@ -38,6 +38,7 @@ ro.vendor.bluetooth.wipower=true
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 
 # Camera
+camera.disable_zsl_mode=1
 persist.camera.gyro.disable=0
 persist.camera.HAL3.enabled=1
 persist.camera.imglib.fddsp=1
