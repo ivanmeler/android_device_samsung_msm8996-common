@@ -83,14 +83,6 @@ etc/firmware/btnv32.bin:vendor/firmware/btnv32.bin
 etc/firmware/msm8996_camera_gts3.xml:vendor/firmware/msm8996_camera_gts3.xml
 etc/firmware/N05QL_s5k5e3yx_chromatix.xml:vendor/firmware/N05QL_s5k5e3yx_chromatix.xml
 etc/firmware/W13QS_imx258_chromatix.xml:vendor/firmware/W13QS_imx258_chromatix.xml
-lib/libblurdetection_interface.so
-lib/libblurdetection.so
-lib/libdejagging_core.so
-lib/libdejagging_interface.so
-lib/libflashedlls_interface.so
-lib/libimage_flashed_lls.so
-lib/libsmartfocus_interface.so
-lib/libsmartfocusengine.so
 lib/libuniapi.so
 lib/libuniplugin.so
 vendor/bin/mm-qcamera-daemon
