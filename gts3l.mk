@@ -134,6 +134,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl:32 \
     libshims_cameraclient
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/camera/msm8996_camera_gts3.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/msm8996_camera_gts3.xml \
+    $(LOCAL_PATH)/camera/N05QL_s5k5e3yx_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/N05QL_s5k5e3yx_chromatix.xml \
+    $(LOCAL_PATH)/camera/W13QS_imx258_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/W13QS_imx258_chromatix.xml
+
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
