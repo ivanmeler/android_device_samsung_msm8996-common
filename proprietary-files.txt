@@ -863,7 +863,6 @@ lib64/vendor.samsung.hardware.miscpower@1.0.so
 lib/vendor.samsung.hardware.miscpower@1.0.so
 
 # Power (perf)
-etc/powerhint.xml
 vendor/bin/energy-awareness
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
