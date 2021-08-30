@@ -132,7 +132,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     android.hardware.camera.provider@2.4-impl:32 \
-    libshims_cameraclient
+    libshims_cameraclient \
+    Snap
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/msm8996_camera_gts3.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/msm8996_camera_gts3.xml \
