@@ -66,6 +66,9 @@ function blob_fixup() {
     vendor/lib/libmmcamera2_sensor_modules.so)
         sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" "${2}"
         ;;
+    lib64/libpixelflinger.so)
+        "${PATCHELF}" --replace-needed "libcutils.so" "libcutils-v29.so" "${2}"
+        ;;
     esac
 }
 

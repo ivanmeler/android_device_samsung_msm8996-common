@@ -26,22 +26,12 @@
 #
 
 on init
-    # Disable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 0
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 0
-    write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 0
     write /sys/module/lpm_levels/parameters/sleep_disabled "Y"
 
     # Drop write bit from cpu_max_freq so that libqti-perfd can't set it
     chmod 0444 /sys/module/msm_performance/parameters/cpu_max_freq
 
 on boot
-    # Update foreground and background cpusets
-    write /dev/cpuset/foreground/cpus 0-3
-    write /dev/cpuset/background/cpus 0-3
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/top-app/cpus 0-3
-
     # Add a cpuset for the camera daemon
     # we want all cores for camera
     mkdir /dev/cpuset/camera-daemon
@@ -56,10 +46,50 @@ on boot
 
 on charger
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    # Enable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 1
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+    wait /dev/block/bootdevice/by-name/efs
+    mount ext4 /dev/block/bootdevice/by-name/efs /efs nosuid nodev noatime noauto_da_alloc,discard,data=ordered,errors=panic
+    mkdir /efs/Battery 0775 radio system
+    chown radio system /efs/Battery
+    chmod 0775 /efs/Battery
+    chmod 0664 /sys/class/power_supply/battery/batt_temp_table
+    chown system radio /sys/class/power_supply/battery/batt_temp_table
+    chmod 0664 /sys/class/power_supply/battery/batt_capacity_max
+    chown system radio /sys/class/power_supply/battery/batt_capacity_max
+    chmod 0664 /efs/Battery/batt_capacity_max
+    chown radio system /efs/Battery/batt_capacity_max
+    chmod 0664 /sys/class/power_supply/battery/battery_cycle
+    chown system radio /sys/class/power_supply/battery/battery_cycle
+    chmod 0664 /sys/class/power_supply/battery/batt_after_manufactured
+    chown system radio /sys/class/power_supply/battery/batt_after_manufactured
+    chown system radio /sys/class/power_supply/battery/cisd_fullcaprep_max
+    chmod 0660 /sys/class/power_supply/battery/cisd_fullcaprep_max
+    chown system radio /sys/class/power_supply/battery/cisd_data
+    chmod 0660 /sys/class/power_supply/battery/cisd_data
+    chown system system /efs/FactoryApp/cisd_data
+    chmod 0660 /efs/FactoryApp/cisd_data
+    chown system system /efs/FactoryApp/cisd_wc_data
+    chmod 0660 /efs/FactoryApp/cisd_wc_data
+    chown system system /efs/FactoryApp/asoc
+    chmod 0660 /efs/FactoryApp/asoc
+    chown system system /efs/FactoryApp/batt_after_manufactured
+    chmod 0640 /efs/FactoryApp/batt_after_manufactured
+    chown system system /efs/FactoryApp/batt_discharge_level
+    chmod 0640 /efs/FactoryApp/batt_discharge_level
+    chown system radio /sys/class/power_supply/battery/cisd_data_json
+    chmod 0660 /sys/class/power_supply/battery/cisd_data_json
+    copy /system/vendor/firmware/battery_data.dat /efs/Battery/battery_data.dat
+    chmod 0400 /efs/Battery/battery_data.dat
+    write /sys/class/power_supply/battery/batt_update_data "/efs/Battery/battery_data.dat"
+    chown radio system /efs
+    chmod 0771 /efs
+    chown radio system /efs/usb_hw_param
+    chmod 771 /efs/usb_hw_param
+    chown system system /efs/usb_hw_param/usb_hw_param.log
+    chmod 0660 /efs/usb_hw_param/usb_hw_param.log
+    mkdir /efs/lpm 0775 system system
+
     write /sys/module/lpm_levels/parameters/sleep_disabled "N"
 
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "userspace"
@@ -70,8 +100,11 @@ on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/module/msm_thermal/parameters/enabled "N"
-    start vendor.hvdcp_opti
+
+    class_start sec-charger
     start thermal-engine
+
+    setprop sys.usb.configfs 1
 
 on enable-low-power
     # Disable thermal hotplug to switch governor
@@ -157,11 +190,6 @@ on enable-low-power
     write /sys/class/devfreq/soc:qcom,memlat-cpu2/polling_interval 10
     write /sys/class/devfreq/soc:qcom,mincpubw/governor "cpufreq"
 
-    # Enable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 1
-
     # Enable all LPMs (this will enable C4, D4, D3, E4 and M3 LPMs)
     write /sys/module/lpm_levels/parameters/sleep_disabled "N"
 
@@ -174,9 +202,6 @@ on property:sys.boot_completed=1
     # Set I/O squeduler
     setprop sys.io.scheduler "bfq"
 
-    # Start I/O prefetcher service
-    start iop
-
     # Update cpusets now that boot is complete and we want better load balancing
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-2
@@ -186,10 +211,10 @@ on property:sys.boot_completed=1
 on property:init.svc.recovery=running
     trigger enable-low-power
 
-service vendor.charger /system/bin/chargeonlymode
-    class charger
+service charger /system/bin/lpm
+    class sec-charger
     user system
-    group system graphics input
+    group system radio graphics input
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
@@ -198,8 +223,3 @@ service energy-awareness /vendor/bin/energy-awareness
     user root
     group system
     oneshot
-
-service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
-    class main
-    user root
-    group system wakelock

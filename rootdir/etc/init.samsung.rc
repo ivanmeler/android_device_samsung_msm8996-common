@@ -66,7 +66,7 @@ on init
     mkdir /mnt/user/0 0755 root root
     mkdir /mnt/expand 0771 system system
     mkdir /mnt/appfuse 0711 root root
-	
+
 	# Add qseecomd default property
     setprop vendor.sys.qseecomd.enable stopped
 
@@ -294,7 +294,7 @@ on boot
     chown system system /sys/kernel/ipv4/tcp_rmem_def
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
-    
+
 	# Permissions for Power
     chown radio system /sys/power/cpufreq_max_limit
     chown radio system /sys/power/cpufreq_min_limit
@@ -305,7 +305,7 @@ on boot
 
     chown radio system /sys/devices/system/cpu/kernel_max
     chmod 664 /sys/devices/system/cpu/kernel_max
-    
+
     # Permissions for booster
     chown radio system /sys/class/kgsl/kgsl-3d0/max_pwrlevel
     chmod 664  /sys/class/kgsl/kgsl-3d0/max_pwrlevel
@@ -329,7 +329,7 @@ on boot
     chmod 664 /sys/class/devfreq/soc:qcom,cpubw/available_frequencies
     chmod 664 /sys/class/devfreq/soc:qcom,cpubw/min_freq
     chmod 664 /sys/class/devfreq/soc:qcom,cpubw/max_freq
-	
+
 	# Permissions for input_booster
     chown system radio /sys/class/input_booster/level
     chown system radio /sys/class/input_booster/head
@@ -343,7 +343,7 @@ on boot
     chmod 0664 /sys/class/input_booster/touchkey/level
     chmod 0664 /sys/class/input_booster/touchkey/freq
     chmod 0664 /sys/class/input_booster/touchkey/time
-	
+
 	# Permissions for Camera
     chown cameraserver cameraserver /sys/kernel/mm/vmscan/mem_boost_mode
     chown system system /sys/class/camera/rear/rear_camfw
@@ -875,51 +875,3 @@ on boot
     chmod 444 /sys/class/sec/sdinfo/data
     chown system system /sys/block/mmcblk0/diskios
     chmod 660 /sys/block/mmcblk0/diskios
-
-on charger
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount ext4 /dev/block/bootdevice/by-name/system /system wait ro
-    wait /dev/block/bootdevice/by-name/efs
-    mount ext4 /dev/block/bootdevice/by-name/efs /efs nosuid nodev noatime noauto_da_alloc,discard,data=ordered,errors=panic
-    mkdir /efs/Battery 0775 radio system
-    chown radio system /efs/Battery
-    chmod 0775 /efs/Battery
-    chmod 0664 /sys/class/power_supply/battery/batt_temp_table
-    chown system radio /sys/class/power_supply/battery/batt_temp_table
-    chmod 0664 /sys/class/power_supply/battery/batt_capacity_max
-    chown system radio /sys/class/power_supply/battery/batt_capacity_max
-    chmod 0664 /efs/Battery/batt_capacity_max
-    chown radio system /efs/Battery/batt_capacity_max
-    chmod 0664 /sys/class/power_supply/battery/battery_cycle
-    chown system radio /sys/class/power_supply/battery/battery_cycle
-    chmod 0664 /sys/class/power_supply/battery/batt_after_manufactured
-    chown system radio /sys/class/power_supply/battery/batt_after_manufactured
-    chown system radio /sys/class/power_supply/battery/cisd_fullcaprep_max
-    chmod 0660 /sys/class/power_supply/battery/cisd_fullcaprep_max
-    chown system radio /sys/class/power_supply/battery/cisd_data
-    chmod 0660 /sys/class/power_supply/battery/cisd_data
-    chown system system /efs/FactoryApp/cisd_data
-    chmod 0660 /efs/FactoryApp/cisd_data
-    chown system system /efs/FactoryApp/cisd_wc_data
-    chmod 0660 /efs/FactoryApp/cisd_wc_data
-    chown system system /efs/FactoryApp/asoc
-    chmod 0660 /efs/FactoryApp/asoc
-    chown system system /efs/FactoryApp/batt_after_manufactured
-    chmod 0640 /efs/FactoryApp/batt_after_manufactured
-    chown system system /efs/FactoryApp/batt_discharge_level
-    chmod 0640 /efs/FactoryApp/batt_discharge_level
-    chown system radio /sys/class/power_supply/battery/cisd_data_json
-    chmod 0660 /sys/class/power_supply/battery/cisd_data_json
-    copy /system/vendor/firmware/battery_data.dat /efs/Battery/battery_data.dat
-    chmod 0400 /efs/Battery/battery_data.dat
-    write /sys/class/power_supply/battery/batt_update_data "/efs/Battery/battery_data.dat"
-    chown radio system /efs
-    chmod 0771 /efs
-    chown radio system /efs/usb_hw_param
-    chmod 771 /efs/usb_hw_param
-    chown system system /efs/usb_hw_param/usb_hw_param.log
-    chmod 0660 /efs/usb_hw_param/usb_hw_param.log
-    mkdir /efs/lpm 0775 system system
-    class_start sec-charger
-

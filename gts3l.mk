@@ -140,6 +140,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/N05QL_s5k5e3yx_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/N05QL_s5k5e3yx_chromatix.xml \
     $(LOCAL_PATH)/camera/W13QS_imx258_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/W13QS_imx258_chromatix.xml
 
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend
+
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     libcnefeatureconfig

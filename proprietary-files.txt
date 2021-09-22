@@ -818,8 +818,6 @@ lib64/libsavsvc.so
 lib64/libsnaace.so
 lib64/libsnamrnb.so
 lib64/libsnamrwb.so
-lib64/libsxqk.so
-lib64/libsxqk_skia.so
 lib/libsomx263dsw.so
 lib/libsomx264dsw.so
 lib/libsomxaacd.so
@@ -848,7 +846,6 @@ lib/libsavsvc.so
 lib/libsnaace.so
 lib/libsnamrnb.so
 lib/libsnamrwb.so
-lib/libsxqk.so
 
 # Peripheral Manager
 vendor/bin/pm-proxy
@@ -887,6 +884,28 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
+
+# Power-off charging
+bin/lpm
+lib64/libmaet.so
+lib64/libpixelflinger.so
+lib64/libsxqk_skia.so
+lib64/libsxqk.so
+media/battery_error.spi
+media/battery_low.spi
+media/battery_temperature_error.spi
+media/battery_temperature_limit.spi
+media/battery_water_usb.spi
+media/charging_New_Fast.spi
+media/charging_New_Normal.spi
+media/dock_error_usb.spi
+media/incomplete_connect.spi
+media/lcd_density.txt
+media/percentage.spi
+media/safety_timer_usb.spi
+media/slow_charging_usb.spi
+media/temperature_limit_usb.spi
+media/water_protection_usb.spi
 
 # QMI
 vendor/bin/irsc_util
