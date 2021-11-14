@@ -16,10 +16,10 @@
 # Samsung Game Pad EI-GP20
 #
 
-key 103   DPAD_UP
-key 105   DPAD_LEFT
-key 106   DPAD_RIGHT
-key 108   DPAD_DOWN
+key 103   DPAD_LEFT
+key 105   DPAD_DOWN
+key 106   DPAD_UP
+key 108   DPAD_RIGHT
 
 key 304   BUTTON_A
 key 305   BUTTON_B
@@ -60,4 +60,4 @@ axis 0x08   WHEEL
 axis 0x09   GAS 		#LTRIGGER
 axis 0x0a   BRAKE 	#RTRIGGER
 axis 0x10   HAT_X
-axis 0x11   HAT_Y
+axis 0x11   HAT_Y
