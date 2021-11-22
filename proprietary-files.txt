@@ -1032,7 +1032,7 @@ lib/vendor.qti.hardware.tui_comm@1.0.so
 # WiFi
 vendor/bin/hw/macloader
 vendor/bin/wcnss_filter
-bin/cnss-daemon
+bin/cnss-daemon:vendor/bin/cnss-daemon
 
 # WiFi (display)
 lib/libremotedisplay_wfd.so
