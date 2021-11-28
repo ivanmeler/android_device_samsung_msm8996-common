@@ -20,7 +20,6 @@ persist.tnr.process.plates             u:object_r:sec_camera_prop:s0
 persist.vendor.camera.                 u:object_r:sec_camera_prop:s0
 persist.vendor.camera.feature.cac      u:object_r:sec_camera_prop:s0
 persist.vendor.camera.global.debug     u:object_r:sec_camera_prop:s0
-persist.vendor.sec.fastchg_enabled     u:object_r:sec_fastcharge_prop:s0
 persist.vendor.members.                u:object_r:vendor_members_prop:s0
 ro.camera.req.fmq.size                 u:object_r:sec_camera_prop:s0
 ro.camera.res.fmq.size                 u:object_r:sec_camera_prop:s0
