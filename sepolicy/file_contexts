@@ -20,6 +20,9 @@
 /system/bin/lpm                                u:object_r:charger_exec:s0
 /system/bin/set-audio-rotation                 u:object_r:set-audio-rotation_exec:s0
 
+# CPU tunable for EAS
+/sys/devices/system/cpu/cpu[0-3]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
+
 # Data files
 /data/camera(/.*)?                   u:object_r:camera_socket:s0
 /data/vendor/biometrics(/.*)?        u:object_r:biometrics_vendor_data_file:s0
