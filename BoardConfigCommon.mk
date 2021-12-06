@@ -15,6 +15,8 @@
 # limitations under the License.
 #
 
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 BOARD_VENDOR := samsung
 
 COMMON_PATH := device/samsung/msm8996-common
