@@ -193,6 +193,10 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.samsung \
     libbauthtzcommon_shim
 
+# FlipFlap
+PRODUCT_PACKAGES += \
+    FlipFlap
+
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
