@@ -429,6 +429,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf \
+    WifiOverlay \
     wifiloader
 
 PRODUCT_COPY_FILES += \
