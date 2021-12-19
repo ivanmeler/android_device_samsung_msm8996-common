@@ -18,12 +18,17 @@ vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Audio
+lib/libprofileparamstorage.so
 lib/librecordalive.so
 lib/libSamsungPostProcess.so
 lib/libSamsungPostProcessConvertor.so
 lib/libsamsungVoipResampler.so
+lib/libsecaudiocoreutils.so
 lib/lib_SamsungRec_06002.so
 lib/lib_SoundBooster_ver_Quad_710.so
+lib64/libprofileparamstorage.so
+lib64/libsecaudiocoreutils.so
+vendor/etc/dolby/dax-default.xml
 vendor/etc/SoundBoosterParam.txt
 vendor/lib/hw/audio.primary.msm8996.so
 vendor/lib/libacdb-fts.so
@@ -57,9 +62,11 @@ vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
+vendor/lib/soundfx/libswdap.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcvirt.so
+vendor/lib64/soundfx/libswdap.so
 
 # Bluetooth
 vendor/bin/btnvtool
