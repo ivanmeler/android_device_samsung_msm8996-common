@@ -46,6 +46,10 @@ persist.camera.imglib.fddsp=1
 persist.vendor.camera.display.umax=1920x1080
 persist.vendor.camera.display.lmax=1280x720
 
+# Chipset
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=MSM8996
+
 # Gatekeeper
 ro.hardware.gatekeeper=mdfpp
 
