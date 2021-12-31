@@ -35,6 +35,9 @@ ro.bluetooth.wipower=true
 ro.vendor.bluetooth.wipower=true
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 
+# BPF
+ro.kernel.ebpf.supported=false
+
 # Camera
 camera.disable_zsl_mode=1
 persist.camera.gyro.disable=0
