@@ -28,4 +28,7 @@ allow init self:netlink_socket { create read bind };
 allow init self:tcp_socket { bind create };
 
 allow init sysfs:dir create;
+
 allow init sysfs:file { open setattr write };
+
+allow init sysfs_touchkey:lnk_file read;
