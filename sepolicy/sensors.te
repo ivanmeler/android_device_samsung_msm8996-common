@@ -1,2 +1,4 @@
 allow sensors app_efs_file:dir { getattr open read search };
 allow sensors app_efs_file:file { getattr open read write };
+
+allow sensors sysfs:file { open read };

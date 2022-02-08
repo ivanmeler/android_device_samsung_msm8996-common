@@ -13,6 +13,6 @@ allow rild default_prop:property_service set;
 allow rild imei_efs_file:file { open read setattr getattr write };
 
 allow rild system_data_file:dir { write add_name };
-allow rild system_data_file:file { create open write };
+allow rild system_data_file:file { create open write setattr };
 
 get_prop(rild, csc_prop)
