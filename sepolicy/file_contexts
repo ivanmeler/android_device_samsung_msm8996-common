@@ -1,4 +1,5 @@
 # Block devices
+/dev/block/mmcblk0p[0-9]*                                   u:object_r:emmcblk_device:s0
 /dev/block/platform/soc/624000\.sdhci/by-name/bota          u:object_r:botablk_device:s0
 /dev/block/platform/soc/624000\.sdhci/by-name/config        u:object_r:frp_block_device:s0
 /dev/block/platform/soc/624000\.sdhci/by-name/debug         u:object_r:debug_block_device:s0

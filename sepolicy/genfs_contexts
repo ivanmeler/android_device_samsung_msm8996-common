@@ -1,0 +1,27 @@
+genfscon debugfs /rmt_storage    u:object_r:debugfs_rmt:s0
+
+genfscon proc /irq/default_smp_affinity                    u:object_r:proc_default_smp_affinity:s0
+genfscon proc /last_kmsg                                   u:object_r:proc_last_kmsg:s0
+genfscon proc /reset_reason                                u:object_r:proc_reset_reason:s0
+genfscon proc /schedstat                                   u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_cfs_bandwidth_slice_us     u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_cfs_boost                  u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_cstate_aware               u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_migration_cost_ns          u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_min_granularity_ns         u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_nr_migrate                 u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_rr_timeslice_ms            u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_shares_window_ns           u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_sync_hint_enable           u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_time_avg_ms                u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_use_walt_cpu_util          u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_use_walt_task_util         u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_walt_cpu_high_irqload      u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_walt_init_task_load_pct    u:object_r:proc_sched:s0
+genfscon proc /sys/vm/swappiness                           u:object_r:proc_swappiness:s0
+
+genfscon sysfs /devices/soc/6a00000.ssusb/6a00000.dwc3/gadget/lun0/                u:object_r:sysfs_android_usb:s0
+genfscon sysfs /devices/soc/6a00000.ssusb/power_supply                             u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/soc:i2c@11/i2c-1/1-0071/power_supply                   u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/soc:i2c@13/i2c-0/0-0049/sm5705-charger/power_supply    u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/virtual/lcd/panel                                          u:object_r:sysfs_lcd_writable:s0

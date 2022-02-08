@@ -1,1 +1,3 @@
 allow qmuxd vendor_radio_prop:file { getattr open read };
+
+allow qmuxd sysfs:file { open read };

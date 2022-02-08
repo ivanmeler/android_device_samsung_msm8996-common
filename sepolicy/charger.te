@@ -22,4 +22,6 @@ allow charger efs_file:file create_file_perms;
 allow charger sec_efs_file:dir rw_dir_perms;
 allow charger sec_efs_file:file create_file_perms;
 
+allow charger proc_reset_reason:file r_file_perms;
+
 set_prop(charger, powerctl_prop)

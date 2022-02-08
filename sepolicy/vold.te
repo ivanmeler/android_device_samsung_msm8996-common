@@ -1,5 +1,12 @@
 allow vold hal_bootctl_hwservice:hwservice_manager find;
 
-allow vold rootfs:dir setattr;
+allow vold rootfs:dir { setattr add_name create write };
 
 allow vold sysfs_mmc_host:file write;
+
+# /efs
+allow vold efs_file:dir r_dir_perms;
+
+# /dev/block/mmcblk0p[0-9]
+allow vold emmcblk_device:dir create_dir_perms;
+allow vold emmcblk_device:blk_file create_file_perms;

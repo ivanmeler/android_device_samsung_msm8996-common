@@ -14,4 +14,4 @@ allow hal_gnss_qti qmuxd:unix_stream_socket connectto;
 allow hal_gnss_qti qmuxd_socket:dir { add_name write };
 allow hal_gnss_qti qmuxd_socket:sock_file { create write };
 
-allow hal_gnss_qti sysfs:file { getattr open write };
+allow hal_gnss_qti sysfs:file { getattr open write read };
