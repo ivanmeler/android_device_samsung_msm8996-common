@@ -4,3 +4,6 @@ allow system_server userspace_reboot_config_prop:file { getattr open read };
 allow system_server userspace_reboot_exported_prop:file { getattr open read };
 
 allow system_server proc_last_kmsg:file r_file_perms;
+
+allow system_server app_zygote:process getpgid;
+allow system_server system_data_root_file:file r_file_perms;
