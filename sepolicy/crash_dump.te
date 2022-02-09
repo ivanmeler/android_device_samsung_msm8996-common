@@ -1,0 +1,7 @@
+allow crash_dump {
+    exported_camera_prop
+    gpu_device
+    hwservicemanager_prop
+    media_variant_prop
+    resourcecache_data_file
+}:file r_file_perms;
