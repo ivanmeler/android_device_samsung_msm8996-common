@@ -1,7 +1,6 @@
 binder_call(gmscore_app, hal_memtrack_default);
 
 allow gmscore_app {
-    adbd_prop
     apexd_prop
     apk_verity_prop
 }:file r_file_perms;
