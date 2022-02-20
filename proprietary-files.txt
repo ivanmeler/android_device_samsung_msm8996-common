@@ -163,14 +163,6 @@ etc/firmware/C12QS_Isp0_imx260.bin:vendor/firmware/C12QS_Isp0_imx260.bin
 etc/firmware/C12QS_Isp1_imx260.bin:vendor/firmware/C12QS_Isp1_imx260.bin
 etc/firmware/cal_data_LSCmaster.bin:vendor/firmware/cal_data_LSCmaster.bin
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/D12QL_Isp0_s5k2l1sx.bin:vendor/firmware/D12QL_Isp0_s5k2l1sx.bin
 etc/firmware/D12QS_Isp0_imx260.bin:vendor/firmware/D12QS_Isp0_imx260.bin
 etc/firmware/Master0.bin:vendor/firmware/Master0.bin
