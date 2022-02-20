@@ -350,6 +350,9 @@ void power_set_interactive(int on)
     struct video_encode_metadata_t video_encode_metadata;
     int rc = 0;
 
+    /* Invoke the extension */
+    power_set_interactive_ext(on);
+
     if (set_interactive_override(on) == HINT_HANDLED) {
         return;
     }

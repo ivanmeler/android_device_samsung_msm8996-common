@@ -21,30 +21,12 @@
 #define LOG_TAG "PowerHAL_TR_Ext"
 #include <utils/Log.h>
 
+#include "utils.h"
+
 #define TOUCHKEY_POWER "/sys/class/input/input6/enabled"
 #define SPEN_POWER "/sys/class/input/input3/enabled"
 #define TSP_POWER "/sys/class/input/input2/enabled"
 #define LCD_POWER "/sys/class/power_supply/battery/lcd"
-
-static void sysfs_write(char *path, char *s) {
-    char buf[80];
-    int len;
-    int fd = open(path, O_WRONLY);
-
-    if (fd < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error opening %s: %s\n", path, buf);
-        return;
-    }
-
-    len = write(fd, s, strlen(s));
-    if (len < 0) {
-        strerror_r(errno, buf, sizeof(buf));
-        ALOGE("Error writing to %s: %s\n", path, buf);
-    }
-
-    close(fd);
-}
 
 void power_set_interactive_ext(int on) {
     ALOGD("%s: %s input devices", __func__, on ? "enabling" : "disabling");

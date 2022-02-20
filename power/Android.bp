@@ -24,6 +24,7 @@ cc_binary {
     srcs: [
         "service.cpp",
         "Power.cpp",
+        "power-ext.c",
         "power-helper.c",
         "metadata-parser.c",
         "utils.c",
