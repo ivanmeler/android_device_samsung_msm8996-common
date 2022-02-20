@@ -273,7 +273,6 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libgui_vendor \
     libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -283,7 +282,6 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libOmxVidcCommon \
     libstagefrighthw
 
 # Power
