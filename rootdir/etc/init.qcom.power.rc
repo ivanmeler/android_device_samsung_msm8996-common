@@ -207,9 +207,3 @@ service charger /system/bin/lpm
     group system radio graphics input
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
-
-service energy-awareness /vendor/bin/energy-awareness
-    class main
-    user root
-    group system
-    oneshot
