@@ -1,1 +1,7 @@
+# communicate with perfd
+allow mediadrmserver mpctl_data_file:dir search;
+allow mediadrmserver mpctl_data_file:sock_file write;
+allow mediadrmserver mpctl_socket:dir search;
+allow mediadrmserver mpctl_socket:sock_file write;
+
 allow mediaserver exported_camera_prop:file { open read getattr };

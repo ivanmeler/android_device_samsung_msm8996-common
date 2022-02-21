@@ -784,6 +784,9 @@ vendor/lib/libqti-perfd.so|2a2077cf455d5a6b03c0bb2b6eeca554ee28a363
 vendor/lib/libqti-perfd-client.so|a4a6da47ee26fcd5116c514f7fed15b91306aea3
 vendor/lib/libqti-util.so|d65f3ef240cebea73bd1ba8b1132a7e639aa05bb
 
+# Perf (perfd) - from LineageOS/android_device_lge_msm8996-common
+vendor/bin/perfd|fa726c3874918611457dfb17d47f6f8c9aa8bdc7
+
 # Power-off charging
 bin/lpm
 lib64/libmaet.so

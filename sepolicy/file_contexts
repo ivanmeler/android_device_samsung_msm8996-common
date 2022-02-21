@@ -176,10 +176,16 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.samsung                     u:object_r:hal_health_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.samsung                  u:object_r:hal_keymaster_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung                      u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service.gts3l                         u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.2-service-qti                             u:object_r:hal_usb_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.gts3l                    u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.gts3l                          u:object_r:hal_lineage_touch_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.miscpower@1\.0-service                   u:object_r:hal_power_default_exec:s0
+
+# perfd
+/(vendor|system/vendor)/bin/perfd                                   u:object_r:perfd_exec:s0
+/data/misc/perfd(/.*)?                                              u:object_r:perfd_data_file:s0
+/data/system/perfd(/.*)?                                            u:object_r:perfd_data_file:s0
 
 # Rootfs
 /firmware(/.*)?          u:object_r:firmware_file:s0
