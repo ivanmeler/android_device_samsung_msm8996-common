@@ -119,18 +119,18 @@ on enable-low-power
 
     # Configure governor settings for little cluster
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "blu_schedutil"
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/blu_schedutil/up_rate_limit_us 250
+    write /sys/devices/system/cpu/cpu0/cpufreq/blu_schedutil/down_rate_limit_us 10000
+    write /sys/devices/system/cpu/cpu0/cpufreq/blu_schedutil/iowait_boost_enable 1
 
     # Bring CPU2 online
     write /sys/devices/system/cpu/cpu2/online 1
 
     # Configure governor settings for big cluster
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "blu_schedutil"
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 20000
-    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/iowait_boost_enable 1
+    write /sys/devices/system/cpu/cpu2/cpufreq/blu_schedutil/up_rate_limit_us 250
+    write /sys/devices/system/cpu/cpu2/cpufreq/blu_schedutil/down_rate_limit_us 10000
+    write /sys/devices/system/cpu/cpu2/cpufreq/blu_schedutil/iowait_boost_enable 1
 
     # Set boottime stune value
     write /dev/stune/schedtune.prefer_idle 1
