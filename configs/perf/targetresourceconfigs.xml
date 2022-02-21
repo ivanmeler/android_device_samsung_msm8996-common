@@ -43,23 +43,23 @@ as anyway perflock calls of these resources would fail. -->
         by default as the recent target moved to schedutil. So, for older targets
         where interactive minors are supported they need to be enabled and schedutil
         minors are disabled. -->
-        <Config MajorValue="0x5" MinorValue="0x0" Supported="yes" /> <!-- above_hispeed_delay -->
-        <Config MajorValue="0x5" MinorValue="0x1" Supported="yes" /> <!-- boost -->
-        <Config MajorValue="0x5" MinorValue="0x3" Supported="yes" /> <!-- boostpulse_duration -->
-        <Config MajorValue="0x5" MinorValue="0x4" Supported="yes" /> <!-- go_hispeed_load -->
-        <Config MajorValue="0x5" MinorValue="0x5" Supported="yes" /> <!-- hispeed_freq -->
-        <Config MajorValue="0x5" MinorValue="0x6" Supported="yes" /> <!-- io_is_busy -->
-        <Config MajorValue="0x5" MinorValue="0x7" Supported="yes" /> <!-- min_sample_time -->
-        <Config MajorValue="0x5" MinorValue="0x8" Supported="yes" /> <!-- target_loads -->
-        <Config MajorValue="0x5" MinorValue="0x9" Supported="yes" /> <!-- timer_rate -->
-        <Config MajorValue="0x5" MinorValue="0xA" Supported="yes" /> <!-- timer_slack -->
-        <Config MajorValue="0x5" MinorValue="0xB" Supported="yes" /> <!-- max_freq_hysteresis -->
-        <Config MajorValue="0x5" MinorValue="0xC" Supported="yes" /> <!-- use_sched_load -->
+        <Config MajorValue="0x5" MinorValue="0x0" Supported="no" /> <!-- above_hispeed_delay -->
+        <Config MajorValue="0x5" MinorValue="0x1" Supported="no" /> <!-- boost -->
+        <Config MajorValue="0x5" MinorValue="0x3" Supported="no" /> <!-- boostpulse_duration -->
+        <Config MajorValue="0x5" MinorValue="0x4" Supported="no" /> <!-- go_hispeed_load -->
+        <Config MajorValue="0x5" MinorValue="0x5" Supported="no" /> <!-- hispeed_freq -->
+        <Config MajorValue="0x5" MinorValue="0x6" Supported="no" /> <!-- io_is_busy -->
+        <Config MajorValue="0x5" MinorValue="0x7" Supported="no" /> <!-- min_sample_time -->
+        <Config MajorValue="0x5" MinorValue="0x8" Supported="no" /> <!-- target_loads -->
+        <Config MajorValue="0x5" MinorValue="0x9" Supported="no" /> <!-- timer_rate -->
+        <Config MajorValue="0x5" MinorValue="0xA" Supported="no" /> <!-- timer_slack -->
+        <Config MajorValue="0x5" MinorValue="0xB" Supported="no" /> <!-- max_freq_hysteresis -->
+        <Config MajorValue="0x5" MinorValue="0xC" Supported="no" /> <!-- use_sched_load -->
         <Config MajorValue="0x5" MinorValue="0xF" Supported="no" />
         <Config MajorValue="0x5" MinorValue="0x10" Supported="no" />
         <Config MajorValue="0x5" MinorValue="0x11" Supported="no" />
 
-        <Config MajorValue="0x9" MinorValue="0x7" Supported="yes" /> <!-- cpu.notify_on_migrate -->
+        <Config MajorValue="0x9" MinorValue="0x7" Supported="no" /> <!-- cpu.notify_on_migrate -->
 
         <!-- All the minors of LLCBW_HWMON MAJOR are not supported -->
         <Config MajorValue="0xC" MinorValue="0x0" Supported="no" />
