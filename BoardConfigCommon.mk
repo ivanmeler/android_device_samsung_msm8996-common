@@ -187,9 +187,6 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so \
     /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so
 
-# USB
-TARGET_QTI_USB_SUPPORTS_AUDIO_ACCESSORY := true
-
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
 BOARD_HAS_QCOM_WLAN := true
