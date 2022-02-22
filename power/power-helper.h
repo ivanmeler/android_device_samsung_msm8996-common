@@ -81,9 +81,6 @@ void power_hint(power_hint_t hint, void *data);
 void power_set_interactive(int on);
 int extract_platform_stats(uint64_t *list);
 
-// Get an extension function
-extern void power_set_interactive_ext(int on);
-
 #ifdef __cplusplus
 }
 #endif
