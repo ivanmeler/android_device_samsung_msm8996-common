@@ -158,6 +158,7 @@ TARGET_PROVIDES_KEYMASTER := true
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(COMMON_PATH)/power_ext/power_interactive_ext.c
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power_ext/power_mode_ext.cpp
 
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
