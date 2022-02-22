@@ -1,5 +1,4 @@
 # data
-type perfd_data_file, file_type, core_data_file_type, data_file_type;
 type camera_socket, file_type, core_data_file_type, data_file_type;
 type biometrics_vendor_data_file, data_file_type, file_type;
 type vendor_audiopcm_data_file, data_file_type, file_type;
@@ -54,7 +53,6 @@ type sysfs_camera_writable, fs_type, sysfs_type;
 type sysfs_fpc, fs_type, sysfs_type;
 type sysfs_lcd_writable, fs_type, sysfs_type;
 type sysfs_mdnie_writable, fs_type, sysfs_type;
-type sysfs_power_management, fs_type, sysfs_type;
 type sysfs_sec_keypad, fs_type, sysfs_type;
 type sysfs_tsp, fs_type, sysfs_type;
 type sysfs_wifi, fs_type, sysfs_type;
