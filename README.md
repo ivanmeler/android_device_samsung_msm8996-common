@@ -5,7 +5,7 @@
 ```xxx
 Copyright (C) 2017 The LineageOS Project
 Copyright (C) 2018-2020 Valera Chigir <valera1978@tut.by>
-Copyright (C) 2021 Deokgyu Yang <secugyu@gmail.com>
+Copyright (C) 2021-2022 Deokgyu Yang <secugyu@gmail.com>
 ```
 
 ## License
