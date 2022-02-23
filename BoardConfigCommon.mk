@@ -42,7 +42,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7464900.sdhci lpm_levels.sleep_disabled=1 rcupdate.rcu_expedited=1 cma=32M@0-0xffffffff
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7464900.sdhci lpm_levels.sleep_disabled=1 rcupdate.rcu_expedited=1 cma=32M@0-0xffffffff loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
@@ -50,8 +50,11 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02200000 --tags_offset 0x02000000
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_VERSION := 3.18
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8996
 TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
@@ -85,8 +88,11 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Display
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+TARGET_HAS_HDR_DISPLAY := true
+TARGET_HAS_WIDE_COLOR_DISPLAY := true
 TARGET_SCREEN_DENSITY := 320
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_GRALLOC1 := true
@@ -151,7 +157,8 @@ TARGET_PROVIDES_KEYMASTER := true
 
 # Power
 TARGET_USES_INTERACTION_BOOST := true
-TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(COMMON_PATH)/power/power_ext.c
+TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(COMMON_PATH)/power_ext/power_interactive_ext.c
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power_ext/power_mode_ext.cpp
 
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
@@ -179,9 +186,6 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so \
     /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so
-
-# USB
-TARGET_QTI_USB_SUPPORTS_AUDIO_ACCESSORY := true
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
