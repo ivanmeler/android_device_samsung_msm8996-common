@@ -112,7 +112,7 @@ persist.vendor.qcomsysd.enabled=1
 sys.vendor.shutdown.waittime=500
 
 # USB
-sys.usb.controller=6a00000.dwc3
+vendor.usb.controller=6a00000.dwc3
 
 # Wifi
 wifi.interface=wlan0
