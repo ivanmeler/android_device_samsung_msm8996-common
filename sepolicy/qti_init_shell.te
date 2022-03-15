@@ -8,4 +8,6 @@ allow qti_init_shell self:capability dac_override;
 
 allow qti_init_shell sysfs:file write;
 
+allow qti_init_shell default_prop:file { getattr open };
+
 set_prop(qti_init_shell, ctl_default_prop)

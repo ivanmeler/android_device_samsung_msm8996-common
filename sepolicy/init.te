@@ -6,7 +6,7 @@ allow init dsp_file:dir mounton;
 allow init system_file:file execute_no_trans;
 allow init vendor_file:file execute_no_trans;
 
-allow init socket_device:sock_file create;
+allow init socket_device:sock_file create_file_perms;
 
 allow init sysfs_graphics:file { open read write };
 
@@ -30,7 +30,7 @@ allow init self:netlink_socket { create read bind };
 allow init self:tcp_socket { bind create };
 
 allow init sysfs:dir create;
-allow init sysfs:file { open setattr write open };
+allow init sysfs:file { open setattr write read };
 
 allow init sysfs_touchkey:lnk_file read;
 

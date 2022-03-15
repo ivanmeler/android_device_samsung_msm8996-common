@@ -1,3 +1,7 @@
 allow location csc_prop:file { getattr open read };
 
 allow location sysfs:file { open read };
+
+allow location radio_prop:file { getattr open read };
+
+allow location wifi_hal_prop:file { getattr open read };

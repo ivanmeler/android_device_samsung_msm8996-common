@@ -9,10 +9,16 @@ allow rild app_efs_file:file { getattr open read };
 
 allow rild default_android_hwservice:hwservice_manager add;
 allow rild default_prop:property_service set;
+allow rild default_prop:file { getattr open read };
 
 allow rild imei_efs_file:file { open read setattr getattr write };
 
 allow rild system_data_file:dir { write add_name };
 allow rild system_data_file:file { create open write setattr };
+
+allow rild radio_core_data_file:dir { add_name write };
+allow rild radio_core_data_file:file { create open setattr write };
+
+allow rild system_prop:file { getattr open read };
 
 get_prop(rild, csc_prop)

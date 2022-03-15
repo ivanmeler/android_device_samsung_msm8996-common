@@ -2,3 +2,5 @@ allow thermal-engine self:capability dac_override;
 
 allow thermal-engine sysfs:dir { open read };
 allow thermal-engine sysfs:file { getattr open read };
+
+allow thermal-engine system_prop:file { getattr open read };

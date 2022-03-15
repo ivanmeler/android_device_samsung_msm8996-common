@@ -1,3 +1,6 @@
 r_dir_file(time_daemon, timeservice_app)
 
 allow time_daemon sysfs:file { open read };
+
+allow time_daemon tee:dir search;
+allow time_daemon tee:file { open read };
