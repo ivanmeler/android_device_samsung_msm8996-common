@@ -22,7 +22,6 @@ $(call inherit-product-if-exists, vendor/samsung/msm8996-common/msm8996-common-v
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    device/samsung/qcom-common/overlay \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
