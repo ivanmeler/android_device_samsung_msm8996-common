@@ -82,6 +82,14 @@ on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
+    # Start qseecomd early as we mount /system early
+    # vold needs keymaster which needs qseecomd
+    wait /dev/qseecom
+    start vendor.qseecomd
+
+    # Wait qseecomd started
+    wait_for_prop vendor.sys.listeners.registered true
+
     write /dev/ipa 1
 
 on late-fs
@@ -258,10 +266,11 @@ on property:sys.shutdown.requested=*
 #on property:sys.boot_completed=1
 #    start qrngp
 
-service qseecomd /vendor/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
    class core
    user root
    group root
+   task_profiles ProcessCapacityHigh HighPerformance
 
 #service gamed /system/vendor/bin/gamed
 #   class main
@@ -512,3 +521,7 @@ service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0
 service wifiloader /vendor/bin/wifiloader
     class main
     oneshot
+
+on property:vendor.sys.listeners.registered=*
+    setprop sys.keymaster.loaded ${vendor.sys.listeners.registered}
+    setprop vendor.sys.keymaster.loaded ${vendor.sys.listeners.registered}
