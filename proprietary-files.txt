@@ -439,6 +439,25 @@ vendor/lib/W13QS_libTsAe.so
 vendor/lib/W13QS_libTsAf.so
 vendor/lib/W13QS_libTsAwb.so
 
+# Camera (unipugin)
+lib64/libblurdetection.so:vendor/lib64/libblurdetection.so
+lib64/libblurdetection_interface.so:vendor/lib64/libblurdetection_interface.so
+lib64/libdejagging_core.so:vendor/lib64/libdejagging_core.so
+lib64/libimage_flashed_lls.so:vendor/lib64/libimage_flashed_lls.so
+lib64/libflashedlls_interface.so:vendor/lib64/libflashedlls_interface.so
+lib64/libhighlight_interface.so:vendor/lib64/libhighlight_interface.so
+lib64/libhypermotion_interface.so:vendor/lib64/libhypermotion_interface.so
+lib64/libsmartfocusengine.so:vendor/lib64/libsmartfocusengine.so
+lib64/libsmartfocus_interface.so:vendor/lib64/libsmartfocus_interface.so
+lib/libblurdetection.so:vendor/lib/libblurdetection.so
+lib/libblurdetection_interface.so:vendor/lib/libblurdetection_interface.so
+lib/libdejagging_core.so:vendor/lib/libdejagging_core.so
+lib/libdejagging_interface.so:vendor/lib/libdejagging_interface.so
+lib/libimage_flashed_lls.so:vendor/lib/libimage_flashed_lls.so
+lib/libflashedlls_interface.so:vendor/lib/libflashedlls_interface.so
+lib/libsmartfocusengine.so:vendor/lib/libsmartfocusengine.so
+lib/libsmartfocus_interface.so:vendor/lib/libsmartfocus_interface.so
+
 # Device Health
 vendor/bin/hw/android.hardware.health@2.0-service.samsung
 vendor/etc/init/android.hardware.health@2.0-service.samsung.rc
