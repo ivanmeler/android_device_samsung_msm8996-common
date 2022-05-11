@@ -137,8 +137,7 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     android.hardware.camera.provider@2.4-impl:32 \
     vendor.qti.hardware.camera.device@1.0:32 \
-    libshims_cameraclient \
-    Snap
+    libshims_cameraclient
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/msm8996_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/msm8996_camera.xml \
