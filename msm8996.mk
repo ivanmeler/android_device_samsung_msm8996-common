@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
     android.frameworks.cameraservice.service@2.1.vendor:32 \
     android.frameworks.displayservice@1.0 \
     android.hardware.camera.provider@2.4-impl:32 \
-    vendor.qti.hardware.camera.device@1.0:32 \
+    vendor.qti.hardware.camera.device@1.0 \
     libshims_cameraclient
 
 PRODUCT_COPY_FILES += \
