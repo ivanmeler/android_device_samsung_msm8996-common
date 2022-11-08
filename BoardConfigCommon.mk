@@ -55,7 +55,8 @@ TARGET_KERNEL_VERSION := 3.18
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8996
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument" \
+    KBUILD_BUILD_USER=$(BUILD_USERNAME) KBUILD_BUILD_HOST=$(BUILD_HOSTNAME)
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
