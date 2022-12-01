@@ -15,10 +15,10 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/gts3l-common/gts3l-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/msm8996-common/msm8996-common-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -31,11 +31,8 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2048
-TARGET_SCREEN_WIDTH := 1536
-
-# Device characteristics
-PRODUCT_CHARACTERISTICS := tablet
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -100,9 +97,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libvolumelistener \
     tinymix \
-    libaudioprimary_shim \
-    AudioRotationMonitor \
-    set-audio-rotation
+    libaudioprimary_shim
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
@@ -135,7 +130,7 @@ PRODUCT_PACKAGES += \
     Snap
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/camera/msm8996_camera_gts3.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/msm8996_camera_gts3.xml \
+    $(LOCAL_PATH)/camera/msm8996_camera_heroq.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/msm8996_camera_gts3.xml \
     $(LOCAL_PATH)/camera/N05QL_s5k5e3yx_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/N05QL_s5k5e3yx_chromatix.xml \
     $(LOCAL_PATH)/camera/W13QS_imx258_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/W13QS_imx258_chromatix.xml
 
@@ -251,11 +246,11 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.gts3l
+    android.hardware.light@2.0-service.msm8996
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.gts3l
+    vendor.lineage.livedisplay@2.0-service.msm8996
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -393,7 +388,7 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.gts3l
+    vendor.lineage.touch@1.0-service.msm8996
 
 # Trust HAL
 PRODUCT_PACKAGES += \

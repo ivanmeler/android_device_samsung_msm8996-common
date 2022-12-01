@@ -13,7 +13,7 @@
 // limitations under the License.
 
 cc_defaults {
-    name: "livedisplay_samsung_gts3l_defaults",
+    name: "livedisplay_samsung_msm8996_defaults",
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     srcs: [
@@ -31,8 +31,8 @@ cc_defaults {
 }
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service.gts3l",
-    init_rc: ["vendor.lineage.livedisplay@2.0-service.gts3l.rc"],
-    defaults: ["livedisplay_samsung_gts3l_defaults"],
+    name: "vendor.lineage.livedisplay@2.0-service.msm8996",
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.msm8996.rc"],
+    defaults: ["livedisplay_samsung_msm8996_defaults"],
     vendor: true,
 }

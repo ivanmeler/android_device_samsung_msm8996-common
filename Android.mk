@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter gts3llte gts3lwifi,$(TARGET_DEVICE)),)
+ifneq ($(filter heroqlte hero2qlte,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

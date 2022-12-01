@@ -273,7 +273,7 @@ thermal_module_t HAL_MODULE_INFO_SYM = {
         .module_api_version = THERMAL_HARDWARE_MODULE_API_VERSION_0_1,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = THERMAL_HARDWARE_MODULE_ID,
-        .name = "Galaxy Tab S3 Thermal HAL",
+        .name = "Galaxy S7 QCOM Thermal HAL",
         .author = "The Android Open Source Project",
         .methods = &thermal_module_methods,
     },

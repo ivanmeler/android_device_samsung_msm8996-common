@@ -25,7 +25,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "gts3llte gts3lwifi"
+write_headers "heroqlte hero2qlte"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true

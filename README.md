@@ -1,4 +1,4 @@
-# Common Device Tree for Samsung Galaxy Tab S3
+# Common Device Tree for Samsung S7 QCOM
 
 ## Copyright
 
@@ -6,6 +6,7 @@
 Copyright (C) 2017 The LineageOS Project
 Copyright (C) 2018-2020 Valera Chigir <valera1978@tut.by>
 Copyright (C) 2021-2022 Deokgyu Yang <secugyu@gmail.com>
+Copyright (C) 2022 Ivan Meler <i_ivan@windowslive.com>
 ```
 
 ## License
