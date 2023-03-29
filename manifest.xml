@@ -209,15 +209,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
-        <name>com.qualcomm.qti.bluetooth_audio</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IBluetoothAudio</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl" override="true">
         <name>com.qualcomm.qti.dpm.api</name>
         <transport>hwbinder</transport>
@@ -379,15 +370,6 @@
         <interface>
             <name>IWifiDisplaySessionVideoTrack</name>
             <instance>wifidisplaysessionvideotrack</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.bluetooth</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISecBluetooth</name>
-            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
