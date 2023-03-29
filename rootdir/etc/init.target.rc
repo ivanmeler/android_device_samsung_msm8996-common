@@ -183,11 +183,6 @@ on boot
     write /sys/module/g_android/parameters/mtp_rx_req_len 131072
     write /sys/class/android_usb/android0/f_rndis_qc/rndis_transports BAM2BAM_IPA
 
-service loggy /vendor/bin/loggy.sh
-    class core
-    user root
-    oneshot
-
 #start camera server as daemon
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
