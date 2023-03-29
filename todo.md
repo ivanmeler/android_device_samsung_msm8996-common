@@ -1,0 +1,9 @@
+- use heroq audio files, this is not ideal but it works for now, configs are fine
+- use heroq sensors
+- we use bcm wifi and bt, import them and make them work
+- camera hal needs to be swapped
+- check overlays and props
+- disable kernel debugging
+- wipe misc partition in twrp, this is twrp bug
+- check and update .rc files
+- add nfc 
