@@ -413,12 +413,11 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
+    macloader \
     hostapd \
-    libbase_shim \
     wificond \
     wifilogd \
     wlutil \
-    libcld80211 \
     libwpa_client \
     TetheringConfigOverlay \
     wpa_supplicant \
