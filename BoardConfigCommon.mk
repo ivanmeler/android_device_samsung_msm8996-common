@@ -19,6 +19,8 @@ BOARD_VENDOR := samsung
 
 COMMON_PATH := device/samsung/msm8996-common
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -189,21 +191,25 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so \
-    /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so
+    /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so \
+    /vendor/lib/libwifi-hal.so|libbase_shim.so \
+    /vendor/lib64/libwifi-hal.so|libbase_shim.so
 
 # Wifi
-BOARD_HAVE_SAMSUNG_WIFI := true
-BOARD_HAS_QCOM_WLAN := true
-BOARD_HAS_QCOM_WLAN_SDK := true
-BOARD_WLAN_DEVICE := qcwcn
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+TARGET_USES_64_BIT_BCMDHD        := true
+BOARD_WLAN_DEVICE                := bcmdhd
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-HOSTAPD_VERSION := VER_0_8_X
-WIFI_AVOID_IFACE_RESET_MAC_CHANGE := true
-WIFI_DRIVER_FW_PATH_AP := "ap"
-WIFI_DRIVER_FW_PATH_STA := "sta"
-WIFI_DRIVER_FW_PATH_P2P := "p2p"
+WPA_SUPPLICANT_USE_HIDL          := true
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/dhd/parameters/firmware_path"
+WIFI_DRIVER_NVRAM_PATH_PARAM     := "/sys/module/dhd/parameters/nvram_path"
+WIFI_DRIVER_NVRAM_PATH           := "/vendor/etc/wifi/nvram_mfg.txt"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/etc/wifi/bcmdhd_sta.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/etc/wifi/bcmdhd_apsta.bin"
+WIFI_BAND                        := 802_11_ABG
+WIFI_HIDL_FEATURE_AWARE          := true
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
-WPA_SUPPLICANT_VERSION := VER_0_8_X

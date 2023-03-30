@@ -33,9 +33,10 @@ on post-fs-data
     # for WIFI MAC
     chown wifi root /sys/wifi/mac_addr
     chmod 0660 /sys/wifi/mac_addr
-
+    
 on boot
     setprop wifi.interface wlan0
+    setprop wifi.concurrent.interface swlan0
 
 # start for WiFi MFG (TestMode)
 service mfgloader /system/vendor/bin/hw/mfgloader
@@ -48,3 +49,6 @@ service macloader /system/vendor/bin/hw/macloader
     oneshot
 
 # end of WiFi MFG (TestMode)
+
+on property:vold.decrypt=trigger_restart_framework
+exec /system/vendor/bin/hw/macloader

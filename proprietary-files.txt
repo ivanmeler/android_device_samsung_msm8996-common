@@ -928,8 +928,9 @@ lib/vendor.qti.hardware.tui_comm@1.0.so
 
 # WiFi
 vendor/bin/hw/macloader
-vendor/bin/wcnss_filter
-bin/cnss-daemon:vendor/bin/cnss-daemon
+vendor/bin/hw/mfgloader
+vendor/lib/libwifi-hal.so
+vendor/lib64/libwifi-hal.so
 
 # WiFi (display)
 lib/libremotedisplay_wfd.so
@@ -939,19 +940,36 @@ lib/libwfduibcsink.so
 lib/libwfduibcsinkinterface.so
 
 # WLAN (firmware)
-etc/firmware/Data.msc:vendor/firmware/Data.msc
-etc/firmware/bdwlan30.bin:vendor/firmware/bdwlan30.bin
-etc/firmware/nvm_tlv_1.3.bin:vendor/firmware/nvm_tlv_1.3.bin
-etc/firmware/nvm_tlv_2.1.bin:vendor/firmware/nvm_tlv_2.1.bin
-etc/firmware/nvm_tlv_3.0.bin:vendor/firmware/nvm_tlv_3.0.bin
-etc/firmware/nvm_tlv_3.2.bin:vendor/firmware/nvm_tlv_3.2.bin
-etc/firmware/nvm_tlv.bin:vendor/firmware/nvm_tlv.bin
-etc/firmware/otp30.bin:vendor/firmware/otp30.bin
-etc/firmware/qwlan30.bin:vendor/firmware/qwlan30.bin
-etc/firmware/rampatch_tlv_1.3.tlv:vendor/firmware/rampatch_tlv_1.3.tlv
-etc/firmware/rampatch_tlv_2.1.tlv:vendor/firmware/rampatch_tlv_2.1.tlv
-etc/firmware/rampatch_tlv_3.0.tlv:vendor/firmware/rampatch_tlv_3.0.tlv
-etc/firmware/rampatch_tlv_3.2.tlv:vendor/firmware/rampatch_tlv_3.2.tlv
-etc/firmware/rampatch_tlv.img:vendor/firmware/rampatch_tlv.img
-etc/firmware/utfbd30.bin:vendor/firmware/utfbd30.bin
-etc/firmware/utf30.bin:vendor/firmware/utf30.bin
+vendor/etc/wifi/bcmdhd_apsta.bin_b1
+vendor/etc/wifi/bcmdhd_apsta.bin_b90s_b1
+vendor/etc/wifi/bcmdhd_apsta.bin_c0
+vendor/etc/wifi/bcmdhd_ibss.bin_b1
+vendor/etc/wifi/bcmdhd_ibss.bin_b90s_b1
+vendor/etc/wifi/bcmdhd_ibss.bin_c0
+vendor/etc/wifi/bcmdhd_mfg2.bin_b1
+vendor/etc/wifi/bcmdhd_mfg2.bin_b90s_b1
+vendor/etc/wifi/bcmdhd_mfg2.bin_c0
+vendor/etc/wifi/bcmdhd_mfg.bin_b1
+vendor/etc/wifi/bcmdhd_mfg.bin_b90s_b1
+vendor/etc/wifi/bcmdhd_mfg.bin_c0
+vendor/etc/wifi/bcmdhd_sta.bin_b1
+vendor/etc/wifi/bcmdhd_sta.bin_b90s_b1
+vendor/etc/wifi/bcmdhd_sta.bin_c0
+vendor/etc/wifi/nvram_mfg.txt
+vendor/etc/wifi/nvram_mfg.txt_b1
+vendor/etc/wifi/nvram_mfg.txt_c0
+vendor/etc/wifi/nvram_mfg.txt_murata
+vendor/etc/wifi/nvram_mfg.txt_murata_b1
+vendor/etc/wifi/nvram_mfg.txt_murata_c0
+vendor/etc/wifi/nvram_mfg.txt_wisol
+vendor/etc/wifi/nvram_mfg.txt_wisol_b1
+vendor/etc/wifi/nvram_mfg.txt_wisol_c0
+vendor/etc/wifi/nvram_net.txt
+vendor/etc/wifi/nvram_net.txt_b1
+vendor/etc/wifi/nvram_net.txt_c0
+vendor/etc/wifi/nvram_net.txt_murata
+vendor/etc/wifi/nvram_net.txt_murata_b1
+vendor/etc/wifi/nvram_net.txt_murata_c0
+vendor/etc/wifi/nvram_net.txt_wisol
+vendor/etc/wifi/nvram_net.txt_wisol_b1
+vendor/etc/wifi/nvram_net.txt_wisol_c0

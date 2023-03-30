@@ -333,7 +333,6 @@ PRODUCT_PACKAGES += \
     init.samsung.rc \
     init.target.rc \
     ueventd.qcom.rc \
-    wifi_qcom.rc \
     wifi_sec.rc
 
 # Recovery
@@ -414,15 +413,19 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
-    libwpa_client \
     hostapd \
+    libbase_shim \
+    wificond \
+    wifilogd \
+    wlutil \
+    libcld80211 \
+    libwpa_client \
+    TetheringConfigOverlay \
     wpa_supplicant \
     wpa_supplicant.conf \
-    WifiOverlay \
-    wifiloader
+    android.hardware.wifi@1.0 \
+    android.hardware.wifi@1.0-impl \
+    android.hardware.wifi@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
