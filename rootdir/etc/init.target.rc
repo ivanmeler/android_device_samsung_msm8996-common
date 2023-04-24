@@ -187,6 +187,7 @@ service loggy /vendor/bin/loggy.sh
     class core
     user root
     oneshot
+    disabled
 
 #start camera server as daemon
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
