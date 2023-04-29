@@ -342,7 +342,8 @@ PRODUCT_PACKAGES += \
     init.samsung.rc \
     init.target.rc \
     ueventd.qcom.rc \
-    wifi_sec.rc
+    wifi_sec.rc \
+    wifiloader
 
 # Recovery
 PRODUCT_COPY_FILES += \
