@@ -168,7 +168,7 @@ etc/firmware/Master1.bin:vendor/etc/firmware/Master1.bin
 etc/firmware/cal_data_LSCmaster.bin:vendor/etc/firmware/cal_data_LSCmaster.bin
 etc/firmware/ois_fw_dom.bin:vendor/etc/firmware/ois_fw_dom.bin
 etc/firmware/ois_fw_sec.bin:vendor/etc/firmware/ois_fw_sec.bin
-etc/firmware/cpp_firmware_v1_10_0.fw:vendor/etc/firmware/cpp_firmware_v1_10_0.fw
+etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
 
 # Camera (sensors)
 vendor/lib/libmmcamera_isp_abf47.so
