@@ -132,7 +132,3 @@ namespace android
 
     int CameraParameters::getInt64(const char *key) const { return -1; }
 };
-
-extern "C" void _ZN7android20DisplayEventReceiverC1Ev()
-{
-}
