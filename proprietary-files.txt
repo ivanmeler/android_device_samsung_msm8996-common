@@ -712,6 +712,10 @@ lib/libflashedlls_interface.so:vendor/lib/libflashedlls_interface.so
 lib/libsmartfocusengine.so:vendor/lib/libsmartfocusengine.so
 lib/libsmartfocus_interface.so:vendor/lib/libsmartfocus_interface.so
 lib/libldc_interface.so:vendor/lib/lib/libldc_interface.so
+lib64/libldc_core.so:vendor/lib64/libldc_core.so
+lib/libldc_core.so:vendor/lib/libldc_core.so
+vendor/lib/libsomp.so
+vendor/lib64/libsomp.so
 
 # Device Health (from T825UBU3CUF1)
 vendor/bin/hw/android.hardware.health@2.0-service.samsung|622767e6a35c6347b8be061a321441c7935edf20
