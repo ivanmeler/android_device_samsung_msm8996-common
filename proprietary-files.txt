@@ -986,7 +986,9 @@ lib64/vendor.qti.hardware.iop@2.0.so|6acc2005f51164b6897d5a39556368e34b7793fd
 vendor/bin/msm_irqbalance|e70694e0412052cd591389b8c1bf4573e5777257
 
 # Keystore (from T825UBU3CUF1)
+lib64/libskeymaster.so:vendor/lib64/libskeymaster.so|8b42585476b2b4b1d33be92c9af8afc1c6899840
 vendor/lib64/hw/keystore.mdfpp.so|8b4f36230f788f624ca339af479e10b1ab47b2b1
+vendor/lib64/libkeymaster_helper.so|b933e9350be2ac11ebf2bb05939ee6ca1a05881d
 vendor/lib64/libkeymaster_mdfpp.so|6e0559087716c23c4963e302ff595d38ffdd53d3
 
 # Media - from daisy - QKQ1.191002.002
