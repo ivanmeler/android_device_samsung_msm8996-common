@@ -20,7 +20,6 @@ LOCAL_SRC_FILES := \
     camera_cameraclient.cpp \
     DisplayEventReceiver.cpp
 
-LOCAL_SHARED_LIBRARIES := libgui
 LOCAL_MODULE := libshims_cameraclient
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
