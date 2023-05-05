@@ -26,6 +26,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
+PRODUCT_ENFORCE_RRO_TARGETS += *
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -82,18 +84,19 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio@4.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@4.0-impl \
+    android.hardware.audio@2.0-impl:32 \
+    android.hardware.audio@4.0-impl:32 \
+    android.hardware.audio.effect@2.0-impl:32 \
+    android.hardware.audio.effect@4.0-impl:32 \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl:32 \
+    android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.soundtrigger@2.0-impl:32 \
-    android.hardware.soundtrigger@2.1-impl \
+    android.hardware.soundtrigger@2.2-impl:32 \
     audio.bluetooth.default \
     audio.primary.msm8996:32 \
     audio.r_submix.default \
     audio.usb.default \
+    liba2dpoffload \
     libaacwrapper \
     libaudio-resampler \
     libaudioroute \
@@ -178,8 +181,10 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.vendor \
     libdisplayconfig.qti \
     liboverlay \
-    libqdMetaData.system \
-    libtinyxml
+    libqdMetaData \
+    libqdMetaData.vendor \
+    libtinyxml \
+    libvulkan
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/display/hdr_tm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/hdr_tm_config.xml \
@@ -290,7 +295,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
     android.system.net.netd@1.0.vendor \
-    android.system.net.netd@1.1 \
     android.system.net.netd@1.1.vendor \
     libandroid_net
 
@@ -441,7 +445,6 @@ PRODUCT_PACKAGES += \
     vndk-sp
 
 PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v30.so \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libcutils-v29.so \
     prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full-v29.so
