@@ -717,11 +717,6 @@ lib/libldc_core.so:vendor/lib/libldc_core.so
 vendor/lib/libsomp.so
 vendor/lib64/libsomp.so
 
-# Device Health (from T825UBU3CUF1)
-vendor/bin/hw/android.hardware.health@2.0-service.samsung|622767e6a35c6347b8be061a321441c7935edf20
-vendor/etc/init/android.hardware.health@2.0-service.samsung.rc|ad43c42b4316cf45ce29a10a6d076de4ea1e3c61
-lib64/vendor.samsung.hardware.exthealth@1.0.so|207e32d6d45d857f2e2a3ca1f90eb8cfab9e940c
-
 # Display postprocessing (from T825UBU3CUF1)
 vendor/bin/hw/vendor.display.color@1.0-service|2ca340c7fd7689ac8ddf36f948fd95a7cd3bfc2e
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
