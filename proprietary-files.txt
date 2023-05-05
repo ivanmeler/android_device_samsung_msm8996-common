@@ -1025,8 +1025,10 @@ vendor/lib/libvqzip.so|24e5eb30e5a2cdb544c8688d81d7cc75a1d85eaf
 # Peripheral Manager (from T825UBU3CUF1)
 vendor/bin/pm-proxy|83c3adde4167fe4d5874dc49312c3e7ffdea31a5
 vendor/bin/pm-service|51d704ebc824f2d10f18e257b6ef38ea25aecc82
-vendor/lib/libperipheral_client.so|21768d817ef624ab9437ab7524e2f81bad2eb859
-vendor/lib64/libperipheral_client.so|6b3bd89a1adb37670ed61e0102b2f566cd947ece
+
+# Peripheral manager - from Nokia/Plate2_00WW - QKQ1.190828.002
+vendor/lib/libperipheral_client.so|836411f7b88afe296b3f3090aab70fc5700ba434
+vendor/lib64/libperipheral_client.so|a0dd574c8af3135adae10ef49065fa765906db7a
 
 # Power (from T825UBU3CUF1)
 vendor/bin/hw/vendor.samsung.hardware.miscpower@1.0-service|99eb53f1becedb60644a056e97b3e00d1a366aed
