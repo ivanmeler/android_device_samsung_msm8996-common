@@ -21,6 +21,9 @@ BOARD_VENDOR := samsung
 
 COMMON_PATH := device/samsung/msm8996-common
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a

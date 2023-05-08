@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ *               2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-#ifndef SAMSUNG_LIGHTS_H
-#define SAMSUNG_LIGHTS_H
+#pragma once
 
 /*
  * Board specific nodes
@@ -25,14 +24,12 @@
  * symlink to the locations given here, or override this header in your
  * device tree.
  */
+
 #define PANEL_BRIGHTNESS_NODE "/sys/class/leds/lcd-backlight/brightness"
 #define PANEL_MAX_BRIGHTNESS_NODE "/sys/class/leds/lcd-backlight/max_brightness"
 #define BUTTON_BRIGHTNESS_NODE "/sys/class/sec/sec_touchkey/brightness"
 
-#define LED_BLINK_NODE "/sys/class/sec/led/led_blink"
-
-// Uncomment to enable variable button brightness
-//#define VAR_BUTTON_BRIGHTNESS 1
+#define LED_BLINK_NODE "/sys/devices/virtual/sec/led/led_blink"
 
 /*
  * Brightness adjustment factors
@@ -54,5 +51,3 @@
 #define LED_BRIGHTNESS_BATTERY 255
 #define LED_BRIGHTNESS_NOTIFICATION 255
 #define LED_BRIGHTNESS_ATTENTION 255
-
-#endif  // SAMSUNG_LIGHTS_H
