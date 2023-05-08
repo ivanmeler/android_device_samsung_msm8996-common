@@ -219,6 +219,8 @@ on boot
     chmod 0664 /sys/module/lowmemorykiller/parameters/adj
     chown root system /sys/module/lowmemorykiller/parameters/minfree
     chmod 0664 /sys/module/lowmemorykiller/parameters/minfree
+    chmod 0666 /sys/devices/virtual/camera/flash/rear_flash
+    chown system radio /sys/devices/virtual/camera/flash/rear_flash
 
     # Tweak background writeout
     write /proc/sys/vm/dirty_expire_centisecs 200
