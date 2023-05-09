@@ -287,6 +287,11 @@ PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor \
     libandroid_net
 
+# Nfc
+PRODUCT_COPY_FILES
+    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
