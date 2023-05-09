@@ -264,10 +264,10 @@
             <name>IGloveMode</name>
             <instance>default</instance>
         </interface>
-        <interface>
+        <!--interface>
             <name>IKeyDisabler</name>
             <instance>default</instance>
-        </interface>
+        </interface-->
         <interface>
             <name>IStylusMode</name>
             <instance>default</instance>
