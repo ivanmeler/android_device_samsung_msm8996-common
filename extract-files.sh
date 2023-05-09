@@ -78,6 +78,9 @@ function blob_fixup() {
     lib64/libpixelflinger.so)
         "${PATCHELF}" --replace-needed "libcutils.so" "libcutils-v29.so" "${2}"
         ;;
+    vendor/bin/hw/vendor.qti.hardware.perf@1.0-service)
+        "${PATCHELF}" --replace-needed "vendor.qti.hardware.perf@1.0_vendor.so" "vendor.qti.hardware.perf@1.0.so" "${2}"
+        ;;
     esac
 }
 
