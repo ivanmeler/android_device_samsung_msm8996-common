@@ -790,7 +790,6 @@ vendor/lib64/libsynaFpSensorTestNwd.so
 # Firmware
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
-vendor/firmware/libpn551_fw.so
 
 # Gatekeeper (from T825UBU3CUF1)
 vendor/lib64/hw/gatekeeper.mdfpp.so|9c63cf92391e8fc550c17b7f375adbaf6aee5626
@@ -1016,6 +1015,9 @@ vendor/lib/libgpustats.so|75fc8f58b071f3c27d708010e1b40eafba091a14
 vendor/lib/libmmosal_proprietary.so|4b0788590e1ecfccd3b20b3181a4add528acb2b6
 vendor/lib/libvpplibrary.so|816a79fe9a6d30e9402acb767119b9ee1c2c8aea
 vendor/lib/libvqzip.so|24e5eb30e5a2cdb544c8688d81d7cc75a1d85eaf
+
+# NFC Firmware
+vendor/firmware/libpn551_fw.so:vendor/lib/libpn551_fw.so
 
 # Peripheral Manager (from T825UBU3CUF1)
 vendor/bin/pm-proxy|83c3adde4167fe4d5874dc49312c3e7ffdea31a5
