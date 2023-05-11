@@ -397,7 +397,8 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/samsung
+    hardware/samsung \
+    vendor/nxp/opensource/pn5xx
 
 # Telephony
 PRODUCT_PACKAGES += \
