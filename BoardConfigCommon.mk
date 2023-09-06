@@ -39,6 +39,14 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := kryo
 
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= false
+    WITH_DEXPREOPT := true
+  endif
+endif
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
